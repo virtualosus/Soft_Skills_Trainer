@@ -22,7 +22,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
     public class InteractionHandler : MonoBehaviour
     {
         [Header("Default States"), Multiline]
-        [SerializeField] private string freshStateText = "Try pressing the Activate button and saying \"Make the cube red\"";
+        [SerializeField] private string freshStateText = "Try putting your hand in the sphere and saying \"Make the cube red\"";
 
         [Header("UI")]
         [SerializeField] private Text textArea, previouslySpokenListText;
@@ -40,6 +40,11 @@ namespace Oculus.Voice.Demo.UIShapesDemo
         private int counter;
 
         public string[] previouslySpokenArray;
+
+        private void Start()
+        {
+            textArea.text = pendingText;
+        }
 
         private void OnEnable()
         {
@@ -103,10 +108,16 @@ namespace Oculus.Voice.Demo.UIShapesDemo
 
         public void ToggleActivation()
         {
-            if (appVoiceExperience.Active) appVoiceExperience.Deactivate();
+            if (appVoiceExperience.Active) 
+            {
+                appVoiceExperience.Deactivate();
+                textArea.text = freshStateText;
+
+            }
             else
             {
                 appVoiceExperience.Activate();
+                textArea.text = "I'm listening...";
             }
         }
     }

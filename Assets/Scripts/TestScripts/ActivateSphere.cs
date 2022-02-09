@@ -23,16 +23,16 @@ public class ActivateSphere : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Hand" && !enabled)
+        if(other.tag == "Hand" && !speechEnabled)
         {
             Debug.Log("Sphere Triggered.");
             interactionHandler.ToggleActivation();
-            enabled = true;
+            speechEnabled = true;
         }
     }
 
     public void OnTriggerExit(Collider other)
     {
-        enabled = false;        
+        speechEnabled = false;        
     }
 }

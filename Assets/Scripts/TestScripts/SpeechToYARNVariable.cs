@@ -4,6 +4,7 @@ using UnityEngine;
 using Oculus.Voice.Demo.UIShapesDemo;
 using Yarn.Unity;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 
 public class SpeechToYARNVariable : MonoBehaviour
@@ -18,46 +19,53 @@ public class SpeechToYARNVariable : MonoBehaviour
 
     public UnityEvent colourChange;
 
-    public void Awake()
-    {
-        dialogueRunner.AddCommandHandler("custom_wait", (UnityEvent waitForEvent) => { return StartCoroutine(CustomWait(waitForEvent)); });
+    public float duration;
 
-    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if(lastColor != colorChanger.currentColor)
+        if(lastColor == null ||lastColor != colorChanger.currentColor)
         {
-
-            ColourSelection();
+            colourChange.Invoke();
         }
     }
 
-    private IEnumerator CustomWait(UnityEvent unityEvent)
-    {        
-        yield return new WaitForSeconds(1);
+    [YarnCommand("custom_wait")]
+    public IEnumerator CustomWait()
+    {
+        Debug.Log("Coroutine started...");
+        var trigger = false;
+        System.Action action = () => trigger = true;
+        colourChange.AddListener(action.Invoke);
+        yield return new WaitUntil(() => trigger);
+        colourChange.RemoveListener(action.Invoke);
+        ColourSelection();
+        Debug.Log("Coroutine finished!!");
+
     }
+
 
     public void ColourSelection()
     {
         lastColor = colorChanger.currentColor;
 
-        if (colorChanger.currentColor == "red")
+        if (colorChanger.currentColor == "red"|| colorChanger.currentColor == "Red")
         {
-
             YARNSetRed();
         }
-        else if(colorChanger.currentColor == "blue")
+        if(colorChanger.currentColor == "blue" || colorChanger.currentColor == "Blue")
         {
             YARNSetBlue();
         }
-        else if(colorChanger.currentColor == "orange")
+        if(colorChanger.currentColor == "orange" || colorChanger.currentColor == "Orange")
         {
             YARNSetOrange();
         }
-        else if(colorChanger.currentColor == "green")
+        if(colorChanger.currentColor == "green" || colorChanger.currentColor == "Green")
         {
+
             YARNSetGreen();
         }
     }
@@ -65,20 +73,27 @@ public class SpeechToYARNVariable : MonoBehaviour
     public void YARNSetRed()
     {
         yarnInMemoryVariableStorage.SetValue("$red", true);
+        Debug.Log("YARN to red");
+
     }
 
     public void YARNSetBlue()
     {
         yarnInMemoryVariableStorage.SetValue("$blue", true);
+        Debug.Log("YARN to blue");
+
     }
 
     public void YARNSetOrange()
     {
         yarnInMemoryVariableStorage.SetValue("$orange", true);
+        Debug.Log("YARN to orange");
+
     }
     public void YARNSetGreen()
     {
         yarnInMemoryVariableStorage.SetValue("$green", true);
+        Debug.Log("YARN to green");
     }
 
 }

@@ -83,7 +83,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
                         StringComparison.CurrentCultureIgnoreCase))
                     {
                         SetColor(child, color);
-                        currentColor = color.ToString();
+                        currentColor = colorName;
                         Debug.LogError(currentColor);
                         break;
                     }

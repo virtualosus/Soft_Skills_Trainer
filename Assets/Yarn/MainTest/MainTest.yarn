@@ -9,9 +9,15 @@ tags:
 
 
 
+<<wait 2>>
+
 Screen: In this test scene you can change the colour of the shapes verbally. #line:0f29527 
 
+<<wait 0.5>> 
+
 Screen: Put your hand in the sphere in front of you and say a colour. #line:0ae03a9 
+
+<<custom_wait DialogueRunner>>
 
 <<if $red>>
     Screen: Red is a great colour to choose! #line:0e00598 
@@ -44,28 +50,30 @@ title: ChooseAnother
 tags:
 ---
 
-Screen: Why don't you try another colour? #line:0022138 
+Screen: Why don't you try another colour? #line:01388e5 
+
+<<custom_wait DialogueRunner>>
 
 <<if $red>>
-    Screen: Red is a great colour to choose! #line:08679c1 
+    Screen: Red is a great colour to choose!  #line:01e008f 
     <<set $red to false>>
     <<jump ChooseAnother>>
 <<endif>>
 
 <<if $blue>>
-    Screen: I love blue, great choice! #line:00cc0f1 
+    Screen: I love blue, great choice!  #line:021695b 
     <<set $blue to false>>
     <<jump ChooseAnother>>
 <<endif>>
 
 <<if $orange>>
-    Screen: Oooo, orange, my favourite! #line:0954d31 
+    Screen: Oooo, orange, my favourite!  #line:02b1f9a 
     <<set $orange to false>>
     <<jump ChooseAnother>>
 <<endif>>
 
 <<if $green>>
-    Screen: I love green, how did you know? #line:09592a8 
+    Screen: I love green, how did you know?  #line:0bc3f52 
     <<set $green to false>>
     <<jump ChooseAnother>>
 <<endif>>
