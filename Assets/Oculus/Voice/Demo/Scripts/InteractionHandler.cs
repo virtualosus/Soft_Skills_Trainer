@@ -14,6 +14,8 @@ using Facebook.WitAi;
 using Facebook.WitAi.Lib;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+
 
 namespace Oculus.Voice.Demo.UIShapesDemo
 {
@@ -23,13 +25,21 @@ namespace Oculus.Voice.Demo.UIShapesDemo
         [SerializeField] private string freshStateText = "Try pressing the Activate button and saying \"Make the cube red\"";
 
         [Header("UI")]
-        [SerializeField] private Text textArea;
+        [SerializeField] private Text textArea, previouslySpokenListText;
         [SerializeField] private bool showJson;
 
         [Header("Voice")]
         [SerializeField] private AppVoiceExperience appVoiceExperience;
 
         private string pendingText;
+
+        public List<string> previouslySpokenList = new List<string>();
+
+        public string previouslySpokenString;
+
+        private int counter;
+
+        public string[] previouslySpokenArray;
 
         private void OnEnable()
         {
@@ -57,11 +67,28 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             }
         }
 
+        void DisplayPreviouslySpokenList()
+        {
+            if (previouslySpokenList == null)
+            {
+                previouslySpokenListText.text = "Nothing spoken yet.";
+            }
+            else
+            {
+                previouslySpokenArray = previouslySpokenList.ToArray();
+                previouslySpokenString = string.Join("\n", previouslySpokenArray);
+                previouslySpokenListText.text = previouslySpokenString;
+                counter++;
+            }
+        }
+
         public void OnResponse(WitResponseNode response)
         {
             if (!string.IsNullOrEmpty(response["text"]))
             {
                 textArea.text = "I heard: " + response["text"];
+                previouslySpokenList.Add(counter + ". " + response["text"]);
+                DisplayPreviouslySpokenList();
             }
             else
             {

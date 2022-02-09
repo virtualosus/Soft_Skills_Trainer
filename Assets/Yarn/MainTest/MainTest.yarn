@@ -1,0 +1,73 @@
+﻿title: MainTest
+tags:
+---
+
+<<declare $red = false>>
+<<declare $blue = false>>
+<<declare $orange = false>>
+<<declare $green = false>>
+
+
+
+Screen: In this test scene you can change the colour of the shapes verbally. #line:0f29527 
+
+Screen: Put your hand in the sphere in front of you and say a colour. #line:0ae03a9 
+
+<<if $red>>
+    Screen: Red is a great colour to choose! #line:0e00598 
+    <<set $red to false>>
+    <<jump ChooseAnother>>
+<<endif>>
+
+<<if $blue>>
+    Screen: I love blue, great choice! #line:0ad05d2 
+    <<set $blue to false>>
+    <<jump ChooseAnother>>
+<<endif>>
+
+<<if $orange>>
+    Screen: Oooo, orange, my favourite! #line:04b1615 
+    <<set $orange to false>>
+    <<jump ChooseAnother>>
+<<endif>>
+
+<<if $green>>
+    Screen: I love green, how did you know? #line:0a764fa 
+    <<set $green to false>>
+    <<jump ChooseAnother>>
+<<endif>>
+
+===
+
+
+title: ChooseAnother
+tags:
+---
+
+Screen: Why don't you try another colour? #line:0022138 
+
+<<if $red>>
+    Screen: Red is a great colour to choose! #line:08679c1 
+    <<set $red to false>>
+    <<jump ChooseAnother>>
+<<endif>>
+
+<<if $blue>>
+    Screen: I love blue, great choice! #line:00cc0f1 
+    <<set $blue to false>>
+    <<jump ChooseAnother>>
+<<endif>>
+
+<<if $orange>>
+    Screen: Oooo, orange, my favourite! #line:0954d31 
+    <<set $orange to false>>
+    <<jump ChooseAnother>>
+<<endif>>
+
+<<if $green>>
+    Screen: I love green, how did you know? #line:09592a8 
+    <<set $green to false>>
+    <<jump ChooseAnother>>
+<<endif>>
+
+===

@@ -19,6 +19,10 @@ namespace Oculus.Voice.Demo.UIShapesDemo
 {
     public class ColorChanger : MonoBehaviour
     {
+
+        public string currentColor;
+
+
         /// <summary>
         /// Sets the color of the specified transform.
         /// </summary>
@@ -66,6 +70,8 @@ namespace Oculus.Voice.Demo.UIShapesDemo
                 for (int i = 0; i < transform.childCount; i++)
                 {
                     SetColor(transform.GetChild(i), color);
+                    currentColor = colorName;
+                    Debug.LogError(currentColor);
                 }
             }
             else
@@ -77,6 +83,8 @@ namespace Oculus.Voice.Demo.UIShapesDemo
                         StringComparison.CurrentCultureIgnoreCase))
                     {
                         SetColor(child, color);
+                        currentColor = color.ToString();
+                        Debug.LogError(currentColor);
                         break;
                     }
                 }

@@ -78,6 +78,7 @@
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\SimpleCapsuleWithStickMovement.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\AugmentedObject.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\InteractableRegistry.cs" />
+    <Compile Include="Assets\Scripts\TestScripts\ModifiedInteractionHandler.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\DebugUI\Scripts\HandedInputSelector.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\DistanceGrabbable.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\Utils\Pose.cs" />
@@ -135,15 +136,14 @@
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\ColliderZone.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Scripts\MoviePlayerSampleControls.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\WindmillController.cs" />
+    <Compile Include="Assets\Scripts\TestScripts\PreviousSpokenList.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\SPPquad.cs" />
-    <Compile Include="Assets\ColorChanger.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\DebugUI\Scripts\LaserPointer.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransition.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSDKCAPI.cs" />
     <Compile Include="Assets\Oculus\Voice\Demo\Scripts\BuiltinDemo\WitActivation.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\SelectionCylinder.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\PanelHMDFollower.cs" />
-    <Compile Include="Assets\TimerDisplay.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\AppDeeplink\AppDeeplinkUI.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSDKManager.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\DebugUI\DebugUISample.cs" />
@@ -209,7 +209,9 @@
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\SelectivePassthroughExperience.cs" />
     <Compile Include="Assets\Oculus\Avatar\Samples\SocialStarter\Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrackSegment.cs" />
-    <Compile Include="Assets\KillCube.cs" />
+    <Compile Include="Assets\Samples\Yarn Spinner\2.0.2\Intro\Scripts\QuitGameCommand.cs" />
+    <Compile Include="Assets\Scripts\TestScripts\ActivateSphere.cs" />
+    <Compile Include="Assets\Scripts\TestScripts\SpeechToYARNVariable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />
@@ -262,6 +264,7 @@
     <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\OculusSampleTrainSmokeShader.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\OVROverlayCanvas\Shaders\UI Prerendered Opaque.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\Video\Plugins\Android\Audio360\NOTICE.txt" />
+    <None Include="Assets\Samples\Yarn Spinner\2.0.2\Intro\Art\Comfortaa-License.txt" />
     <None Include="Assets\Oculus\SampleFramework\Usage\Locomotion\Shaders\TriPlanarWorld.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\Video\Plugins\Android\Audio360\ThirdPartyNotices.txt" />
@@ -494,6 +497,36 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@b70f37e884\Runtime\DLLs\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr4.Runtime.Standard">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@b70f37e884\Runtime\DLLs\Antlr4.Runtime.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner.Compiler">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@b70f37e884\Runtime\DLLs\YarnSpinner.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@b70f37e884\Runtime\DLLs\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@b70f37e884\Runtime\DLLs\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@b70f37e884\Runtime\DLLs\YarnSpinner.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@b70f37e884\Runtime\DLLs\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@b70f37e884\Runtime\DLLs\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.TypeExtensions">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@b70f37e884\Runtime\DLLs\System.Reflection.TypeExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@b70f37e884\Runtime\DLLs\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Editors\2020.3.22f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -932,6 +965,15 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner.Unity">
+      <HintPath>Library\ScriptAssemblies\YarnSpinner.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandsInAnAssemblyDefinition">
+      <HintPath>Library\ScriptAssemblies\CommandsInAnAssemblyDefinition.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner.Unity.Editor">
+      <HintPath>Library\ScriptAssemblies\YarnSpinner.Unity.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
