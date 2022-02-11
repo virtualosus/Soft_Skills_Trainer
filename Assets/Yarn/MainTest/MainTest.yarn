@@ -11,34 +11,34 @@ tags:
 
 <<wait 2>>
 
-Screen: In this test scene you can change the colour of the shapes verbally. #line:0f29527 
+Screen: In this test scene you can change the color of the shapes with verbal commands. #line:a_1
 
 <<wait 0.5>> 
 
-Screen: Put your hand in the sphere in front of you and say a colour. #line:0ae03a9 
+Screen: Put your hand in the sphere in front of you and say a colour. #line:a_2 
 
 <<custom_wait DialogueRunner>>
 
 <<if $red>>
-    Screen: Red is a great colour to choose! #line:0e00598 
+    Screen: Red is a great colour to choose! #line:a_red 
     <<set $red to false>>
     <<jump ChooseAnother>>
 <<endif>>
 
 <<if $blue>>
-    Screen: I love blue, great choice! #line:0ad05d2 
+    Screen: I love blue, great choice! #line:a_blue 
     <<set $blue to false>>
     <<jump ChooseAnother>>
 <<endif>>
 
 <<if $orange>>
-    Screen: Oooo, orange, my favourite! #line:04b1615 
+    Screen: Oooo, orange, my favourite! #line:a_orange 
     <<set $orange to false>>
     <<jump ChooseAnother>>
 <<endif>>
 
 <<if $green>>
-    Screen: I love green, how did you know? #line:0a764fa 
+    Screen: I love green, how did you know? #line:a_green 
     <<set $green to false>>
     <<jump ChooseAnother>>
 <<endif>>
@@ -50,30 +50,65 @@ title: ChooseAnother
 tags:
 ---
 
-Screen: Why don't you try another colour? #line:01388e5 
+Screen: Why don't you try another colour? #line:b_1 
 
 <<custom_wait DialogueRunner>>
 
 <<if $red>>
-    Screen: Red is a great colour to choose!  #line:01e008f 
+    Screen: Red is a great colour to choose!  #line:b_red 
+    <<set $red to false>>
+    <<jump SpecificShape>>
+<<endif>>
+
+<<if $blue>>
+    Screen: I love blue, great choice!  #line:b_blue 
+    <<set $blue to false>>
+    <<jump SpecificShape>>
+<<endif>>
+
+<<if $orange>>
+    Screen: Oooo, orange, my favourite!  #line:b_orange 
+    <<set $orange to false>>
+    <<jump SpecificShape>>
+<<endif>>
+
+<<if $green>>
+    Screen: I love green, how did you know?  #line:b_green 
+    <<set $green to false>>
+    <<jump SpecificShape>>
+<<endif>>
+
+===
+
+
+title: SpecificShape
+tags:
+---
+
+Screen: Try choosing a specific shape and colour? #line:c_1 
+
+<<custom_wait DialogueRunner>>
+
+<<if $red>>
+    Screen: Red is a great colour to choose!  #line:c_red 
     <<set $red to false>>
     <<jump ChooseAnother>>
 <<endif>>
 
 <<if $blue>>
-    Screen: I love blue, great choice!  #line:021695b 
+    Screen: I love blue, great choice!  #line:c_blue 
     <<set $blue to false>>
     <<jump ChooseAnother>>
 <<endif>>
 
 <<if $orange>>
-    Screen: Oooo, orange, my favourite!  #line:02b1f9a 
+    Screen: Oooo, orange, my favourite!  #line:c_orange 
     <<set $orange to false>>
     <<jump ChooseAnother>>
 <<endif>>
 
 <<if $green>>
-    Screen: I love green, how did you know?  #line:0bc3f52 
+    Screen: I love green, how did you know?  #line:c_green 
     <<set $green to false>>
     <<jump ChooseAnother>>
 <<endif>>
