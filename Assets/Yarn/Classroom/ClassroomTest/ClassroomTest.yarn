@@ -1,0 +1,34 @@
+﻿title: ClassroomTest
+tags:
+---
+//<<declare $boyVoiceline = 0>>
+//<<declare $girlVoiceline = 0>>
+
+<<declare $boyTemperment = 5>>
+<<declare $girlTemperment = 5>>
+
+
+<<wait 5>>
+
+<<set $boyVoiceline = 1>>
+<<boy_talk DialogueRunner>>
+
+<<wait 5>>
+
+<<set $boyVoiceline = 3>>
+<<boy_talk DialogueRunner>>
+
+<<wait 5>>
+
+<<set $girlVoiceline = 1>>
+<<girl_talk DialogueRunner>>
+
+<<wait 5>>
+
+<<set $girlVoiceline = 3>>
+<<girl_talk DialogueRunner>>
+
+<<wait 2>>
+
+
+===
