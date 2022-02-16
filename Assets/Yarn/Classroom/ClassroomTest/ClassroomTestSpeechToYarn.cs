@@ -11,31 +11,17 @@ public class ClassroomTestSpeechToYarn : MonoBehaviour
 
     public VOLineController BoyVOLineController, GirlVOLineController;
 
-    public float BoyVoiceLine, GirlVoiceLine;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public float boyVoiceLine, girlVoiceLine;
 
 
     [YarnCommand("boy_talk")]
     public void BoyToTalk()
     {
         Debug.LogError("Boy talking...");
-        yarnInMemoryVariableStorage.TryGetValue("$boyVoiceLine", out BoyVoiceLine);
-        Debug.LogError(BoyVoiceLine);
-        //BoyVOLineController.VoiceLineToPlay = BoyVoiceLine;
-        //BoyVOLineController.UpdateLineAndPlay();
-        //Debug.LogError(BoyVoiceLine);
+        yarnInMemoryVariableStorage.TryGetValue("$boyVoiceLine", out boyVoiceLine);
+        Debug.LogError(boyVoiceLine);
+        BoyVOLineController.VoiceLineToPlay = boyVoiceLine;
+        BoyVOLineController.UpdateLineAndPlay();
 
     }
 
@@ -43,25 +29,14 @@ public class ClassroomTestSpeechToYarn : MonoBehaviour
     public void GirlToTalk()
     {
         Debug.LogError("Girl talking...");
-        yarnInMemoryVariableStorage.TryGetValue("$girlVoiceLine", out GirlVoiceLine);
-        Debug.LogError(GirlVoiceLine);
-        //GirlVOLineController.VoiceLineToPlay = GirlVoiceLine;
-        //GirlVOLineController.UpdateLineAndPlay();
-        //Debug.LogError(GirlVoiceLine);
+        yarnInMemoryVariableStorage.TryGetValue("$girlVoiceLine", out girlVoiceLine);
+        Debug.LogError(girlVoiceLine);
+        GirlVOLineController.VoiceLineToPlay = girlVoiceLine;
+        GirlVOLineController.UpdateLineAndPlay();
 
     }
 
-    //[YarnCommand("boy_talk")]
-    //public void BoyToTalk()
-    //{
-    //    Debug.LogError("Boy talking...");
-    //    variableStorage = GameObject.FindObjectOfType<InMemoryVariableStorage>();
-    //    int testVariable;
-    //    variableStorage.TryGetValue("$testVariable", out testVariable);
-    //    BoyVOLineController.VoiceLineToPlay = BoyVoiceLine;
-    //    BoyVOLineController.UpdateLineAndPlay();
-    //    Debug.LogError(BoyVoiceLine);
-    //}
+
 
 
 }

@@ -8,23 +8,25 @@ public class VOLineController : MonoBehaviour
     public AudioSource NPCAudio;
     public AudioClip[] VoiceLines;
 
-    public int VoiceLineToPlay;
+    public float VoiceLineToPlay;
+   
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    //// Start is called before the first frame update
+    //void Start()
+    //{
         
-    }
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //void Update()
+    //{
         
-    }
+    //}
 
     public void UpdateLineAndPlay()
     {
-        NPCAudio.clip = VoiceLines[VoiceLineToPlay];
+        NPCAudio.clip = VoiceLines[(int)VoiceLineToPlay];
         NPCAudio.Play();
+        Debug.LogError("Playing voiceline " + (int)VoiceLineToPlay);
     }
 }
