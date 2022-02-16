@@ -8,31 +8,23 @@ tags:
 <<declare $girlTemperment = 5>>
 
 
-<<wait 5>>
+<<wait 2>>
 
-<<set $boyVoiceLine to 2>>
+<<girl_talk DialogueRunner>>
+
+<<girl_NPC_finish_talking_wait DialogueRunner>>
+
 <<boy_talk DialogueRunner>>
-//Boy: Blah blah blah #line:0787cff 
 
-<<wait 5>>
-
-<<set $boyVoiceLine to 2>>
-<<boy_talk DialogueRunner>>
-//Boy: Blah blah blah #line:04ad0e9 
-
-
-<<wait 5>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
 
 <<set $girlVoiceLine = 1>>
 <<girl_talk DialogueRunner>>
-//Girl: Blah blah blah #line:0e08266 
 
+<<girl_NPC_finish_talking_wait DialogueRunner>>
 
-<<wait 5>>
-
-<<set $girlVoiceLine = 3>>
-<<girl_talk DialogueRunner>>
-//Girl: Blah blah blah #line:0766afa 
+<<set $boyVoiceLine to 1>>
+<<boy_talk DialogueRunner>>
 
 
 <<wait 2>>
