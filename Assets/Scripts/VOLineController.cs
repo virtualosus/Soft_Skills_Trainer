@@ -9,25 +9,13 @@ public class VOLineController : MonoBehaviour
     public AudioClip[] voiceLines;
 
     public float voiceLineToPlay, voiceLineClipLength;
-   
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-        
-    //}
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-
-    public void UpdateLineAndPlay()
+    public void UpdateLineAndPlay()                                 //selecting Audio clip to play with data passed in from SpeechToYARN and playing
     {
         NPCAudio.clip = voiceLines[(int)voiceLineToPlay];
         voiceLineClipLength = NPCAudio.clip.length;
         NPCAudio.Play();
-        Debug.LogError("Playing voiceline " + (int)voiceLineToPlay);
+        //Debug.LogError("Playing voiceline " + (int)voiceLineToPlay);
     }
 }
