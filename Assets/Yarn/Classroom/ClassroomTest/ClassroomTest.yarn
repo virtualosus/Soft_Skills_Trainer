@@ -7,20 +7,24 @@ tags:
 <<declare $boyTemperment = 5>>
 <<declare $girlTemperment = 5>>
 
-
 <<wait 2>>
 
-<<girl_talk DialogueRunner>>
+<<jump Intro>>
 
+===
+
+title: Intro
+tags:
+---
+
+<<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
 <<boy_talk DialogueRunner>>
-
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
 <<set $girlVoiceLine = 1>>
 <<girl_talk DialogueRunner>>
-
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
 <<set $boyVoiceLine to 1>>

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
-//using UnityEngine.Events;
+using UnityEngine.Events;
 
 
 public class ClassroomTestSpeechToYarn : MonoBehaviour
@@ -13,7 +13,7 @@ public class ClassroomTestSpeechToYarn : MonoBehaviour
 
     public float boyVoiceLine, girlVoiceLine;
 
-    //public UnityEvent NPCFinishedTalking;
+    public UnityEvent PlayerFinishedTalking;
 
 
 
@@ -40,23 +40,33 @@ public class ClassroomTestSpeechToYarn : MonoBehaviour
     }
 
 
-    [YarnCommand("boy_NPC_finish_talking_wait")]        //custom YARN wait based on length of current voice line plus half a second
+    [YarnCommand("boy_NPC_finish_talking_wait")]        //custom YARN wait based on length of current BOY voice line plus half a second
     public IEnumerator BoyNPCFinishTalking()
     {
-        //Debug.Log("Coroutine started...");
+        //Debug.Log("Boy NPC finish talking Coroutine started...");
         yield return new WaitForSeconds((BoyVOLineController.voiceLineClipLength) + 0.5f);
-        //Debug.Log("Coroutine finished!!");
+        //Debug.Log("Boy NPC finish talking Coroutine finished!!");
     }
 
-    [YarnCommand("girl_NPC_finish_talking_wait")]       //custom YARN wait based on length of current voice line plus half a second
+    [YarnCommand("girl_NPC_finish_talking_wait")]       //custom YARN wait based on length of current GIRL voice line plus half a second
     public IEnumerator GirlNPCFinishTalking()
     {
-        //Debug.Log("Coroutine started...");
+        //Debug.Log("Girl NPC finish talking Coroutine started...");
         yield return new WaitForSeconds((GirlVOLineController.voiceLineClipLength) + 0.5f);
-        //Debug.Log("Coroutine finished!!");
+        //Debug.Log("Girl NPC finish talking Coroutine finished!!");
     }
 
-
+    [YarnCommand("player_finish_talking_wait")]       //custom YARN wait based on when the USER has finished speaking
+    public IEnumerator PlayerFinishTalking()
+    {
+        Debug.Log("Player finish talking Coroutine started...");
+        var trigger = false;
+        System.Action action = () => trigger = true;
+        PlayerFinishedTalking.AddListener(action.Invoke);
+        yield return new WaitUntil(() => trigger);
+        PlayerFinishedTalking.RemoveListener(action.Invoke);
+        Debug.Log("Player finish talking Coroutine finished!!");
+    }
 
 
 }
