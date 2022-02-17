@@ -29,6 +29,25 @@ tags:
 
 <<set $boyVoiceLine to 1>>
 <<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<set $girlVoiceLine = 2>>
+<<girl_talk DialogueRunner>>
+<<girl_NPC_finish_talking_wait DialogueRunner>>
+
+<<set $boyVoiceLine to 2>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<set $girlVoiceLine = 3>>
+<<girl_talk DialogueRunner>>
+<<girl_NPC_finish_talking_wait DialogueRunner>>
+
+<<set $boyVoiceLine to 3>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+
 
 
 <<wait 2>>
