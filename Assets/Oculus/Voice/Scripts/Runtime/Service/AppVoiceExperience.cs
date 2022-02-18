@@ -55,11 +55,14 @@ namespace Oculus.Voice
 
         public override void Activate()
         {
+            Debug.LogError("App voice experience listening");
+
             voiceServiceImpl.Activate();
         }
 
         public override void Activate(WitRequestOptions options)
         {
+            Debug.LogError("App voice experience listening");
             voiceServiceImpl.Activate(options);
         }
 

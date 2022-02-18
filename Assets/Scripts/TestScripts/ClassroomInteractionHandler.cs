@@ -14,25 +14,16 @@ using Facebook.WitAi;
 using Facebook.WitAi.Lib;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 
 namespace Oculus.Voice.Demo.UIShapesDemo
 {
-    public class ModifiedInteractionHandler : MonoBehaviour
+    public class ClassroomInteractionHandler : MonoBehaviour
     {
 
-        //[SerializeField] TMP_Text previouslySpokenListText;
-
-        public List<string> previouslySpokenList = new List<string>();
-
-        public string previouslySpokenString, mostRecentSpoken;
-
-        private int counter;
-
-        public string[] previouslySpokenArray;
+        public string mostRecentSpoken;
 
         [Header("Default States"), Multiline]
         [SerializeField] private string freshStateText = "Try pressing the Activate button and saying \"Make the cube red\"";
@@ -46,7 +37,6 @@ namespace Oculus.Voice.Demo.UIShapesDemo
 
         private string pendingText;
 
-        public bool activate;
 
         private void OnEnable()
         {
@@ -72,28 +62,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
                 textArea.text = pendingText;
                 pendingText = null;
             }
-
-            if (activate)
-            {
-                ToggleActivation();
-            }
-
         }
-
-        //void DisplayPreviouslySpokenList()
-        //{
-        //    if (previouslySpokenList == null)
-        //    {
-        //        previouslySpokenListText.text = "Nothing spoken yet.";
-        //    }
-        //    else
-        //    {
-        //        previouslySpokenArray = previouslySpokenList.ToArray();
-        //        previouslySpokenString = string.Join("\n", previouslySpokenArray);
-        //        previouslySpokenListText.text = previouslySpokenString;
-        //        counter++;
-        //    }
-        //}
 
         public void OnResponse(WitResponseNode response)
         {
@@ -101,8 +70,6 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             {
                 textArea.text = "I heard: " + response["text"];
                 mostRecentSpoken = response["text"];
-                previouslySpokenList.Add(counter + ". " + response["text"]);
-                //DisplayPreviouslySpokenList();
             }
             else
             {
@@ -117,13 +84,12 @@ namespace Oculus.Voice.Demo.UIShapesDemo
 
         public void ToggleActivation()
         {
-            //if (appVoiceExperience.Active) appVoiceExperience.Deactivate();
-            //else
-            //{
+            if (appVoiceExperience.Active) appVoiceExperience.Deactivate();
+            else
+            {
                 appVoiceExperience.Activate();
-            activate = false;
                 textArea.text = "I'm listening...";
-            //}
+            }
         }
     }
 }

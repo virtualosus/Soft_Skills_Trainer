@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: ClassrommWitConfiguration
+  m_EditorClassIdentifier: 
+  application:
+    witConfiguration: {fileID: 0}
+    name: test_app
+    id: 927575798122501
+    lang: en
+    isPrivate: 0
+    createdAt: 2022-02-07T01:50:02-0800
+  configId: b8a678e7a8b0243479f255ff14c700cf
+  clientAccessToken: ZAG23LXBXDVOS5R6ZTBJKSE6DRBRPDI2
+  timeoutMS: 10000
+  endpointConfiguration:
+    uriScheme: 
+    authority: 
+    port: 0
+    witApiVersion: 
+    speech: 
+    message: 
+  entities:
+  - witConfiguration: {fileID: 11400000}
+    id: 341735944500348
+    name: color
+    lookups:
+    - free-text
+    - keywords
+    roles:
+    - id: 1016220869301340
+      name: color
+    keywords:
+    - keyword: black
+      synonyms:
+      - black
+    - keyword: green
+      synonyms:
+      - green
+    - keyword: orange
+      synonyms:
+      - orange
+    - keyword: yellow
+      synonyms:
+      - yellow
+  - witConfiguration: {fileID: 11400000}
+    id: 645656230009152
+    name: shape
+    lookups:
+    - free-text
+    - keywords
+    roles:
+    - id: 3096781143972496
+      name: shape
+    keywords:
+    - keyword: capsule
+      synonyms:
+      - capsule
+    - keyword: cube
+      synonyms:
+      - cube
+    - keyword: cylinder
+      synonyms:
+      - cylinder
+    - keyword: sphere
+      synonyms:
+      - sphere
+  intents:
+  - witConfiguration: {fileID: 11400000}
+    id: 2080889858726811
+    name: change_color
+    entities:
+    - witConfiguration: {fileID: 11400000}
+      id: 1016220869301340
+      name: color:color
+      lookups: []
+      roles: []
+      keywords: []
+    - witConfiguration: {fileID: 11400000}
+      id: 3096781143972496
+      name: shape:shape
+      lookups: []
+      roles: []
+      keywords: []
+  traits: []

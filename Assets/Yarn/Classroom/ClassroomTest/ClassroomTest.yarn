@@ -17,38 +17,198 @@ title: Intro
 tags:
 ---
 
+//Emily 1
+
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
-<<boy_talk DialogueRunner>>
-<<boy_NPC_finish_talking_wait DialogueRunner>>
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
 
 <<set $girlVoiceLine = 1>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
-<<set $boyVoiceLine to 1>>
-<<boy_talk DialogueRunner>>
-<<boy_NPC_finish_talking_wait DialogueRunner>>
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
 
 <<set $girlVoiceLine = 2>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
-<<set $boyVoiceLine to 2>>
-<<boy_talk DialogueRunner>>
-<<boy_NPC_finish_talking_wait DialogueRunner>>
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
 
 <<set $girlVoiceLine = 3>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+// Jonathan 1
+
+
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+<<set $boyVoiceLine to 1>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+<<set $boyVoiceLine to 2>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
 <<set $boyVoiceLine to 3>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+<<set $boyVoiceLine to 4>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+<<set $boyVoiceLine to 5>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+<<set $boyVoiceLine to 6>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+<<set $boyVoiceLine to 7>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+<<set $boyVoiceLine to 8>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+//Emily 2
 
 
+<<set $girlVoiceLine = 4>>
+<<girl_talk DialogueRunner>>
+<<girl_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+<<set $girlVoiceLine = 5>>
+<<girl_talk DialogueRunner>>
+<<girl_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+<<set $girlVoiceLine = 6>>
+<<girl_talk DialogueRunner>>
+<<girl_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+//Jonathan 2
+
+
+<<set $boyVoiceLine to 9>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+<<set $boyVoiceLine to 10>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+<<set $boyVoiceLine to 11>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+//Emily 3
+
+
+<<set $girlVoiceLine = 7>>
+<<girl_talk DialogueRunner>>
+<<girl_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+//Jonathan 3
+
+
+<<set $boyVoiceLine to 12>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+//Emily 4
+
+
+<<set $girlVoiceLine = 8>>
+<<girl_talk DialogueRunner>>
+<<girl_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
+
+//Jonathan 5
+
+
+<<set $boyVoiceLine to 13>>
+<<boy_talk DialogueRunner>>
+<<boy_NPC_finish_talking_wait DialogueRunner>>
+
+//Emily 5
+
+
+<<set $girlVoiceLine = 9>>
+<<girl_talk DialogueRunner>>
+<<girl_NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
 
 <<wait 2>>
 

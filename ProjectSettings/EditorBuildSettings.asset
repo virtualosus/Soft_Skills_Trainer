@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/HandTrackingTest.unity
     guid: b413ef8e39f60b440ab57694bd4cc9cc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainTest.unity
     guid: b55316054e9be88448e5e340ae2ecd49
+  - enabled: 1
+    path: Assets/Scenes/Classroom.unity
+    guid: d1b8d048dceb63247b19f6fedf119592
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 32564bdfa454226479718eab2869b761, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0e5df5f5ed3e9614b97d1f44eb642de3, type: 2}

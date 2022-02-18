@@ -17,6 +17,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 
+
 namespace Oculus.Voice.Demo.UIShapesDemo
 {
     public class InteractionHandler : MonoBehaviour
@@ -30,6 +31,8 @@ namespace Oculus.Voice.Demo.UIShapesDemo
 
         [Header("Voice")]
         [SerializeField] private AppVoiceExperience appVoiceExperience;
+
+        public ClassroomTestSpeechToYarn ClassroomTestSpeechToYarn;
 
         private string pendingText;
 
@@ -91,9 +94,12 @@ namespace Oculus.Voice.Demo.UIShapesDemo
         {
             if (!string.IsNullOrEmpty(response["text"]))
             {
+                Debug.LogError("On response called");
                 textArea.text = "I heard: " + response["text"];
                 previouslySpokenList.Add(counter + ". " + response["text"]);
                 DisplayPreviouslySpokenList();
+                ClassroomTestSpeechToYarn.indicator.SetActive(false);
+                ClassroomTestSpeechToYarn.PlayerFinishedTalking.Invoke();
             }
             else
             {
