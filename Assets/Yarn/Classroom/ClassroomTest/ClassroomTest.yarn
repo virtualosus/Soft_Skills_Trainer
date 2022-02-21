@@ -17,196 +17,238 @@ title: Intro
 tags:
 ---
 
+
 //Emily 1
+Teacher: Hello Emily and Jonathan.  Thank you both for coming together to talk about what happened earlier today. Emily would you like to tell me what happened? #line:0c273a6 
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
 
+Emily: Jonathan was saying that my family don’t have any money and they don’t care about me. #line:051c6bd 
+//<<girl_talk DialogueRunner>>
+//<<girl_NPC_finish_talking_wait DialogueRunner>>
 
-<<activate_voice_recognition DialogueRunner>>
-<<wait_for_speech_recog DialogueRunner>>
+Teacher:  That’s very upsetting.  How did that make you feel Emily? #line:019f51f 
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
 
-<<girl_talk DialogueRunner>>
-<<girl_NPC_finish_talking_wait DialogueRunner>>
-
-<<activate_voice_recognition DialogueRunner>>
-<<wait_for_speech_recog DialogueRunner>>
-
+Emily:  It made me cry. I felt embarrassed. Everyone was laughing. I wanted to go home and not come back to school.  #line:01c1039 
 <<set $girlVoiceLine = 1>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  I’m really sorry to hear this Emily.  How do you feel now? #line:0ca93fd 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Emily:  I’m still really upset. #line:0fb1640 
 <<set $girlVoiceLine = 2>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher: I’m glad you brought this to my attention and that you were both able to come together with me to talk about this. Emily, what would you like to get out of this meeting with me and Jonathan?   #line:0881576 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Emily:  I want him to stop saying those things. #line:00df8a6 
 <<set $girlVoiceLine = 3>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  Okay that sounds reasonable.  Jonathan would you like to tell me what happened from your viewpoint? #line:0d5d67e 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
 // Jonathan 1
 
-
+Jonathan: Nothing really, I was only joking. #line:0f767a6 
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher: You like to have a laugh with your friends do you? #line:0513bd9 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Jonathan: Yeah I suppose. #line:02f5115 
 <<set $boyVoiceLine to 1>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  Okay so what was it about this particular incident that made you laugh? #line:03d9f97 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Jonathan: Well, I noticed that Emily never has dinner in school like the rest of us.  She always sits on her own to eat a packed lunch.  I was only teasing her. #line:0fde08d 
 <<set $boyVoiceLine to 2>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  So you thought that maybe you could have a joke with everyone is that it? #line:0e098f4 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Jonathan:  Yeah I guess so.  I didn't mean to make her cry. #line:01b3826 
 <<set $boyVoiceLine to 3>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  I understand, so tell me what happened. #line:07ff854 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Jonathan:  Well, I shouted over to Emily, having a sandwiches again Emily!  Then everyone kind of laughed.  So I carried on for a bit.   #line:0ecee7a 
 <<set $boyVoiceLine to 4>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  How were you feeling at that time?   #line:03d9547 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Jonathan: I guess I thought it was funny because everyone else was laughing.   #line:009ec7c 
 <<set $boyVoiceLine to 5>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  And how did you feel when Emily started crying. #line:0509e6d 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Jonathan:  I didn’t really notice.  I guess I was to into it to pay attention.   #line:0e6f05a 
 <<set $boyVoiceLine to 6>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  So you were caught up in the moment? #line:0bb4c10 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Jonathan:  I guess so. #line:057be74 
 <<set $boyVoiceLine to 7>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  So how do you think it made Emily feel?  #line:09b6a7c 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Jonathan:  I guess I shouldn’t have done it.  I didn’t mean to make her cry. #line:0f5fa06 
 <<set $boyVoiceLine to 8>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher: Emily is there anything you would like to say to Jonathan? #line:0afbb8c 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
 //Emily 2
 
 
+Emily: Yes.  I was trying to explain earlier but everyone was laughing and no one was listening. #line:0de4cc3 
 <<set $girlVoiceLine = 4>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  What was it that you were trying to say Emily? #line:02f4451 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Emily: That’s because I have diabetes I can’t eat certain foods so my Mum packs me a lunch to keep me safe. #line:02f45c7 
 <<set $girlVoiceLine = 5>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher: That’s a really lovely thing for your mum to do Emily.   #line:0d666c7 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Emily: Yes it is. #line:0b98d05 
 <<set $girlVoiceLine = 6>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  What do you think now you have heard that Jonathan? #line:095cd91 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
 //Jonathan 2
 
-
+Jonathan: Yeah that’s kind of her Mum.  I guess she does care about her a lot.  #line:014b84e 
 <<set $boyVoiceLine to 9>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  How do you feel about what happened now you have heard what Emily has to say? Would you do anything differently next time?  #line:08f492b 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Jonathan:  I feel bad.  I didn’t mean to upset her.  I should have listened.   #line:0c2970b 
 <<set $boyVoiceLine to 10>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  What do you think needs to happen to make this right? #line:0979174 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
+Jonathan: Yeah I won’t do that in the future, I will listen more. #line:0c7cdaf 
 <<set $boyVoiceLine to 11>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  Emily are you happy with that outcome. #line:0445303 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
 //Emily 3
 
 
+Emily:  Yes, I just wanted him to stop.  I’m glad he listened eventually.  #line:00ef902 
 <<set $girlVoiceLine = 7>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  Is there anything else either of you would like to say? #line:0a3003c 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
 //Jonathan 3
 
 
+Jonathan:  I guess I should say sorry. #line:04f83a7 
 <<set $boyVoiceLine to 12>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher: Emily would that be acceptable? #line:0749fd6 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
 //Emily 4
 
-
+Emily: Yes. #line:04546cc 
 <<set $girlVoiceLine = 8>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher: Over to you then Jonathan. #line:074b800 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 
 //Jonathan 5
 
-
+Jonathan:  I’m sorry I upset you Emily.  I won’t do it again. #line:083db28 
 <<set $boyVoiceLine to 13>>
 <<boy_talk DialogueRunner>>
 <<boy_NPC_finish_talking_wait DialogueRunner>>
 
 //Emily 5
 
-
+Emily:  That’s okay. #line:032483e 
 <<set $girlVoiceLine = 9>>
 <<girl_talk DialogueRunner>>
 <<girl_NPC_finish_talking_wait DialogueRunner>>
 
+Teacher:  Well done both of you for coming together like this.  /Is there anything else either of you would like to add? #line:0c4678f 
 <<activate_voice_recognition DialogueRunner>>
 <<wait_for_speech_recog DialogueRunner>>
 

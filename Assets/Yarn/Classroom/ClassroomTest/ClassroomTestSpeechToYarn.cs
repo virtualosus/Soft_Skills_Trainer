@@ -15,6 +15,8 @@ public class ClassroomTestSpeechToYarn : MonoBehaviour
 
     public InMemoryVariableStorage yarnInMemoryVariableStorage;
 
+    public LineManager LineManager;
+
     public VOLineController BoyVOLineController, GirlVOLineController;
 
     public float boyVoiceLine, girlVoiceLine;
