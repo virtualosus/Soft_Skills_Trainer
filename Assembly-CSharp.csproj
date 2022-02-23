@@ -61,6 +61,7 @@
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Firebase\StartCrashlytics.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\HandsActiveChecker.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSkinnedMeshRenderPBSV2Component.cs" />
+    <Compile Include="Assets\Samples\Yarn Spinner\2.0.2\Space\Scripts\MobileOnly.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSettings.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughProjectionSurface.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\GazeTarget.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\EnableUnpremultipliedAlpha.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Plugins\Android\NativeVideoPlayer.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimVisualLaser.cs" />
+    <Compile Include="Assets\Samples\Yarn Spinner\2.0.2\Space\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\TestScripts\SpeechToYARNVariable.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Scripts\MoviePlayerSample.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportDestination.cs" />
@@ -88,6 +90,8 @@
     <Compile Include="Assets\Oculus\SampleFramework\Core\DebugUI\Scripts\HandedInputSelector.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\DistanceGrabbable.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\Utils\Pose.cs" />
+    <Compile Include="Assets\Scripts\TTS Scripts\UnityDispatcher.cs" />
+    <Compile Include="Assets\Samples\Yarn Spinner\2.0.2\Space\Scripts\SpriteSwitcher.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportInputHandlerHMD.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportInputHandler.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\GrabManager.cs" />
@@ -122,12 +126,14 @@
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarBase.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarAssetTexture.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Interactable.cs" />
+    <Compile Include="Assets\Samples\Yarn Spinner\2.0.2\Space\Scripts\NPC.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\TouchControllers\TouchController.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainCar.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughSurface.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportPoint.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\FingerTipPokeTool.cs" />
     <Compile Include="Assets\Oculus\Avatar\Samples\GripPoses\Scripts\PoseEditHelper.cs" />
+    <Compile Include="Assets\Scripts\TTS Scripts\SpeechManager.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTargetHandlerNavMesh.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarTouchController.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\ControllerBoxController.cs" />
@@ -135,6 +141,7 @@
     <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Scripts\ButtonDownListener.cs" />
     <Compile Include="Assets\Scripts\TestScripts\ActivateSphere.cs" />
     <Compile Include="Assets\Oculus\Voice\Demo\Scripts\UIShapesDemo\ColorChanger.cs" />
+    <Compile Include="Assets\Samples\Yarn Spinner\2.0.2\Space\Scripts\PlayerCharacter.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimHandlerLaser.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughBrush.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughController.cs" />
@@ -157,12 +164,14 @@
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\BrushController.cs" />
     <Compile Include="Assets\Oculus\Voice\Demo\Scripts\BuiltinDemo\TimerController.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\ButtonTriggerZone.cs" />
+    <Compile Include="Assets\Scripts\TTS Scripts\LineManager.cs" />
     <Compile Include="Assets\Yarn\Classroom\ClassroomTest\ClassroomTestSpeechToYarn.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Firebase\AnalyticsUI.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\BoneCapsuleTriggerLogic.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\ColorGrabbable.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Scripts\MediaPlayerImage.cs" />
+    <Compile Include="Assets\Scripts\TTS Scripts\SecretHelper.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Scripts\DistanceGrabberSample.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\HandsManager.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSettingsEditor.cs" />
@@ -186,6 +195,7 @@
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarRemoteDriver.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarHand.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportInputHandlerTouch.cs" />
+    <Compile Include="Assets\Scripts\TTS Scripts\UIManager.cs" />
     <Compile Include="Assets\Oculus\Avatar\Samples\SocialStarter\Assets\Scripts\VoipManager.cs" />
     <Compile Include="Assets\Oculus\Voice\Demo\Scripts\UIShapesDemo\Instructions.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransitionInstant.cs" />
@@ -193,6 +203,7 @@
     <Compile Include="Assets\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\Anchor.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\InteractableToolView.cs" />
     <Compile Include="Assets\Scripts\VOLineController.cs" />
+    <Compile Include="Assets\Scripts\TTS Scripts\TTSClient.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\InteractableToolsInputRouter.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\ObjectManipulator.cs" />
     <Compile Include="Assets\Scripts\ScoreHandler.cs" />
@@ -212,6 +223,7 @@
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\RayTool.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\FingerTipPokeToolView.cs" />
     <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarTextureCopyManager.cs" />
+    <Compile Include="Assets\Samples\Yarn Spinner\2.0.2\Space\Scripts\NodeVisitedTracker.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\OVROverlay\Scripts\OVROverlaySample.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTargetHandler.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughStyler.cs" />
@@ -219,12 +231,6 @@
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\SelectivePassthroughExperience.cs" />
     <Compile Include="Assets\Oculus\Avatar\Samples\SocialStarter\Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrackSegment.cs" />
-    <Compile Include="Assets\Scripts\TTS Scripts\SecretHelper.cs" />
-    <Compile Include="Assets\Scripts\TTS Scripts\UnityDispatcher.cs" />
-    <Compile Include="Assets\Scripts\TTS Scripts\SpeechManager.cs" />
-    <Compile Include="Assets\Scripts\TTS Scripts\TTSClient.cs" />
-    <Compile Include="Assets\Scripts\TTS Scripts\UIManager.cs" />
-    <Compile Include="Assets\Scripts\TTS Scripts\LineManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />
@@ -327,7 +333,6 @@
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_02.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Materials\Hands_DiffBump.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Expressive\Avatar_Mobile_SingleComponentExpressive.shader" />
-    <None Include="Assets\SpeechSDK\Plugins\iOS\Microsoft.CognitiveServices.Speech.csharp.dll" />
     <None Include="Assets\SpeechSDK\Plugins\WSA\x86\Microsoft.CognitiveServices.Speech.extension.kws.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\SpeechSDK\Plugins\WSA\ARM\Microsoft.CognitiveServices.Speech.extension.kws.dll" />
@@ -548,41 +553,41 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Editors\2020.3.22f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="YarnSpinner">
-      <HintPath>Library\PackageCache\dev.yarnspinner.unity@7cdc2c8ddd\Runtime\DLLs\YarnSpinner.dll</HintPath>
-    </Reference>
     <Reference Include="System.Buffers">
-      <HintPath>Library\PackageCache\dev.yarnspinner.unity@7cdc2c8ddd\Runtime\DLLs\System.Buffers.dll</HintPath>
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@c51fcb9c90\Runtime\DLLs\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr4.Runtime.Standard">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@c51fcb9c90\Runtime\DLLs\Antlr4.Runtime.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner.Compiler">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@c51fcb9c90\Runtime\DLLs\YarnSpinner.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@c51fcb9c90\Runtime\DLLs\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@c51fcb9c90\Runtime\DLLs\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner">
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@c51fcb9c90\Runtime\DLLs\YarnSpinner.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CognitiveServices.Speech.csharp">
+      <HintPath>Assets\SpeechSDK\Plugins\x86_64\Microsoft.CognitiveServices.Speech.csharp.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics.Vectors">
-      <HintPath>Library\PackageCache\dev.yarnspinner.unity@7cdc2c8ddd\Runtime\DLLs\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr4.Runtime.Standard">
-      <HintPath>Library\PackageCache\dev.yarnspinner.unity@7cdc2c8ddd\Runtime\DLLs\Antlr4.Runtime.Standard.dll</HintPath>
-    </Reference>
-    <Reference Include="YarnSpinner.Compiler">
-      <HintPath>Library\PackageCache\dev.yarnspinner.unity@7cdc2c8ddd\Runtime\DLLs\YarnSpinner.Compiler.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>Library\PackageCache\dev.yarnspinner.unity@7cdc2c8ddd\Runtime\DLLs\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Protobuf">
-      <HintPath>Library\PackageCache\dev.yarnspinner.unity@7cdc2c8ddd\Runtime\DLLs\Google.Protobuf.dll</HintPath>
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@c51fcb9c90\Runtime\DLLs\System.Numerics.Vectors.dll</HintPath>
     </Reference>
     <Reference Include="CsvHelper">
-      <HintPath>Library\PackageCache\dev.yarnspinner.unity@7cdc2c8ddd\Runtime\DLLs\CsvHelper.dll</HintPath>
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@c51fcb9c90\Runtime\DLLs\CsvHelper.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.TypeExtensions">
-      <HintPath>Library\PackageCache\dev.yarnspinner.unity@7cdc2c8ddd\Runtime\DLLs\System.Reflection.TypeExtensions.dll</HintPath>
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@c51fcb9c90\Runtime\DLLs\System.Reflection.TypeExtensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-      <HintPath>Library\PackageCache\dev.yarnspinner.unity@7cdc2c8ddd\Runtime\DLLs\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CognitiveServices.Speech.csharp">
-      <HintPath>Assets\SpeechSDK\Plugins\x86_64\Microsoft.CognitiveServices.Speech.csharp.dll</HintPath>
+      <HintPath>Library\PackageCache\dev.yarnspinner.unity@c51fcb9c90\Runtime\DLLs\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Editors\2020.3.22f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

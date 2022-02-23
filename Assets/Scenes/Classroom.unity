@@ -7272,8 +7272,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -17472,9 +17472,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b610e585270b748930dd9d0e86f8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoySpeechManager: {fileID: 504503611}
-  GirlSpeechManager: {fileID: 504503610}
-  lineToBeSpoken: 
+  myYarnProject: {fileID: 7545569452688597077, guid: 8f69d76cd148d7745b3efd0ad67324ea, type: 3}
+  lineIDsString: 
+  lineTextString: 
+  lineIDs: []
+  debugText: {fileID: 0}
 --- !u!1 &505953880
 GameObject:
   m_ObjectHideFlags: 0
@@ -31996,7 +31998,7 @@ MonoBehaviour:
   typewriterEffectSpeed: 120
   continueButton: {fileID: 0}
   holdTime: 1
-  autoAdvance: 1
+  autoAdvance: 0
 --- !u!1 &1017851529
 GameObject:
   m_ObjectHideFlags: 0
@@ -43339,7 +43341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -60433,6 +60435,7 @@ MonoBehaviour:
   _variableStorage: {fileID: 1766036279}
   dialogueViews:
   - {fileID: 1011686699}
+  - {fileID: 1011686699}
   startNode: ClassroomTest
   startAutomatically: 1
   runSelectedOptionAsLine: 1
@@ -60465,6 +60468,7 @@ MonoBehaviour:
   appVoiceExperience: {fileID: 939096635}
   interactionHandler: {fileID: 1437035259}
   yarnInMemoryVariableStorage: {fileID: 1766036279}
+  LineManager: {fileID: 504503612}
   BoyVOLineController: {fileID: 1192779491}
   GirlVOLineController: {fileID: 2026871037}
   boyVoiceLine: 0
