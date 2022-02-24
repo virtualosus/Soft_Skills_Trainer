@@ -8,15 +8,23 @@ using System.Linq;
 
 public class LineManager : MonoBehaviour
 {
-    public SpeechManager char1SpeechManager, char2SpeechManager;
-
     public YarnProject myYarnProject;
+
+    public SpeechManager char1SpeechManager, char2SpeechManager;
+    public ClassroomTestSpeechToYarn ClassroomTestSpeechToYarn;
+    public LineView LineView;
 
     private List<string> allLinesIDList = new List<string>();
     private List<string> char1LineIDList = new List<string>();
     private List<string> char2LineIDList = new List<string>();
     public List<string> char1TextLineList = new List<string>();
     public List<string> char2TextLineList = new List<string>();
+
+    public int char1LineCount, char2LineCount;
+
+    public bool audioPlaying;
+
+    public AudioSource Char1AudioSource, Char2AudioSource;
 
     //public string[] char1LineArray, char2LineArray;
 
@@ -31,16 +39,6 @@ public class LineManager : MonoBehaviour
         GetLinesFromIDs();
     }
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //}
 
     public void GetLineIDs()
     {
@@ -86,58 +84,75 @@ public class LineManager : MonoBehaviour
 
 
 
+    public void Char1SpeechPlayback()
+    {
+        Debug.LogError("Char 1 speaking...");
 
+        if (char1SpeechManager.isReady)
+        {
+            string lineToBeSpoken = char1TextLineList[char1LineCount];
 
+            //SpeechManager.voiceName = (VoiceName)voicelist.value;
+            //SpeechManager.VoicePitch = int.Parse(pitch.text);
 
+            //Required to insure non - blocking code in the main Unity UI thread.
+            char1SpeechManager.SpeakWithSDKPlugin(lineToBeSpoken);
+            char1LineCount++;
+            StartCoroutine(Char1WaitForLineToFinish());
+        }
+        else
+        {
+            Debug.Log("SpeechManager is not ready. Wait until authentication has completed.");
+        }
+    }
 
-    //public void BoySpeechPlayback()
-    //{
-    //    if (BoySpeechManager.isReady)
-    //    {
+    public void Char2SpeechPlayback()
+    {
+        Debug.LogError("Char 2 speaking...");
 
-    //        //lineToBeSpoken = MarkupParseResult.Text;
+        if (char2SpeechManager.isReady)
+        {
+            string lineToBeSpoken = char2TextLineList[char2LineCount];
 
-    //        //lineToBeSpoken = 
+            //SpeechManager.voiceName = (VoiceName)voicelist.value;
+            //SpeechManager.VoicePitch = int.Parse(pitch.text);
 
+            // Required to insure non-blocking code in the main Unity UI thread.
+            char2SpeechManager.SpeakWithSDKPlugin(lineToBeSpoken);
+            char2LineCount++;
+            StartCoroutine(Char2WaitForLineToFinish());
 
+        }
+        else
+        {
+            Debug.Log("SpeechManager is not ready. Wait until authentication has completed.");
+        }
+    }
 
+    public IEnumerator Char1WaitForLineToFinish()
+    {
+        yield return new WaitUntil(() => Char1AudioSource.isPlaying);
 
+        yield return new WaitUntil(() => !Char1AudioSource.isPlaying);
 
+        yield return new WaitForSeconds(0.5f);
 
-    //        //lineToBeSpoken = LineView.sendline
-    //        //SpeechManager.voiceName = (VoiceName)voicelist.value;
-    //        //SpeechManager.VoicePitch = int.Parse(pitch.text);
+        LineView.OnContinueClicked();
+        //ClassroomTestSpeechToYarn.Char1FinishTalking();
+        Debug.LogError("Char1 finished talking");
+    }
 
+    public IEnumerator Char2WaitForLineToFinish()
+    {
+        yield return new WaitUntil(() => Char2AudioSource.isPlaying);
 
-    //        // Required to insure non-blocking code in the main Unity UI thread.
-    //        //BoySpeechManager.SpeakWithSDKPlugin(lineToBeSpoken);
+        yield return new WaitUntil(() => !Char2AudioSource.isPlaying);
 
+        yield return new WaitForSeconds(0.5f);
+        LineView.OnContinueClicked();
+        //ClassroomTestSpeechToYarn.Char2FinishTalking();
 
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("SpeechManager is not ready. Wait until authentication has completed.");
-    //    }
-    //}
+        Debug.LogError("Char2 finished talking");
 
-    //public void GirlSpeechPlayback()
-    //{
-    //    if (GirlSpeechManager.isReady)
-    //    {
-    //        //string msg = lineToBeSpoken;
-    //        //SpeechManager.voiceName = (VoiceName)voicelist.value;
-    //        //SpeechManager.VoicePitch = int.Parse(pitch.text);
-
-
-    //        // Required to insure non-blocking code in the main Unity UI thread.
-    //        //GirlSpeechManager.SpeakWithSDKPlugin(msg);
-
-
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("SpeechManager is not ready. Wait until authentication has completed.");
-    //    }
-    //}
-
+    }
 }
