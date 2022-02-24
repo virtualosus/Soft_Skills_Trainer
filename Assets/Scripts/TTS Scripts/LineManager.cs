@@ -11,7 +11,7 @@ public class LineManager : MonoBehaviour
     public YarnProject myYarnProject;
 
     public SpeechManager char1SpeechManager, char2SpeechManager;
-    public ClassroomTestSpeechToYarn ClassroomTestSpeechToYarn;
+    public ClassroomSpeechToYarn ClassroomTestSpeechToYarn;
     public LineView LineView;
 
     private List<string> allLinesIDList = new List<string>();

@@ -17802,7 +17802,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 504503608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03b610e585270b748930dd9d0e86f8ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 621365908df3e3a4584d5f7fa1d6b2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myYarnProject: {fileID: 7545569452688597077, guid: 8f69d76cd148d7745b3efd0ad67324ea, type: 3}
@@ -17816,7 +17816,7 @@ MonoBehaviour:
   char2LineCount: 0
   Char1AudioSource: {fileID: 2026871036}
   Char2AudioSource: {fileID: 1192779490}
-  waitTime: 0.5
+  waitTime: 0
 --- !u!1 &505953880
 GameObject:
   m_ObjectHideFlags: 0
@@ -60864,7 +60864,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766036277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6238bb4099e2b414d9b0164a756ec77e, type: 3}
+  m_Script: {fileID: 11500000, guid: e0ecde60fd109a4458e732c6ac3f357c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   appVoiceExperience: {fileID: 939096635}
