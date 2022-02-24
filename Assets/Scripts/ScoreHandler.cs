@@ -42,4 +42,6 @@ public class ScoreHandler : MonoBehaviour
         Debug.Log("NPC referred to.");
     }
 
+
+
 }

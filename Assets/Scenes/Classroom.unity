@@ -442,6 +442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5429457}
   - component: {fileID: 5429458}
+  - component: {fileID: 5429459}
   m_Layer: 0
   m_Name: Response Handler
   m_TagString: Untagged
@@ -479,7 +480,7 @@ MonoBehaviour:
   intent: add_score
   confidenceThreshold: 0.6
   valueMatchers:
-  - path: entities.comment:comment[0].value
+  - path: entities.question:question[0].value
     witValueReference: {fileID: 0}
     contentRequired: 1
     matchMethod: 0
@@ -490,24 +491,56 @@ MonoBehaviour:
   - format: 
     onFormattedValueEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1753798371}
-          m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
-          m_MethodName: UpdateScoreTest
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   onMultiValueEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1753798369}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1753798371}
+        m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
+        m_MethodName: QuestionAsked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5429459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591c3d6f017c11b4faa41506d75635b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wit: {fileID: 939096635}
+  intent: add_score
+  confidenceThreshold: 0.6
+  valueMatchers: []
+  formattedValueEvents: []
+  onMultiValueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1753798371}
+        m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
+        m_MethodName: NPCReferenced
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -29905,7 +29938,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   witRuntimeConfiguration:
-    witConfiguration: {fileID: 11400000, guid: 74d9efbadade7024697d23c31cba7f7b, type: 2}
+    witConfiguration: {fileID: 11400000, guid: 4e6c3672783cfbc4a8226c281aac6996, type: 2}
     minKeepAliveVolume: 0.0005
     minKeepAliveTimeInSeconds: 5
     minTranscriptionKeepAliveTimeInSeconds: 1
@@ -60476,6 +60509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1753798370}
   - component: {fileID: 1753798371}
+  - component: {fileID: 1753798372}
   m_Layer: 0
   m_Name: ScoreTest
   m_TagString: Untagged
@@ -60509,6 +60543,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adaee2833aaa40d419946b23041f5aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1753798372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753798369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591c3d6f017c11b4faa41506d75635b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wit: {fileID: 939096635}
+  intent: add_score
+  confidenceThreshold: 0.6
+  valueMatchers:
+  - path: entities.NPC:NPC[0].value
+    witValueReference: {fileID: 0}
+    contentRequired: 1
+    matchMethod: 0
+    comparisonMethod: 0
+    matchValue: 
+    floatingPointComparisonTolerance: 0.00009999999747378752
+  - path: entities.NPC:NPC[1].value
+    witValueReference: {fileID: 0}
+    contentRequired: 1
+    matchMethod: 0
+    comparisonMethod: 0
+    matchValue: 
+    floatingPointComparisonTolerance: 0.00009999999747378752
+  formattedValueEvents: []
+  onMultiValueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1753798371}
+        m_TargetAssemblyTypeName: ScoreHandler, Assembly-CSharp
+        m_MethodName: UpdateScoreTest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1757608702
 GameObject:
   m_ObjectHideFlags: 0
