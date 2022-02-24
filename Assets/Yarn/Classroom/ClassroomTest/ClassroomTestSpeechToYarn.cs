@@ -31,24 +31,24 @@ public class ClassroomTestSpeechToYarn : MonoBehaviour
     [YarnCommand("activate_voice_recognition")]           //yarn command to activate Wit.AI
     public void ActivateVoiceRecognition()
     {
-        Debug.LogError("Attempting voice recog...");
+        //Debug.LogError("Attempting voice recog...");
         indicator.SetActive(true);
         interactionHandler.ToggleActivation();
-        Debug.LogError("Attempt voice recog activation complete");
+        //Debug.LogError("Attempt voice recog activation complete");
     }
 
 
     [YarnCommand("wait_for_speech_recog")]
     public IEnumerator CustomWait()
     {
-        Debug.Log("Coroutine started...");
+        //Debug.Log("Coroutine started...");
         var trigger = false;
         System.Action action = () => trigger = true;
         PlayerFinishedTalking.AddListener(action.Invoke);
         yield return new WaitUntil(() => trigger);
         PlayerFinishedTalking.RemoveListener(action.Invoke);
         LineView.OnContinueClicked();
-        Debug.Log("Coroutine finished!!");
+        //Debug.Log("Coroutine finished!!");
     }
 
         
@@ -64,20 +64,4 @@ public class ClassroomTestSpeechToYarn : MonoBehaviour
     {
         LineManager.Char2SpeechPlayback();
     }
-
-
-    ////[YarnCommand("girl_NPC_finish_talking_wait")]       //custom YARN wait based on length of current GIRL voice line plus half a second
-    //public IEnumerator Char1FinishTalking()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    //LineView.OnContinueClicked();
-    //}
-
-
-    ////[YarnCommand("boy_NPC_finish_talking_wait")]        //custom YARN wait based on length of current BOY voice line plus half a second
-    //public IEnumerator Char2FinishTalking()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    //LineView.OnContinueClicked();
-    //}
 }

@@ -289,6 +289,12 @@ namespace CognitiveServicesTTS
     {
         enGBRyanNeural,
         enGBSoniaNeural,
+        enGBLibbyNeural,
+
+        enGBMaisieNeural,
+        enGBAlfieNeural,
+
+        enGBTestRubbish,
 
         enAUCatherine,
         enAUHayleyRUS,
@@ -297,7 +303,6 @@ namespace CognitiveServicesTTS
         enGBSusanApollo,
         enGBHazelRUS,
         enGBGeorgeApollo,
-        enGBMaisieNeural,
         enIESean,
         enINHeeraApollo,
         enINPriyaRUS,
@@ -337,7 +342,7 @@ namespace CognitiveServicesTTS
         /// <param name="gender">The gender.</param>
         /// <param name="name">The voice name.</param>
         /// <param name="text">The text input.</param>
-        private string GenerateSsml(string locale, string gender, VoiceName voicename, string text, int pitchdelta)
+        private string GenerateSsml(string locale, string gender, VoiceName voicename, string text, int pitchpercent)
         {
             string voice = ConvertVoiceNametoString(voicename);
 
@@ -351,7 +356,7 @@ namespace CognitiveServicesTTS
                                       new XAttribute(XNamespace.Xml + "gender", gender),
                                       new XAttribute("name", voice),
                                       new XElement("prosody",
-                                            new XAttribute("pitch", pitchdelta.ToString() + "Hz"),
+                                            new XAttribute("pitch", pitchpercent.ToString() + "Hz"),
                                                 text))));
 
             return ssmlDoc.ToString();
@@ -404,7 +409,7 @@ namespace CognitiveServicesTTS
 
             var request = new HttpRequestMessage(HttpMethod.Post, inputOptions.RequestUri)
             {
-                Content = new StringContent(GenerateSsml(inputOptions.Locale, genderValue, inputOptions.VoiceName, inputOptions.Text, inputOptions.PitchDelta))
+                Content = new StringContent(GenerateSsml(inputOptions.Locale, genderValue, inputOptions.VoiceName, inputOptions.Text, inputOptions.PitchPercent))
             };
 
             var httpMsg = await client.SendAsync(request, HttpCompletionOption.ResponseContentRead, cancellationToken);
@@ -426,6 +431,22 @@ namespace CognitiveServicesTTS
         {
             switch (voicename)
             {
+                case VoiceName.enGBSoniaNeural:
+                    return "Microsoft Server Speech Text to Speech Voice (en-GB, SoniaNeural)";
+                case VoiceName.enGBRyanNeural:
+                    return "Microsoft Server Speech Text to Speech Voice (en-GB, RyanNeural)";
+                case VoiceName.enGBLibbyNeural:
+                    return "Microsoft Server Speech Text to Speech Voice (en-GB, LibbyNeural)";
+                    
+
+                case VoiceName.enGBAlfieNeural:
+                    return "Microsoft Server Speech Text to Speech Voice (en-GB, AlfieNeural)";
+                case VoiceName.enGBMaisieNeural:
+                    return "Microsoft Server Speech Text to Speech Voice (en-GB, MaisieNeural)";
+                case VoiceName.enGBTestRubbish:
+                    return "Microsoft Server Speech Text to Speech Voice (en-GB, Rubbish)";
+
+
                 case VoiceName.enAUCatherine:
                     return "Microsoft Server Speech Text to Speech Voice (en-AU, Catherine)";
                 case VoiceName.enAUHayleyRUS:
@@ -454,16 +475,6 @@ namespace CognitiveServicesTTS
                     return "Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)";
                 case VoiceName.enUSJessaNeural:
                     return "Microsoft Server Speech Text to Speech Voice (en-US, JessaNeural)";
-
-
-                case VoiceName.enGBMaisieNeural:
-                    return "Microsoft Server Speech Text to Speech Voice (en-GB, MaisieNeural)";
-                case VoiceName.enGBSoniaNeural:
-                    return "Microsoft Server Speech Text to Speech Voice (en-GB, SoniaNeural)";
-                case VoiceName.enGBRyanNeural:
-                    return "Microsoft Server Speech Text to Speech Voice (en-GB, RyanNeural)";
-
-
                 case VoiceName.enUSBenjaminRUS:
                     return "Microsoft Server Speech Text to Speech Voice (en-US, BenjaminRUS)";
                 case VoiceName.enUSGuyNeural:
@@ -524,7 +535,7 @@ namespace CognitiveServicesTTS
                 this.VoiceName = VoiceName.enUSJessaRUS;
                 // Default to Riff24Khz16BitMonoPcm output format.
                 this.OutputFormat = AudioOutputFormat.Riff24Khz16BitMonoPcm;
-                this.PitchDelta = 0;
+                this.PitchPercent = 0;
             }
 
             /// <summary>
@@ -655,6 +666,9 @@ namespace CognitiveServicesTTS
             /// Gets or sets the pitch delta/modifier in Hz (plus/minus)
             /// </summary>
             public int PitchDelta { get; set; }
+
+
+            public int PitchPercent { get; set; }
 
             /// <summary>
             /// Authorization Token.

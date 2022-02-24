@@ -32,8 +32,8 @@ tags:
 
 //Teacher
 //Hello Emily and Jonathan.  Thank you both for coming together to talk about what happened earlier today. Emily would you like to tell me what happened? #line:0c273a6
-//<<activate_voice_recognition DialogueRunner>>
-//<<wait_for_speech_recog DialogueRunner>>
+<<activate_voice_recognition DialogueRunner>>
+<<wait_for_speech_recog DialogueRunner>>
 
 //Emily
 <<girl_talk DialogueRunner>>

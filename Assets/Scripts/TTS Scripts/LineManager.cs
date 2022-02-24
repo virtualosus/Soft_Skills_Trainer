@@ -22,9 +22,9 @@ public class LineManager : MonoBehaviour
 
     public int char1LineCount, char2LineCount;
 
-    public bool audioPlaying;
-
     public AudioSource Char1AudioSource, Char2AudioSource;
+
+    public float waitTime;
 
     //public string[] char1LineArray, char2LineArray;
 
@@ -92,12 +92,10 @@ public class LineManager : MonoBehaviour
         {
             string lineToBeSpoken = char1TextLineList[char1LineCount];
 
-            //SpeechManager.voiceName = (VoiceName)voicelist.value;
-            //SpeechManager.VoicePitch = int.Parse(pitch.text);
 
-            //Required to insure non - blocking code in the main Unity UI thread.
             char1SpeechManager.SpeakWithSDKPlugin(lineToBeSpoken);
             char1LineCount++;
+            StartCoroutine(Char1VolTrim());
             StartCoroutine(Char1WaitForLineToFinish());
         }
         else
@@ -106,27 +104,11 @@ public class LineManager : MonoBehaviour
         }
     }
 
-    public void Char2SpeechPlayback()
+    public IEnumerator Char1VolTrim()
     {
-        Debug.LogError("Char 2 speaking...");
-
-        if (char2SpeechManager.isReady)
-        {
-            string lineToBeSpoken = char2TextLineList[char2LineCount];
-
-            //SpeechManager.voiceName = (VoiceName)voicelist.value;
-            //SpeechManager.VoicePitch = int.Parse(pitch.text);
-
-            // Required to insure non-blocking code in the main Unity UI thread.
-            char2SpeechManager.SpeakWithSDKPlugin(lineToBeSpoken);
-            char2LineCount++;
-            StartCoroutine(Char2WaitForLineToFinish());
-
-        }
-        else
-        {
-            Debug.Log("SpeechManager is not ready. Wait until authentication has completed.");
-        }
+        Char1AudioSource.volume = 0;
+        yield return new WaitForSeconds(waitTime);
+        Char1AudioSource.volume = 1;
     }
 
     public IEnumerator Char1WaitForLineToFinish()
@@ -141,6 +123,34 @@ public class LineManager : MonoBehaviour
         //ClassroomTestSpeechToYarn.Char1FinishTalking();
         Debug.LogError("Char1 finished talking");
     }
+
+    public void Char2SpeechPlayback()
+    {
+        Debug.LogError("Char 2 speaking...");
+
+        if (char2SpeechManager.isReady)
+        {
+            string lineToBeSpoken = char2TextLineList[char2LineCount];
+
+            char2SpeechManager.SpeakWithSDKPlugin(lineToBeSpoken);
+            char2LineCount++;
+            StartCoroutine(Char2VolTrim());
+            StartCoroutine(Char2WaitForLineToFinish());
+
+        }
+        else
+        {
+            Debug.Log("SpeechManager is not ready. Wait until authentication has completed.");
+        }
+    }
+
+    public IEnumerator Char2VolTrim()
+    {
+        Char2AudioSource.volume = 0;
+        yield return new WaitForSeconds(waitTime);
+        Char2AudioSource.volume = 1;
+    }
+
 
     public IEnumerator Char2WaitForLineToFinish()
     {

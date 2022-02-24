@@ -94,7 +94,6 @@ namespace Oculus.Voice.Demo.UIShapesDemo
         {
             if (!string.IsNullOrEmpty(response["text"]))
             {
-                Debug.LogError("On response called");
                 textArea.text = "I heard: " + response["text"];
                 previouslySpokenList.Add(counter + ". " + response["text"]);
                 DisplayPreviouslySpokenList();

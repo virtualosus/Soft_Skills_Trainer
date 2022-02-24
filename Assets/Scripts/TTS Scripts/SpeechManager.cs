@@ -39,6 +39,7 @@ public class SpeechManager : MonoBehaviour {
 
     public VoiceName voiceName = VoiceName.enUSJessaRUS;
     public int VoicePitch = 0;
+    public int pitchTest;
 
     // Access token used to make calls against the Cognitive Services Speech API
     string accessToken;
@@ -208,7 +209,10 @@ public class SpeechManager : MonoBehaviour {
 
                 // Service can return audio in different output format.
                 OutputFormat = AudioOutputFormat.Riff24Khz16BitMonoPcm,
-                PitchDelta = VoicePitch,
+
+                
+
+                PitchPercent = VoicePitch,
                 AuthorizationToken = "Bearer " + accessToken,
             });
 
@@ -439,6 +443,7 @@ public class SpeechManager : MonoBehaviour {
         var config = SpeechConfig.FromSubscription(SpeechServiceAPIKey, SpeechServiceRegion);
         config.SpeechSynthesisLanguage = cortana.GetVoiceLocale(voiceName);
         config.SpeechSynthesisVoiceName = cortana.ConvertVoiceNametoString(voiceName);
+        
 
         // Creates an audio out stream.
         //var stream = AudioOutputStream.CreatePullStream();
