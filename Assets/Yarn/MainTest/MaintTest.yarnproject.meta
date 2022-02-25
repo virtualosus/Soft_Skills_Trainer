@@ -1,0 +1,54 @@
+fileFormatVersion: 2
+guid: 70f4e3b2f58c92345924f5d9ddba6610
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
+  sourceScripts:
+  - {fileID: 6391573757903218779, guid: 8688777749f42d444a0940bbf96d770a, type: 3}
+  compileErrors: []
+  serializedDeclarations:
+  - name: $red
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: 
+    isImplicit: 0
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 8688777749f42d444a0940bbf96d770a, type: 3}
+  - name: $blue
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: 
+    isImplicit: 0
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 8688777749f42d444a0940bbf96d770a, type: 3}
+  - name: $orange
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: 
+    isImplicit: 0
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 8688777749f42d444a0940bbf96d770a, type: 3}
+  - name: $green
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: 
+    isImplicit: 0
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 8688777749f42d444a0940bbf96d770a, type: 3}
+  defaultLanguage: en-GB
+  languagesToSourceAssets:
+  - languageID: en-GB
+    stringsFile: {instanceID: 0}
+    assetsFolder: {fileID: 102900000, guid: 709df6162aac02546b16ff5852c173e5, type: 3}
+  useAddressableAssets: 0
+  searchAllAssembliesForActions: 1
+  assembliesToSearch: []
