@@ -1,5 +1,12 @@
-﻿title: ClassroomTest
+﻿title:Start
 tags:
+---
+
+===
+
+title: ClassroomTest
+tags:
+
 ---
 //<<declare $boyVoiceLine = 0>>
 //<<declare $girlVoiceLine = 0>>
@@ -27,7 +34,8 @@ tags:
 
 title: Main
 tags: 
-
+colorID: 0
+position: 485,457
 ---
 
 //Teacher

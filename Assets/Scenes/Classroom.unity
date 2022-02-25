@@ -17805,17 +17805,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621365908df3e3a4584d5f7fa1d6b2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myYarnProject: {fileID: 7545569452688597077, guid: 8f69d76cd148d7745b3efd0ad67324ea, type: 3}
+  myYarnProject: {fileID: 7545569452688597077, guid: b706abf9f670fee43b09c80176fe311e, type: 3}
   char1SpeechManager: {fileID: 504503610}
   char2SpeechManager: {fileID: 504503611}
   ClassroomTestSpeechToYarn: {fileID: 1766036283}
   LineView: {fileID: 1011686699}
-  char1TextLineList: []
-  char2TextLineList: []
-  char1LineCount: 0
-  char2LineCount: 0
   Char1AudioSource: {fileID: 2026871036}
   Char2AudioSource: {fileID: 1192779490}
+  char1NegativeLineStage1List: []
+  char2NegativeLineStage1List: []
+  char1NeutralLineStage1List: []
+  char2NeutralLineStage1List: []
+  char1PositiveLineStage1List: []
+  char2PositiveLineStage1List: []
+  char1NegativeLineStage2List: []
+  char2NegativeLineStage2List: []
+  char1NeutralLineStage2List: []
+  char2NeutralLineStage2List: []
+  char1PositiveLineStage2List: []
+  char2PositiveLineStage2List: []
+  char1NegativeLineStage3List: []
+  char2NegativeLineStage3List: []
+  char1NeutralLineStage3List: []
+  char2NeutralLineStage3List: []
+  char1PositiveLineStage3List: []
+  char2PositiveLineStage3List: []
+  char1LineCount: 0
+  char2LineCount: 0
   waitTime: 0
 --- !u!1 &505953880
 GameObject:
@@ -60833,12 +60849,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yarnProject: {fileID: 7545569452688597077, guid: 8f69d76cd148d7745b3efd0ad67324ea, type: 3}
+  yarnProject: {fileID: 7545569452688597077, guid: b706abf9f670fee43b09c80176fe311e, type: 3}
   _variableStorage: {fileID: 1766036279}
   dialogueViews:
   - {fileID: 1011686699}
   - {fileID: 1011686699}
-  startNode: ClassroomTest
+  startNode: Start
   startAutomatically: 1
   runSelectedOptionAsLine: 1
   lineProvider: {fileID: 1766036281}
