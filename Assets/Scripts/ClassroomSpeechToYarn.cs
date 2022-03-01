@@ -17,7 +17,7 @@ public class ClassroomSpeechToYarn : MonoBehaviour
 
     public LineManager LineManager;
 
-    public LineView LineView;
+    //public LineView LineView;
 
     public UnityEvent PlayerFinishedTalking;
 
@@ -48,7 +48,7 @@ public class ClassroomSpeechToYarn : MonoBehaviour
         PlayerFinishedTalking.AddListener(action.Invoke);
         yield return new WaitUntil(() => trigger);
         PlayerFinishedTalking.RemoveListener(action.Invoke);
-        LineView.OnContinueClicked();
+        //LineView.OnContinueClicked();
         //Debug.Log("Coroutine finished!!");
     }
 

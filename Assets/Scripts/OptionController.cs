@@ -33,31 +33,34 @@ public class OptionController : MonoBehaviour
         Debug.LogError("Option 1 selected");
 
         OptionToSelect = 0;
-        StartCoroutine(OptionSelectCoroutine());
+        OptionSelectCoroutine();
+        //StartCoroutine(OptionSelectCoroutine());
         Debug.LogError("Option 1 selected");
     }
 
     public void OptionTwoSelect()
     {
         OptionToSelect = 1;
-        StartCoroutine(OptionSelectCoroutine());
+        OptionSelectCoroutine();
+        //StartCoroutine(OptionSelectCoroutine());
         Debug.LogError("Option 2 selected");
     }
 
     public void OptionThreeSelect()
     {
         OptionToSelect = 2;
-        StartCoroutine(OptionSelectCoroutine());
+        OptionSelectCoroutine();
+        //StartCoroutine(OptionSelectCoroutine());
         Debug.LogError("Option 3 selected");
     }
 
-    public IEnumerator OptionSelectCoroutine()
+    public void OptionSelectCoroutine()
     {
         optionSelected = true;
         Options[OptionToSelect].GetComponent<OptionView>().InvokeOptionSelected();
        // OptionSelected.Invoke();
-        yield return new WaitForSeconds(1f);
-        LineView.OnContinueClicked();
+        //yield return new WaitForSeconds(1f);
+        //LineView.OnContinueClicked();
     }
 
     //public void CheckIfOptionSelected()

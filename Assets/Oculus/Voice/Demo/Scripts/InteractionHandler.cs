@@ -102,6 +102,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             }
             else
             {
+                ClassroomSpeechToYarn.indicator.SetActive(false);
                 textArea.text = freshStateText;
             }
         }

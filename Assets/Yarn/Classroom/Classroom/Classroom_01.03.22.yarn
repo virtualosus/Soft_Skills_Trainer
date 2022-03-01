@@ -35,7 +35,7 @@ position: -308,-284
 //Emily
 <<girl_talk DialogueRunner>>
 Jonathan was saying that my family don’t have any money and they don’t care about me. #line:0f33821_char1
-//<<char1_finish_talking_wait DialogueRunner>>
+<<char1_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. That’s very upsetting.  How did that make you feel Emily? #line:0e33683 
@@ -45,7 +45,7 @@ Jonathan was saying that my family don’t have any money and they don’t care 
 //Emily
 <<girl_talk DialogueRunner>>
 It made me cry and I felt embarrassed. Everyone was laughing, I wanted to go home and not come back to school.  #line:01c1039_char1
-//<<char1_finish_talking_wait DialogueRunner>>
+<<char1_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. I’m really sorry to hear this Emily, how do you feel now?  #line:0ca7522 
@@ -55,7 +55,7 @@ It made me cry and I felt embarrassed. Everyone was laughing, I wanted to go hom
 //Emily:  
 <<girl_talk DialogueRunner>>
 I’m still really upset. #line:0fb1640_char1 
-//<<char1_finish_talking_wait DialogueRunner>>
+<<char1_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. Emily, what would you like to get out of this meeting with me and Jonathan? #line:0a10b64 
@@ -66,7 +66,7 @@ I’m still really upset. #line:0fb1640_char1
 //Emily: 
 <<girl_talk DialogueRunner>>
 I want him to stop saying those things. #line:00df8a6_char1 
-//<<char1_finish_talking_wait DialogueRunner>>
+<<char1_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. Jonathan would you like to tell me what happened from your viewpoint?  #line:0f6a89e 
@@ -231,17 +231,17 @@ position: -307,-47
 //Jonathan: 
 <<boy_talk DialogueRunner>>
 Nothing really, I was only joking. #line:0f767a6_char2
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. You like to have a laugh with your friends do you? #line:0c23aa5 
--> 2. I dont't think it was very funny. #line:042d98e 
+-> 2. I don't think it was very funny. #line:042d98e 
 -> 3. It was actually quite a mean thing to do. #line:0611d90 
 
 //Jonathan: 
 <<boy_talk DialogueRunner>>
 Yeah I suppose. #line:02f5115_char2 
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. So what was it about this particular incident that made you laugh? #line:0de75b1 
@@ -251,7 +251,7 @@ Yeah I suppose. #line:02f5115_char2
 //Jonathan: 
 <<boy_talk DialogueRunner>>
 Well, I noticed that Emily never has dinner in school like the rest of us. She always sits on her own to eat a packed lunch.  I was only teasing her. #line:0fde08d_char2 
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. So you thought that maybe you could have a joke with everyone? #line:0528951 
@@ -261,7 +261,7 @@ Well, I noticed that Emily never has dinner in school like the rest of us. She a
 //Jonathan:  
 <<boy_talk DialogueRunner>>
 Yeah I guess so.  I didn't mean to make her cry. #line:01b3826_char2 
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. I understand, so tell me what happened.  #line:06ffdee 
@@ -271,7 +271,7 @@ Yeah I guess so.  I didn't mean to make her cry. #line:01b3826_char2
 //Jonathan:  
 <<boy_talk DialogueRunner>>
 Well, I shouted over to Emily, having sandwiches again then Emily!  Then everyone kind of laughed.  So I carried on for a bit.   #line:0ecee7a_char2
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. How were you feeling at that time?  #line:0691990 
@@ -281,7 +281,7 @@ Well, I shouted over to Emily, having sandwiches again then Emily!  Then everyon
 //Jonathan: 
 <<boy_talk DialogueRunner>>
 I guess I thought it was funny because everyone else was laughing.   #line:009ec7c_char2 
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. How did you feel when Emily started crying? #line:02a2781 
@@ -291,7 +291,7 @@ I guess I thought it was funny because everyone else was laughing.   #line:009ec
 //Jonathan:  
 <<boy_talk DialogueRunner>>
 I didn’t really notice.  I guess I was to into it to pay attention.   #line:0e6f05a_char2 
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. So you were caught up in the moment? #line:0756cd3 
@@ -301,7 +301,7 @@ I didn’t really notice.  I guess I was to into it to pay attention.   #line:0e
 //Jonathan:  
 <<boy_talk DialogueRunner>>
 I guess so. #line:057be74_char2 
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. How do you think it made Emily feel?  #line:09b1d34 
@@ -311,7 +311,7 @@ I guess so. #line:057be74_char2
 //Jonathan:  
 <<boy_talk DialogueRunner>>
 I guess I shouldn’t have done it.  I didn’t mean to make her cry. #line:0f5fa06_char2
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. Emily, is there anything you would like to say to Jonathan? #line:02b18fa 
@@ -328,7 +328,7 @@ position: -310,207
 //Emily: 
 <<girl_talk DialogueRunner>>
 I was trying to explain earlier but everyone was laughing and no one was listening. #line:0de4cc3_char1
-//<<char1_finish_talking_wait DialogueRunner>>
+<<char1_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. What was it that you were trying to say Emily? #line:0e7d64b 
@@ -338,7 +338,7 @@ I was trying to explain earlier but everyone was laughing and no one was listeni
 //Emily: 
 <<girl_talk DialogueRunner>>
 It's because I have diabetes that I can’t eat certain foods, so my Mum packs me a lunch to keep me safe. #line:02f45c7_char1
-//<<char1_finish_talking_wait DialogueRunner>>
+<<char1_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. That’s a really lovely thing for your mum to do Emily.  #line:053ece2 
@@ -348,7 +348,7 @@ It's because I have diabetes that I can’t eat certain foods, so my Mum packs m
 //Emily: 
 <<girl_talk DialogueRunner>>
 Yes it is. #line:0b98d05_char1
-//<<char1_finish_talking_wait DialogueRunner>>
+<<char1_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. What do you think now that you have heard that Jonathan?  #line:0d13b22 
@@ -358,7 +358,7 @@ Yes it is. #line:0b98d05_char1
 //Jonathan: 
 <<boy_talk DialogueRunner>>
 Yeah that’s kind of her Mum.  I guess she does care about her a lot.  #line:014b84e_char2 
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. How do you feel about what happened now, would you do anything differently next time?   #line:0e0a8ae 
@@ -368,7 +368,7 @@ Yeah that’s kind of her Mum.  I guess she does care about her a lot.  #line:01
 //Jonathan:  
 <<boy_talk DialogueRunner>>
 I do feel bad.  I didn’t mean to upset her and I should have listened.   #line:0c2970b_char2 
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. What do you think needs to happen to make this right?   #line:0a2b400 
@@ -378,7 +378,7 @@ I do feel bad.  I didn’t mean to upset her and I should have listened.   #line
 //Jonathan: 
 <<boy_talk DialogueRunner>>
 Yeah I won’t do that in the future, I will listen more. #line:0c7cdaf_char2 
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. Emily are you happy with that outcome?  #line:011c7ff 
@@ -388,7 +388,7 @@ Yeah I won’t do that in the future, I will listen more. #line:0c7cdaf_char2
 //Emily:  
 <<girl_talk DialogueRunner>>
 I really wanted him to stop.  I’m just glad he listened eventually.  #line:00ef902_char1 
-//<<char1_finish_talking_wait DialogueRunner>>
+<<char1_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. Is there anything else either of you would like to say? #line:041b626 
@@ -398,7 +398,7 @@ I really wanted him to stop.  I’m just glad he listened eventually.  #line:00e
 //Jonathan:  
 <<boy_talk DialogueRunner>>
 I guess I should say sorry. #line:04f83a7_char2 
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. Emily would that be acceptable?  #line:0d3d2eb 
@@ -408,7 +408,7 @@ I guess I should say sorry. #line:04f83a7_char2
 //Emily: 
 <<girl_talk DialogueRunner>>
 Yes. #line:04546cc_char1
-//<<char1_finish_talking_wait DialogueRunner>>
+<<char1_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. Over to you then Jonathan. #line:0f61d84 
@@ -418,7 +418,7 @@ Yes. #line:04546cc_char1
 //Jonathan:  
 <<boy_talk DialogueRunner>>
 I’m sorry I upset you Emily.  I won’t do it again. #line:083db28_char2
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 //Emily:  
 <<girl_talk DialogueRunner>>
@@ -438,12 +438,12 @@ That’s okay. #line:032483e_char1
 //Emily:  
 <<girl_talk DialogueRunner>>
 No thank you. #line:12154314_char1
-//<<char1_finish_talking_wait DialogueRunner>>
+<<char1_finish_talking_wait DialogueRunner>>
 
 //Jonathan:  
 <<boy_talk DialogueRunner>>
 No. #line:0125741_char2
-//<<char2_finish_talking_wait DialogueRunner>>
+<<char2_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
 -> 1. Okay then thanks again and go and enjoy the rest of your day. #line:08222bf 

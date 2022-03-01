@@ -15,7 +15,7 @@ public class LineManager : MonoBehaviour
 
     public SpeechManager char1SpeechManager, char2SpeechManager;
     public ClassroomSpeechToYarn ClassroomTestSpeechToYarn;
-    public LineView LineView;
+    //public LineView LineView;
     public OptionController OptionController;
     public AudioSource Char1AudioSource, Char2AudioSource;
 
@@ -425,16 +425,8 @@ public class LineManager : MonoBehaviour
     public IEnumerator Char1WaitForLineToFinish()
     {
         yield return new WaitUntil(() => Char1AudioSource.isPlaying);
-
         yield return new WaitUntil(() => !Char1AudioSource.isPlaying);
-
         Char1FinishedTalking.Invoke();
-        //Debug.LogError("finish talking invoked");
-        //yield return new WaitForSeconds(2f);
-        //OptionController.GatherAvailableOptions();
-
-        Debug.LogError("Char1 finished talking");
-
         yield return new WaitForSeconds(0.5f);
         OptionController.GatherAvailableOptions();
         //Debug.LogError("Char1 finished talking");
@@ -449,13 +441,10 @@ public class LineManager : MonoBehaviour
         if (char2SpeechManager.isReady)
         {
             string lineToBeSpoken = char2TextLineList[char2LineCount];
-
             char2SpeechManager.SpeakWithSDKPlugin(lineToBeSpoken);
             char2LineCount++;
-            StartCoroutine(Char2VolTrim());
+            //StartCoroutine(Char2VolTrim());
             StartCoroutine(Char2WaitForLineToFinish());
-
-
         }
         else
         {
@@ -474,19 +463,12 @@ public class LineManager : MonoBehaviour
     public IEnumerator Char2WaitForLineToFinish()
     {
         yield return new WaitUntil(() => Char2AudioSource.isPlaying);
-
         yield return new WaitUntil(() => !Char2AudioSource.isPlaying);
-
-
+        Char2FinishedTalking.Invoke();
         yield return new WaitForSeconds(0.5f);
-        LineView.OnContinueClicked();
-
-
-
-        Char2FinishedTalking.Invoke();     
-
-
-        Debug.LogError("Char2 finished talking");
-
+        OptionController.GatherAvailableOptions();
+        //yield return new WaitForSeconds(0.5f);
+        //LineView.OnContinueClicked();
+        //Debug.LogError("Char2 finished talking");
     }
 }
