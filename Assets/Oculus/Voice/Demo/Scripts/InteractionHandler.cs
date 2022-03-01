@@ -32,7 +32,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
         [Header("Voice")]
         [SerializeField] private AppVoiceExperience appVoiceExperience;
 
-        public ClassroomSpeechToYarn ClassroomTestSpeechToYarn;
+        public ClassroomSpeechToYarn ClassroomSpeechToYarn;
 
         private string pendingText;
 
@@ -97,8 +97,8 @@ namespace Oculus.Voice.Demo.UIShapesDemo
                 textArea.text = "I heard: " + response["text"];
                 previouslySpokenList.Add(counter + ". " + response["text"]);
                 DisplayPreviouslySpokenList();
-                ClassroomTestSpeechToYarn.indicator.SetActive(false);
-                ClassroomTestSpeechToYarn.PlayerFinishedTalking.Invoke();
+                ClassroomSpeechToYarn.indicator.SetActive(false);
+                ClassroomSpeechToYarn.PlayerFinishedTalking.Invoke();
             }
             else
             {

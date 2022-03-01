@@ -16,6 +16,7 @@ public class LineManager : MonoBehaviour
     public SpeechManager char1SpeechManager, char2SpeechManager;
     public ClassroomSpeechToYarn ClassroomTestSpeechToYarn;
     public LineView LineView;
+    public OptionController OptionController;
     public AudioSource Char1AudioSource, Char2AudioSource;
 
     private List<string> allLinesIDList = new List<string>();
@@ -426,19 +427,20 @@ public class LineManager : MonoBehaviour
         yield return new WaitUntil(() => Char1AudioSource.isPlaying);
 
         yield return new WaitUntil(() => !Char1AudioSource.isPlaying);
-        LineView.OnContinueClicked();
 
-        yield return new WaitForSeconds(0.5f);
-        LineView.OnContinueClicked();
         Char1FinishedTalking.Invoke();
+        //Debug.LogError("finish talking invoked");
+        //yield return new WaitForSeconds(2f);
+        //OptionController.GatherAvailableOptions();
 
         Debug.LogError("Char1 finished talking");
 
-        //yield return new WaitForSeconds(2f);
-        //Char1FinishedTalking.Invoke();
+        yield return new WaitForSeconds(0.5f);
+        OptionController.GatherAvailableOptions();
         //Debug.LogError("Char1 finished talking");
 
     }
+
 
     public void Char2SpeechPlayback()
     {

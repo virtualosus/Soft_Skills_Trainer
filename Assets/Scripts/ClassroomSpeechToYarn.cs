@@ -38,6 +38,7 @@ public class ClassroomSpeechToYarn : MonoBehaviour
     }
 
 
+
     [YarnCommand("wait_for_speech_recog")]
     public IEnumerator CustomWait()
     {
@@ -58,10 +59,45 @@ public class ClassroomSpeechToYarn : MonoBehaviour
         LineManager.Char1SpeechPlayback();
     }
 
-        
-    [YarnCommand("boy_talk")]                           //yarn command retrieving required voiceline number from YARN and setting clip and initiating Audio in VOLineController
+    [YarnCommand("char1_finish_talking_wait")]                         
+    public IEnumerator Char1FinishTalking()
+    {
+        //Debug.Log("Coroutine started...");
+        var trigger = false;
+        System.Action action = () => trigger = true;
+        LineManager.Char1FinishedTalking.AddListener(action.Invoke);
+        yield return new WaitUntil(() => trigger);
+        LineManager.Char1FinishedTalking.RemoveListener(action.Invoke);
+        //LineView.OnContinueClicked();
+        //Debug.Log("Coroutine finished!!");
+        //
+     }
+
+
+        [YarnCommand("boy_talk")]                           //yarn command retrieving required voiceline number from YARN and setting clip and initiating Audio in VOLineController
     public void BoyToTalk()
     {
         LineManager.Char2SpeechPlayback();
     }
+
+    [YarnCommand("char2_finish_talking_wait")]                         
+    public IEnumerator Char2FinishTalking()
+    {
+        //Debug.Log("Coroutine started...");
+        var trigger = false;
+        System.Action action = () => trigger = true;
+        LineManager.Char2FinishedTalking.AddListener(action.Invoke);
+        yield return new WaitUntil(() => trigger);
+        LineManager.Char2FinishedTalking.RemoveListener(action.Invoke);
+        //LineView.OnContinueClicked();
+        //Debug.Log("Coroutine finished!!");
+        //
+    }
+
+    [YarnCommand ("Quit_Application")]
+    public void CloseApplication()
+    {
+        Application.Quit();
+    }
+
 }
