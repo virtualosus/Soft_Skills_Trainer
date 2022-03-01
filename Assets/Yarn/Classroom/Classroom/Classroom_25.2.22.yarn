@@ -8,6 +8,14 @@ position: -296,-511
 
 <<wait 2>>
 
+<<girl_talk DialogueRunner>>
+I'll start because it was Jonathan that hurt my feelings.  #line:080416f_char1NeutralStage1
+
+-> Emily would you like to tell me what happened? #line:0c273a6
+    <<jump Stage1>>
+-> Jonathan can you tell me what happened? #line:02a40db 
+-> Who would like to go first? #line:0e7027f 
+
 <<jump Stage1>>
 ===
 
@@ -20,9 +28,19 @@ position: -297,-294
 
 
 //Teacher
-//Hello Emily and Jonathan.  Thank you both for coming together to talk about what happened earlier today. Emily would you like to tell me what happened? #line:0c273a6
-<<activate_voice_recognition DialogueRunner>>
-<<wait_for_speech_recog DialogueRunner>>
+//Hello Emily and Jonathan.  Thank you both for coming together to talk about what happened earlier today.  #line:0c54355 
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+
+<<girl_talk DialogueRunner>>
+Jonathan was saying that my family don’t have any money and they don’t care about me. #line:0f33821_char1NeutralStage1 
+
+<<wait 2>>
+
+-> blah blahg blah
+-> blah blahg blah
+-> blah blahg blah
 
 
 
@@ -52,11 +70,11 @@ position: -306,-60
 
 //Emily
 <<girl_talk DialogueRunner>>
-I'll start because it was Jonathan that hurt my feelings.  #line:080416f_char1NeutralStage1
+//I'll start because it was Jonathan that hurt my feelings.  #line:080416f_char1NeutralStage1
 
 //Emily
 <<girl_talk DialogueRunner>>
-Jonathan was saying that my family don’t have any money and they don’t care about me. #line:0f33821_char1NeutralStage1 
+//Jonathan was saying that my family don’t have any money and they don’t care about me. #line:0f33821_char1NeutralStage1 
 
 
 //Teacher

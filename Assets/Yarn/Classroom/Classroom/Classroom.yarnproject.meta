@@ -9,9 +9,25 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
-  - {fileID: 6391573757903218779, guid: 74c4046b4e3d6f546aa9d3407dee85dc, type: 3}
+  - {fileID: 6391573757903218779, guid: 47633ee49e42d9845832f5fcb2220579, type: 3}
   compileErrors: []
-  serializedDeclarations: []
+  serializedDeclarations:
+  - name: $boyTemperment
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 5
+    defaultValueString: 
+    description: 
+    isImplicit: 0
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 74c4046b4e3d6f546aa9d3407dee85dc, type: 3}
+  - name: $girlTemperment
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 5
+    defaultValueString: 
+    description: 
+    isImplicit: 0
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 74c4046b4e3d6f546aa9d3407dee85dc, type: 3}
   defaultLanguage: en-GB
   languagesToSourceAssets: []
   useAddressableAssets: 0
