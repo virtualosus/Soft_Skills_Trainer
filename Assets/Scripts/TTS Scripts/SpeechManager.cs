@@ -27,6 +27,7 @@ public class SpeechManager : MonoBehaviour {
     // https://docs.microsoft.com/en-us/azure/cognitive-services/speech/how-to/how-to-authentication
     // The free tier gives you 5,000 free API transactions / month.
     // Set credentials in the Inspector
+    public string Character;
     [Tooltip("Cognitive Services Speech API Key")]
     [SecretValue("SpeechService_APIKey")]
     public string SpeechServiceAPIKey = string.Empty;
@@ -39,7 +40,7 @@ public class SpeechManager : MonoBehaviour {
 
     public VoiceName voiceName = VoiceName.enUSJessaRUS;
     public int VoicePitch = 0;
-    public int pitchTest;
+
 
     // Access token used to make calls against the Cognitive Services Speech API
     string accessToken;
