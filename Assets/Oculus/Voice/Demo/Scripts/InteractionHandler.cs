@@ -34,6 +34,8 @@ namespace Oculus.Voice.Demo.UIShapesDemo
 
         public ClassroomSpeechToYarn ClassroomSpeechToYarn;
 
+        public SpeechToOptionCompare speechToOptionCompare;
+
         private string pendingText;
 
         public List<string> previouslySpokenList = new List<string>();
@@ -95,6 +97,8 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             if (!string.IsNullOrEmpty(response["text"]))
             {
                 textArea.text = "I heard: " + response["text"];
+                speechToOptionCompare.currentLine = response["text"];
+                speechToOptionCompare.LineComparison();
                 previouslySpokenList.Add(counter + ". " + response["text"]);
                 DisplayPreviouslySpokenList();
                 ClassroomSpeechToYarn.indicator.SetActive(false);

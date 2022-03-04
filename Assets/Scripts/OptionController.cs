@@ -31,8 +31,6 @@ public class OptionController : MonoBehaviour
 
     public void OptionOneSelect()
     {
-        Debug.LogError("Option 1 selected");
-
         OptionToSelect = 0;
         OptionSelectCoroutine();
         //StartCoroutine(OptionSelectCoroutine());
@@ -59,6 +57,7 @@ public class OptionController : MonoBehaviour
     {
         optionSelected = true;
         Options[OptionToSelect].GetComponent<OptionView>().InvokeOptionSelected();
+        Options[OptionToSelect].GetComponent<Animator>().Play("Selected");
        // OptionSelected.Invoke();
         //yield return new WaitForSeconds(1f);
         //LineView.OnContinueClicked();
