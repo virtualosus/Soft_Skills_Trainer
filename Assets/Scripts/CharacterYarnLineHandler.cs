@@ -15,7 +15,6 @@ public class CharacterYarnLineHandler : MonoBehaviour
 
     public SpeechManager characterSpeechManager;
     public ClassroomSpeechToYarn ClassroomSpeechToYarn;
-    public OptionController OptionController;
     public AudioSource characterAudioSource;
 
     private List<string> allLinesIDList = new List<string>();
@@ -230,7 +229,7 @@ public class CharacterYarnLineHandler : MonoBehaviour
 
     public void CharacterSpeechPlayback()                                   //sets the line to be sent to the TTS from the line list and sends
     {
-        Debug.LogError(characterName + " speaking...");
+        //Debug.LogError(characterName + " speaking...");
 
         if (characterSpeechManager.isReady)
         {
@@ -246,14 +245,12 @@ public class CharacterYarnLineHandler : MonoBehaviour
         }
     }
 
-    public IEnumerator CharacterWaitForLineToFinish()                       //coroutine set to complete once the NPCs audio clip has completed and tells the 'OptionController' to gather options, if available
+    public IEnumerator CharacterWaitForLineToFinish()                       //coroutine set to complete once the NPCs audio clip has completed
     {
         yield return new WaitUntil(() => characterAudioSource.isPlaying);
         yield return new WaitUntil(() => !characterAudioSource.isPlaying);
         characterFinishedTalking.Invoke();
-        yield return new WaitForSeconds(0.5f);
-        OptionController.GatherAvailableOptions();
-        Debug.LogError(characterName + " finished talking");
+        //Debug.LogError(characterName + " finished talking");
     }
     
     //public IEnumerator CharacterVolTrim()                                   //a test coroutine to try and fix the clicking sound heard at the start of TTS audio clip

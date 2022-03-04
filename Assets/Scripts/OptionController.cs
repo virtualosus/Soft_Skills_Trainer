@@ -18,14 +18,15 @@ public class OptionController : MonoBehaviour
 
     public UnityEvent OptionSelected;
 
-    public void GatherAvailableOptions()
+    public IEnumerator GatherOptions()
     {
+        yield return new WaitForSeconds(0.5f);
         Options = new GameObject[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
             Options[i] = transform.GetChild(i).gameObject;
         }
-        Debug.Log("Options listed");
+        Debug.LogError(Options.Length + " available options listed");
     }
 
     public void OptionOneSelect()
@@ -62,6 +63,8 @@ public class OptionController : MonoBehaviour
         //yield return new WaitForSeconds(1f);
         //LineView.OnContinueClicked();
     }
+
+
 
     //public void CheckIfOptionSelected()
     //{

@@ -11,8 +11,9 @@ public class ClassroomSpeechToYarn : MonoBehaviour
 {
     [Header("Voice")]
     public InteractionHandler interactionHandler;
-    public UnityEvent PlayerFinishedTalking;
     public GameObject indicator;
+    public OptionController OptionController;
+    public UnityEvent PlayerFinishedTalking;
 
     [Header("Yarn")]
     public InMemoryVariableStorage yarnInMemoryVariableStorage;
@@ -46,10 +47,11 @@ public class ClassroomSpeechToYarn : MonoBehaviour
         }
     }
 
-    [YarnCommand("activate_voice_recognition")]                                                 //YARN command to activate Wit.AI voice recognition
+    [YarnCommand("activate_voice_recognition")]                                                 //YARN command to activate Wit.AI voice recognition and gather available options
     public void ActivateVoiceRecognition()
     {
         //Debug.LogError("Attempting voice recog...");
+        StartCoroutine(OptionController.GatherOptions());
         indicator.SetActive(true);
         interactionHandler.ToggleActivation();
         //Debug.LogError("Attempt voice recog activation complete");
@@ -90,11 +92,24 @@ public class ClassroomSpeechToYarn : MonoBehaviour
     [YarnCommand("scene_change")]
     public void SceneChange()
     {
-        OVRScreenFade.FadeIn();
+        StartCoroutine(SwitchCharacters());
+    }
+
+    [YarnCommand ("Quit_Application")]                                                          //YARN command to enter the application Quit procedure
+    public void CloseApplication()
+    {
+        OVRScreenFade.FadeOut();
+        Application.Quit();
+    }
+
+    public IEnumerator SwitchCharacters()
+    {
+        OVRScreenFade.FadeOut();
+        yield return new WaitForSeconds(1f);
         yarnInMemoryVariableStorage.TryGetValue("$sceneNumber", out sceneNumber);
-        if(sceneNumber == 1)
+        if (sceneNumber == 1)
         {
-            for(int i = 0; i < children.Length; i++)
+            for (int i = 0; i < children.Length; i++)
             {
                 children[i].SetActive(true);
             }
@@ -114,21 +129,7 @@ public class ClassroomSpeechToYarn : MonoBehaviour
                 teacher[i].SetActive(true);
             }
         }
-        StartCoroutine(Wait());
-        OVRScreenFade.FadeOut();
-
-    }
-
-    [YarnCommand ("Quit_Application")]                                                          //YARN command to enter the application Quit procedure
-    public void CloseApplication()
-    {
-        OVRScreenFade.FadeOut();
-        Application.Quit();
-    }
-
-    public IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(1f);
+        OVRScreenFade.FadeIn();
     }
 
     //[YarnCommand("wait_for_speech_recog")]                                                   //yarn command to wait for player to finish talking - for YARN line view mode

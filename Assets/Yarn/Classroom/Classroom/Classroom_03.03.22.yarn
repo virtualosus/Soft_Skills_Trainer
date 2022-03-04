@@ -1,7 +1,16 @@
-﻿title: Start
+title: Stage2Neutral
 tags: 
 colorID: 0
-position: -314,-516
+position: -811,-176
+---
+
+
+Empty Text
+===
+title: Start
+tags: 
+colorID: 0
+position: 39,-492
 ---
 <<declare $boyTemperment = 5>>
 <<declare $girlTemperment = 5>>
@@ -38,6 +47,8 @@ I will return at the end to let you know how you got on, based on our restorativ
 <<set $sceneNumber to 1>>
 <<scene_change DialogueRunner>>
 
+<<wait 2>>
+
 <<activate_voice_recognition DialogueRunner>>
 -> 1. Emily would you like to tell me what happened? #line:0c273a6
     <<jump Stage1>>
@@ -51,9 +62,9 @@ I will return at the end to let you know how you got on, based on our restorativ
 title: Stage1
 tags: 
 colorID: 0
-position: -308,-284
+position: 41,-256
 ---
-<<wait 2>>
+
 
 //Emily
 <<set $characterToTalk to "Emily">>
@@ -61,10 +72,10 @@ position: -308,-284
 Jonathan was saying that my family don’t have any money and they don’t care about me. #line:0f33821_char1_Emily
 <<NPC_finish_talking_wait DialogueRunner>>
 
-//<<activate_voice_recognition DialogueRunner>>
-//-> 1. That’s very upsetting.  How did that make you feel Emily? #line:0e33683 
-//-> 2. That's not very nice. #line:01cdc4f 
-//-> 3. I don't think Jonathan meant it. #line:07d8f6f 
+<<activate_voice_recognition DialogueRunner>>
+-> 1. That’s very upsetting.  How did that make you feel Emily? #line:0e33683 
+-> 2. That's not very nice. #line:01cdc4f 
+-> 3. I don't think Jonathan meant it. #line:07d8f6f 
 
 //Emily
 <<set $characterToTalk to "Emily">>
@@ -72,10 +83,10 @@ Jonathan was saying that my family don’t have any money and they don’t care 
 It made me cry and I felt embarrassed. Everyone was laughing, I wanted to go home and not come back to school.  #line:01c1039_char1_Emily
 <<NPC_finish_talking_wait DialogueRunner>>
 
-//<<activate_voice_recognition DialogueRunner>>
-//-> 1. I’m really sorry to hear this Emily, how do you feel now?  #line:0ca7522 
-//-> 2. That must have been awful. #line:0a9bffd 
-//-> 3. How do you feel at the moment? #line:020b808 
+<<activate_voice_recognition DialogueRunner>>
+-> 1. I’m really sorry to hear this Emily, how do you feel now?  #line:0ca7522 
+-> 2. That must have been awful. #line:0a9bffd 
+-> 3. How do you feel at the moment? #line:020b808 
 
 //Emily:  
 <<set $characterToTalk to "Emily">>
@@ -83,10 +94,10 @@ It made me cry and I felt embarrassed. Everyone was laughing, I wanted to go hom
 I’m still really upset. #line:0fb1640_char1_Emily 
 <<NPC_finish_talking_wait DialogueRunner>>
 
-//<<activate_voice_recognition DialogueRunner>>
-//-> 1. Emily, what would you like to get out of this meeting with me and Jonathan? #line:0a10b64 
-//-> 2. What would you like to say to Jonathan? #line:01c686b 
-//-> 3. How would you like to move forward? #line:0110048 
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Emily, what would you like to get out of this meeting with me and Jonathan? #line:0a10b64 
+-> 2. What would you like to say to Jonathan? #line:01c686b 
+-> 3. How would you like to move forward? #line:0110048 
 
 
 //Emily: 
@@ -95,17 +106,17 @@ I’m still really upset. #line:0fb1640_char1_Emily
 I want him to stop saying those things. #line:00df8a6_char1_Emily 
 <<NPC_finish_talking_wait DialogueRunner>>
 
-//<<activate_voice_recognition DialogueRunner>>
-//-> 1. Jonathan would you like to tell me what happened from your viewpoint?  #line:0f6a89e 
-//-> 2. Jonathan can you tell me what happened? #line:09d9449 
-//-> 3. What was going on Jonathan? #line:096bd1a 
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Jonathan would you like to tell me what happened from your viewpoint?  #line:0f6a89e 
+-> 2. Jonathan can you tell me what happened? #line:09d9449 
+-> 3. What was going on Jonathan? #line:096bd1a 
 
 <<jump Stage2>>
 ===
 title: Stage1Negative
 tags: 
 colorID: 0
-position: -1052,-102
+position: -1059,-411
 ---
 //if Jonathan is addressed first
 //negative path
@@ -116,7 +127,7 @@ position: -1052,-102
 title: Stage1Neutral
 tags: 
 colorID: 0
-position: -830,-98
+position: -811,-409
 ---
 //If neither child is referred to specifically
 //neutral pathway
@@ -165,7 +176,7 @@ position: -830,-98
 title: Stage1Positive
 tags: 
 colorID: 0
-position: -616,-94
+position: -533,-403
 ---
 //if Emily is referred to first
 //positive path
@@ -208,7 +219,7 @@ position: -616,-94
 title: Stage2Negative
 tags: 
 colorID: 0
-position: -1053,126
+position: -1051,-173
 ---
 
 
@@ -217,7 +228,7 @@ Empty Text #line:03b041d
 title: Stage2Positive
 tags: 
 colorID: 0
-position: -618,130
+position: -527,-172
 ---
 
 
@@ -226,7 +237,7 @@ Empty Text #line:0299b99
 title: Stage3Negative
 tags: 
 colorID: 0
-position: -1056,344
+position: -1062,73
 ---
 
 
@@ -235,7 +246,7 @@ Empty Text #line:029b81b
 title: Stage3Neutral
 tags: 
 colorID: 0
-position: -831,348
+position: -814,65
 ---
 
 
@@ -244,7 +255,7 @@ Empty Text #line:08c95ed
 title: Stage3Positive
 tags: 
 colorID: 0
-position: -612,350
+position: -522,59
 ---
 
 
@@ -253,7 +264,7 @@ Empty Text #line:09ccba3
 title: Stage2
 tags: 
 colorID: 0
-position: -307,-47
+position: 47,-21
 ---
 //Jonathan: 
 <<set $characterToTalk to "Jonathan">>
@@ -261,10 +272,10 @@ position: -307,-47
 Nothing really, I was only joking. #line:0f767a6_char2_Jonathan
 <<NPC_finish_talking_wait DialogueRunner>>
 
-//<<activate_voice_recognition DialogueRunner>>
-//-> 1. You like to have a laugh with your friends do you? #line:0c23aa5 
-//-> 2. I don't think it was very funny. #line:042d98e 
-//-> 3. It was actually quite a mean thing to do. #line:0611d90 
+<<activate_voice_recognition DialogueRunner>>
+-> 1. You like to have a laugh with your friends do you? #line:0c23aa5 
+-> 2. I don't think it was very funny. #line:042d98e 
+-> 3. It was actually quite a mean thing to do. #line:0611d90 
 
 //Jonathan: 
 <<set $characterToTalk to "Jonathan">>
@@ -272,10 +283,10 @@ Nothing really, I was only joking. #line:0f767a6_char2_Jonathan
 Yeah I suppose. #line:02f5115_char2_Jonathan 
 <<NPC_finish_talking_wait DialogueRunner>>
 
-//<<activate_voice_recognition DialogueRunner>>
-//-> 1. So what was it about this particular incident that made you laugh? #line:0de75b1 
-//-> 2. What about this did you find so funny? #line:0ed7664 
-//-> 3. Why were you laughing? #line:09d329d 
+<<activate_voice_recognition DialogueRunner>>
+-> 1. So what was it about this particular incident that made you laugh? #line:0de75b1 
+-> 2. What about this did you find so funny? #line:0ed7664 
+-> 3. Why were you laughing? #line:09d329d 
 
 //Jonathan: 
 <<set $characterToTalk to "Jonathan">>
@@ -291,7 +302,7 @@ Well, I noticed that Emily never has dinner in school like the rest of us. She a
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-Yeah I guess so.  I didn't mean to make her cry. #line:01b3826_char2 
+Yeah I guess so.  I didn't mean to make her cry. #line:01b3826_char2_Jonathan 
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -302,7 +313,7 @@ Yeah I guess so.  I didn't mean to make her cry. #line:01b3826_char2
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-Well, I shouted over to Emily, having sandwiches again then Emily!  Then everyone kind of laughed.  So I carried on for a bit.   #line:0ecee7a_char2
+Well, I shouted over to Emily, having sandwiches again then Emily!  Then everyone kind of laughed.  So I carried on for a bit.   #line:0ecee7a_char2_Jonathan
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -313,7 +324,7 @@ Well, I shouted over to Emily, having sandwiches again then Emily!  Then everyon
 //Jonathan: 
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-I guess I thought it was funny because everyone else was laughing.   #line:009ec7c_char2 
+I guess I thought it was funny because everyone else was laughing.   #line:009ec7c_char2_Jonathan 
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -324,7 +335,7 @@ I guess I thought it was funny because everyone else was laughing.   #line:009ec
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-I didn’t really notice.  I guess I was to into it to pay attention.   #line:0e6f05a_char2 
+I didn’t really notice.  I guess I was to into it to pay attention.   #line:0e6f05a_char2_Jonathan 
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -335,7 +346,7 @@ I didn’t really notice.  I guess I was to into it to pay attention.   #line:0e
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-I guess so. #line:057be74_char2 
+I guess so. #line:057be74_char2_Jonathan 
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -346,7 +357,7 @@ I guess so. #line:057be74_char2
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-I guess I shouldn’t have done it.  I didn’t mean to make her cry. #line:0f5fa06_char2
+I guess I shouldn’t have done it.  I didn’t mean to make her cry. #line:0f5fa06_char2_Jonathan
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -359,12 +370,12 @@ I guess I shouldn’t have done it.  I didn’t mean to make her cry. #line:0f5f
 title: Stage3
 tags: 
 colorID: 0
-position: -310,207
+position: 51,210
 ---
 //Emily: 
 <<set $characterToTalk to "Emily">>
 <<NPC_start_talking DialogueRunner>>
-I was trying to explain earlier but everyone was laughing and no one was listening. #line:0de4cc3_char1
+I was trying to explain earlier but everyone was laughing and no one was listening. #line:0de4cc3_char1_Emily
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -375,7 +386,7 @@ I was trying to explain earlier but everyone was laughing and no one was listeni
 //Emily: 
 <<set $characterToTalk to "Emily">>
 <<NPC_start_talking DialogueRunner>>
-It's because I have diabetes that I can’t eat certain foods, so my Mum packs me a lunch to keep me safe. #line:02f45c7_char1
+It's because I have diabetes that I can’t eat certain foods, so my Mum packs me a lunch to keep me safe. #line:02f45c7_char1_Emily
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -386,7 +397,7 @@ It's because I have diabetes that I can’t eat certain foods, so my Mum packs m
 //Emily: 
 <<set $characterToTalk to "Emily">>
 <<NPC_start_talking DialogueRunner>>
-Yes it is. #line:0b98d05_char1
+Yes it is. #line:0b98d05_char1_Emily
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -397,7 +408,7 @@ Yes it is. #line:0b98d05_char1
 //Jonathan: 
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-Yeah that’s kind of her Mum.  I guess she does care about her a lot.  #line:014b84e_char2 
+Yeah that’s kind of her Mum.  I guess she does care about her a lot.  #line:014b84e_char2_Jonathan 
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -408,7 +419,7 @@ Yeah that’s kind of her Mum.  I guess she does care about her a lot.  #line:01
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-I do feel bad.  I didn’t mean to upset her and I should have listened.   #line:0c2970b_char2 
+I do feel bad.  I didn’t mean to upset her and I should have listened.   #line:0c2970b_char2_Jonathan 
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -419,7 +430,7 @@ I do feel bad.  I didn’t mean to upset her and I should have listened.   #line
 //Jonathan: 
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-Yeah I won’t do that in the future, I will listen more. #line:0c7cdaf_char2 
+Yeah I won’t do that in the future, I will listen more. #line:0c7cdaf_char2_Jonathan 
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -430,7 +441,7 @@ Yeah I won’t do that in the future, I will listen more. #line:0c7cdaf_char2
 //Emily:  
 <<set $characterToTalk to "Emily">>
 <<NPC_start_talking DialogueRunner>>
-I really wanted him to stop.  I’m just glad he listened eventually.  #line:00ef902_char1 
+I really wanted him to stop.  I’m just glad he listened eventually.  #line:00ef902_char1_Emily 
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -441,7 +452,7 @@ I really wanted him to stop.  I’m just glad he listened eventually.  #line:00e
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-I guess I should say sorry. #line:04f83a7_char2 
+I guess I should say sorry. #line:04f83a7_char2_Jonathan 
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -452,7 +463,7 @@ I guess I should say sorry. #line:04f83a7_char2
 //Emily: 
 <<set $characterToTalk to "Emily">>
 <<NPC_start_talking DialogueRunner>>
-Yes. #line:04546cc_char1
+Yes. #line:04546cc_char1_Emily
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -463,13 +474,13 @@ Yes. #line:04546cc_char1
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-I’m sorry I upset you Emily.  I won’t do it again. #line:083db28_char2
+I’m sorry I upset you Emily.  I won’t do it again. #line:083db28_char2_Jonathan
 <<NPC_finish_talking_wait DialogueRunner>>
 
 //Emily:  
 <<set $characterToTalk to "Emily">>
 <<NPC_start_talking DialogueRunner>>
-That’s okay. #line:032483e_char1
+That’s okay. #line:032483e_char1_Emily
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -485,13 +496,13 @@ That’s okay. #line:032483e_char1
 //Emily:  
 <<set $characterToTalk to "Emily">>
 <<NPC_start_talking DialogueRunner>>
-No thank you. #line:12154314_char1
+No thank you. #line:12154314_char1_Emily
 <<NPC_finish_talking_wait DialogueRunner>>
 
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">>
 <<NPC_start_talking DialogueRunner>>
-No. #line:0125741_char2
+No. #line:0125741_char2_Jonathan
 <<NPC_finish_talking_wait DialogueRunner>>
 
 <<activate_voice_recognition DialogueRunner>>
@@ -499,5 +510,14 @@ No. #line:0125741_char2
 
 <<wait 1>>
 
+
+
 <<Quit_Application DialogueRunner>>
+===
+title: Outro
+tags: 
+colorID: 0
+position: 46,458
+---
+Empty Text
 ===
