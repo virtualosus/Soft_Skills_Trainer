@@ -451,7 +451,11 @@ public class SpeechManager : MonoBehaviour {
         // Creates a speech synthesizer using audio stream output.
         //var streamConfig = AudioConfig.FromStreamOutput(stream);
         synthesizer = new SpeechSynthesizer(config, null);
+        
         Task<SpeechSynthesisResult> Speaking = synthesizer.SpeakTextAsync(message);
+        
+        //Task<SpeechSynthesisResult> Speaking = synthesizer.SpeakSsmlAsync(message);
+
 
         // We can't await the task without blocking the main Unity thread, so we'll call a coroutine to
         // monitor completion and play audio when it's ready.

@@ -7570,7 +7570,7 @@ MonoBehaviour:
   SpeechServiceAPIKey: 014e4f573197493dac6eeba9a4965623
   SpeechServiceRegion: uksouth
   audioSource: {fileID: 1192779490}
-  voiceName: 0
+  voiceName: 4
   VoicePitch: 0
   isReady: 0
 --- !u!114 &224688139
@@ -20719,7 +20719,7 @@ MonoBehaviour:
   SpeechServiceAPIKey: 014e4f573197493dac6eeba9a4965623
   SpeechServiceRegion: uksouth
   audioSource: {fileID: 2026871036}
-  voiceName: 2
+  voiceName: 3
   VoicePitch: 0
   isReady: 0
 --- !u!114 &613411543
