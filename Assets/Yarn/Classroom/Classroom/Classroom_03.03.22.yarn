@@ -489,6 +489,8 @@ That’s okay. #line:032483e_char1_Emily
 -> 2. I'm glad we could work this out together. #line:0271d71_OptionTwo 
 -> 3. Finally, thank you for taking reposibility Jonathan. #line:0dda2c4_OptionThree 
 
+<<wait 0.5>>
+
 <<activate_voice_recognition DialogueRunner>>
 -> 1. Is there anything else either of you would like to add?  #line:09d361c_OptionOne 
 -> 2. Can I help with anything else right now? #line:0b35cb7_OptionTwo 
@@ -505,9 +507,6 @@ No thank you. #line:12154314_char1_Emily
 <<NPC_start_talking DialogueRunner>>
 No. #line:0125741_char2_Jonathan
 <<NPC_finish_talking_wait DialogueRunner>>
-
-<<activate_voice_recognition DialogueRunner>>
--> 1. Okay then thanks again and go and enjoy the rest of your day. #line:08222bf_OptionOne 
 
 
 <<jump Outro>>
@@ -540,9 +539,16 @@ I am sure that they are once again, firm friends. #line:0ef7a12_Teacher
 //Teacher
 <<set $characterToTalk to "Teacher">>
 <<NPC_start_talking DialogueRunner>>
-I will return at the end to let you know how you got on, based on our restorative practice procedures.   #line:040aea2_Teacher 
+Based on your selections throughout the experience, you did really well by our restorative practice procedures and scored insert score here.   #line:040aea2_Teacher 
 <<NPC_finish_talking_wait DialogueRunner>>
 
+//Teacher
+<<set $characterToTalk to "Teacher">>
+<<NPC_start_talking DialogueRunner>>
+If you wish to run through this application once more, then please reload it from your headsets main menu. Thank you again for taking part.    #line:06b60b2_Teacher  
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<wait 2>>
 
 <<Quit_Application DialogueRunner>>
 
