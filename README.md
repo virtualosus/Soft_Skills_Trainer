@@ -83,7 +83,10 @@ Retrive the Wit.ai Service Token from your app settings on their website here...
   <img src="https://github.com/2030428/Soft_Skills_Trainer/blob/master/Assets/READMEImages/witUnitySettings.PNG" width="600" height="" />
   
 You are then able to train the Wit.ai system to recognise key words and perform custom functions within Unity, though in this application we are only taking the string and using a string comparison algorithm to select our desired option.
+  
 ### Yarn Spinner 2.0
+  
+[Yarn Spinner](https://yarnspinner.dev/) is the pulse of the app, waiting for options, holding the voicelines for the characters, calling the voice recogition and the order of the flow. There is [excellent documentaion](https://docs.yarnspinner.dev/) on their website as well as great help on their [Discord](https://discord.com/invite/yarnspinner).
 
 ### Meta/Oculus Lip Sync
 
