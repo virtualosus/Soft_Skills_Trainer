@@ -297,7 +297,10 @@ namespace CognitiveServicesTTS
         enGBMaisieNeural,
         enGBAlfieNeural,
 
-        enGBTestRubbish,
+        enSALukeNeural,
+
+
+
 
         enAUCatherine,
         enAUHayleyRUS,
@@ -444,15 +447,16 @@ namespace CognitiveServicesTTS
                     return "Microsoft Server Speech Text to Speech Voice (en-US, AnaNeural)";
                 case VoiceName.enUSBrandonNeural:
                     return "Microsoft Server Speech Text to Speech Voice (en-US, BrandonNeural)";
-                    
+
+                case VoiceName.enSALukeNeural:
+                    return "Microsoft Server Speech Text to Speech Voice (en-SA, LukeNeural)";
 
 
                 case VoiceName.enGBAlfieNeural:
                     return "Microsoft Server Speech Text to Speech Voice (en-GB, AlfieNeural)";
                 case VoiceName.enGBMaisieNeural:
                     return "Microsoft Server Speech Text to Speech Voice (en-GB, MaisieNeural)";
-                case VoiceName.enGBTestRubbish:
-                    return "Microsoft Server Speech Text to Speech Voice (en-GB, Rubbish)";
+
 
 
                 case VoiceName.enAUCatherine:
