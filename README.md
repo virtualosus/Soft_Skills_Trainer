@@ -1,7 +1,7 @@
 # Virtual Reality Soft Skills Trainer - Restorative Justice for Teacher Training UK
 
 
-  [<img src="http://img.youtube.com/vi/Aq8hGkx1nEk/0.jpg" width="600" height="" />](https://www.youtube.com/watch?v=Aq8hGkx1nEk)
+  [<img src="http://img.youtube.com/vi/Aq8hGkx1nEk/0.jpg" width="1000" height="" />](https://www.youtube.com/watch?v=Aq8hGkx1nEk)
 
 
 This Virtual Reality project is a demonstration of a number of Artificial Interlligence elements brought together in Unity for the purpose of training and developement focusing on Soft Skills in the area of Restorative Justice for use in Teacher Training.
