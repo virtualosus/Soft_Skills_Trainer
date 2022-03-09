@@ -30,8 +30,11 @@ To implement this in your project, you will need to set up (at least) a [free ac
 
 Once your account has been set up, you will then find your 'Speech Service API Key' and 'Speech Service Region' in the Keys and Endpoint section of your account portal.
 
+![Microsoft Azure Portal](https://github.com/2030428/Soft_Skills_Trainer/blob/master/Assets/READMEImages/speechServices.PNG)
+
 This will then need to be added to each Speech Manager script in the Inspector window.
 
+![Speech Manager in Inspector](https://github.com/2030428/Soft_Skills_Trainer/blob/master/Assets/READMEImages/speechManager.PNG)
 
 
 ### Meta/Oculus Voice Recognition (Wit.ai)
