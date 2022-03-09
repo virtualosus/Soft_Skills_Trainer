@@ -6,15 +6,16 @@ This soft skills VR trainer is a demonstration of a number of Artificial Interll
 
 ## Artifical Intelligence Elements
 
-* [Microsoft Azure Text to Speech](https://github.com/2030428/LawAndOrder/new/master#microsoft-azure-text-to-speech).
-* [Meta/Oculus Voice Recognition (Wit.ai)](https://github.com/2030428/LawAndOrder/new/master#metaoculus-voice-recognition-witai)
+* [Microsoft Azure Text to Speech](https://github.com/2030428/LawAndOrder/blob/master/README.md#microsoft-azure-text-to-speech).
+* [Meta/Oculus Voice Recognition (Wit.ai)](https://github.com/2030428/LawAndOrder/blob/master/README.md#metaoculus-voice-recognition-witai)
+
 
 ## NPC and Dialogue
 
-* [Yarn Spinner 2.0](https://github.com/2030428/LawAndOrder/new/master#yarn-spinner-20)
-* [Meta/Oculus Lip Sync](https://github.com/2030428/LawAndOrder/new/master#metaoculus-lip-sync)
-* [Rocketbox](https://github.com/2030428/LawAndOrder/new/master#rocketbox)
-* [Mixamo](https://github.com/2030428/LawAndOrder/new/master#mixamo)
+* [Yarn Spinner 2.0](https://github.com/2030428/LawAndOrder/blob/master/README.md#yarn-spinner-20)
+* [Meta/Oculus Lip Sync](https://github.com/2030428/LawAndOrder/blob/master/README.md#metaoculus-lip-sync)
+* [Rocketbox](https://github.com/2030428/LawAndOrder/blob/master/README.md#rocketbox)
+* [Mixamo](https://github.com/2030428/LawAndOrder/blob/master/README.md#mixamo)
 
 ### Microsoft Azure Text to Speech
 
