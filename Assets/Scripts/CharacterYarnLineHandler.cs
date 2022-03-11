@@ -14,7 +14,7 @@ public class CharacterYarnLineHandler : MonoBehaviour
     public YarnProject myYarnProject;
 
     public SpeechManager characterSpeechManager;
-    public ClassroomSpeechToYarn ClassroomSpeechToYarn;
+    public YarnCommandController ClassroomSpeechToYarn;
     public AudioSource characterAudioSource;
 
     private List<string> allLinesIDList = new List<string>();

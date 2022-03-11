@@ -7,7 +7,7 @@ using Oculus.Voice.Demo.UIShapesDemo;
 using Oculus.Voice;
 
 
-public class ClassroomSpeechToYarn : MonoBehaviour
+public class YarnCommandController : MonoBehaviour
 {
     [Header("Voice")]
     public InteractionHandler interactionHandler;

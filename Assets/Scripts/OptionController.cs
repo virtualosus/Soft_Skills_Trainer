@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class OptionController : MonoBehaviour
 {
     public LineView LineView;
-    public ClassroomSpeechToYarn ClassroomSpeechToYarn;
+    public YarnCommandController ClassroomSpeechToYarn;
 
     public GameObject[] Options;
 

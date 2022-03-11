@@ -32,7 +32,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
         [Header("Voice")]
         [SerializeField] private AppVoiceExperience appVoiceExperience;
 
-        public ClassroomSpeechToYarn ClassroomSpeechToYarn;
+        public YarnCommandController ClassroomSpeechToYarn;
 
         public SpeechToOptionCompare speechToOptionCompare;
 
