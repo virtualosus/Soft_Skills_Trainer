@@ -85,18 +85,34 @@ Retrive the Wit.ai Service Token from your app settings on their website here...
   
 You are then able to train the Wit.ai system to recognise key words and perform custom functions within Unity, though in this application we are only taking the string and using a string comparison algorithm to select our desired option.
   
-### Yarn Spinner 2.0
+## Yarn Spinner 2.0
   
 [Yarn Spinner](https://yarnspinner.dev/) is the pulse of the app, waiting for options, holding the voicelines for the characters, calling the voice recogition and the order of the flow. There is [excellent documentaion](https://docs.yarnspinner.dev/) on their website as well as great help on their [Discord](https://discord.com/invite/yarnspinner).
 
 Any amendments to the script need to be made to the Yarn script which is attached to the current Yarn Project selected in the Dialogue Runner.
   
+<p align = "center">
+  <img src="https://github.com/2030428/Soft_Skills_Trainer/blob/master/Assets/READMEImages/yarnInspector.PNG" width="1000" height="" />
+  
 If being used for your own individual project, create a new Yarn project and Yarn script within the Project window.
   
-When adding the line ending to the script, ensure to add the character name to the line ending, and make sure this matches exactly with the character name on the NPC prefab scripts, 'Character Yarn Line Handler' and 'Speech Manager'. Be sure to create a tag with the name as well. This will link the script lines to the correct NPC, and send them to the correct TTS and Audio Source.
+When adding the line ending to the script, ensure to add the character name to the line ending, and make sure this matches exactly with the character name on the NPC prefab scripts, 'Character Yarn Line Handler' and 'Speech Manager'. Be sure to create a tag with the name as well. 
   
-### Meta/Oculus Lip Sync
+<p align = "center">
+  <img src="https://github.com/2030428/Soft_Skills_Trainer/blob/master/Assets/READMEImages/npcPrefab.PNG" width="600" height="" />
+  
+This will link the script lines to the correct NPC, and send them to the correct TTS and Audio Source. Also ensure that the 'characterToTalk' variable within the Yarn script is set to the NPC's name.
+  
+<p align = "center">
+  <img src="https://github.com/2030428/Soft_Skills_Trainer/blob/master/Assets/READMEImages/yarnScript.PNG" width="600" height="" />
+    
+## Meta/Oculus Lip Sync
+  
+The Meta/Oculus Lip Sync is also now included with the [Oculus Integration](https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022) package. Your character models will need to include blend shapes for the facial expressions of letter pronunciations. The Rocket Box collection now includes facial blend shapes, and can be used for free.
+  
+Be sure to drag the Skinned Mesh Renderer for your desired model on to the 'OVR Lip Sync Contect Morph Target'.
 
-### Rocketbox
 
-### Mixamo
+## Rocketbox
+
+## Mixamo
