@@ -26,6 +26,7 @@ Set up for use on the  Meta/Oculus Quest 2, this project can be used as a templa
 * What you'll need to do
 * Essential elements
 
+
 ## Microsoft Azure Text to Speech
 
 The Microsoft TTS setup is based on [Active Nick's Unity-Test-To-Speech project](https://github.com/ActiveNick/Unity-Text-to-Speech). By adapting his Speech Manager script, it is possible to call realtime TTS from the Microsoft Azure Cognitive Services.
@@ -88,6 +89,12 @@ You are then able to train the Wit.ai system to recognise key words and perform 
   
 [Yarn Spinner](https://yarnspinner.dev/) is the pulse of the app, waiting for options, holding the voicelines for the characters, calling the voice recogition and the order of the flow. There is [excellent documentaion](https://docs.yarnspinner.dev/) on their website as well as great help on their [Discord](https://discord.com/invite/yarnspinner).
 
+Any amendments to the script need to be made to the Yarn script which is attached to the current Yarn Project selected in the Dialogue Runner.
+  
+If being used for your own individual project, create a new Yarn project and Yarn script within the Project window.
+  
+When adding the line ending to the script, ensure to add the character name to the line ending, and make sure this matches exactly with the character name on the NPC prefab scripts, 'Character Yarn Line Handler' and 'Speech Manager'. Be sure to create a tag with the name as well. This will link the script lines to the correct NPC, and send them to the correct TTS and Audio Source.
+  
 ### Meta/Oculus Lip Sync
 
 ### Rocketbox
