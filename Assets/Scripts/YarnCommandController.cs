@@ -53,7 +53,8 @@ public class YarnCommandController : MonoBehaviour
         //Debug.LogError("Attempting voice recog...");
         StartCoroutine(OptionController.GatherOptions());
         indicator.SetActive(true);
-        interactionHandler.ToggleActivation();
+        StartCoroutine(interactionHandler.AttemptActivation());
+            //interactionHandler.ToggleActivation();
         //Debug.LogError("Attempt voice recog activation complete");
     }
 

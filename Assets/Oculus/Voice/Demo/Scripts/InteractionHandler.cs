@@ -23,7 +23,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
     public class InteractionHandler : MonoBehaviour
     {
         [Header("Default States"), Multiline]
-        [SerializeField] private string freshStateText = "Try putting your hand in the sphere and saying \"Make the cube red\"";
+        [SerializeField] private string freshStateText;
 
         [Header("UI")]
         [SerializeField] private Text textArea, previouslySpokenListText;
@@ -107,7 +107,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             else
             {
                 ClassroomSpeechToYarn.indicator.SetActive(false);
-                textArea.text = freshStateText;
+                StartCoroutine(NothingHeardRetry());
             }
         }
 
@@ -129,6 +129,25 @@ namespace Oculus.Voice.Demo.UIShapesDemo
                 appVoiceExperience.Activate();
                 textArea.text = "I'm listening...";
             }
+        }
+
+        public System.Collections.IEnumerator AttemptActivation()
+        {
+            appVoiceExperience.Activate();
+            textArea.text = "I'm listening...";
+            yield return new WaitForSeconds(10f);
+            appVoiceExperience.Deactivate();
+        }
+
+        public System.Collections.IEnumerator NothingHeardRetry()
+        {
+            textArea.text = "Sorry, I didn't hear a recognised response. Trying again in 3...";
+            yield return new WaitForSeconds(1f);
+            textArea.text = "Sorry, I didn't hear a recognised response. Trying again in 2...";
+            yield return new WaitForSeconds(1f);
+            textArea.text = "Sorry, I didn't hear a recognised response. Trying again in 1...";
+            yield return new WaitForSeconds(1f);
+            ClassroomSpeechToYarn.ActivateVoiceRecognition();
         }
     }
 }

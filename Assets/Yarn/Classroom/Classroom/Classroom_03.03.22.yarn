@@ -20,6 +20,13 @@ position: 39,-492
 
 <<wait 2>>
 
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Emily would you like to tell me what happened? #line:0c273a6_OptionOne
+    //<<jump Stage1>>
+-> 2. Jonathan can you tell me what happened? #line:02a40db_OptionTwo
+    //<<jump Stage1>>
+-> 3. Who would like to go first? #line:0e7027f_OptionThree
+    //<<jump Stage1>>
 
 //Teacher
 <<set $characterToTalk to "Teacher">>
@@ -50,13 +57,7 @@ I will return at the end to let you know how you got on, based on our restorativ
 
 <<wait 2>>
 
-<<activate_voice_recognition DialogueRunner>>
--> 1. Emily would you like to tell me what happened? #line:0c273a6_OptionOne
-    <<jump Stage1>>
--> 2. Jonathan can you tell me what happened? #line:02a40db_OptionTwo
-    <<jump Stage1>>
--> 3. Who would like to go first? #line:0e7027f_OptionThree
-    <<jump Stage1>>
+
 
 
 ===

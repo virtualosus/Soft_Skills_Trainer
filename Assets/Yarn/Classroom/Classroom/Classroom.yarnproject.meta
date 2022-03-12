@@ -9,7 +9,7 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
-  - {fileID: 6391573757903218779, guid: bfbc775e5b529614c84254eb47b9ee4f, type: 3}
+  - {fileID: 6391573757903218779, guid: e8c979489e08487418ebcbcdc4dfb285, type: 3}
   compileErrors: []
   serializedDeclarations:
   - name: $boyTemperment
@@ -19,7 +19,7 @@ ScriptedImporter:
     defaultValueString: 
     description: 
     isImplicit: 0
-    sourceYarnAsset: {fileID: 6391573757903218779, guid: 47633ee49e42d9845832f5fcb2220579, type: 3}
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: bfbc775e5b529614c84254eb47b9ee4f, type: 3}
   - name: $girlTemperment
     typeName: Number
     defaultValueBool: 0
@@ -27,7 +27,23 @@ ScriptedImporter:
     defaultValueString: 
     description: 
     isImplicit: 0
-    sourceYarnAsset: {fileID: 6391573757903218779, guid: 47633ee49e42d9845832f5fcb2220579, type: 3}
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: bfbc775e5b529614c84254eb47b9ee4f, type: 3}
+  - name: $sceneNumber
+    typeName: Number
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: 
+    isImplicit: 0
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: bfbc775e5b529614c84254eb47b9ee4f, type: 3}
+  - name: $characterToTalk
+    typeName: String
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: name
+    description: 
+    isImplicit: 0
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: bfbc775e5b529614c84254eb47b9ee4f, type: 3}
   defaultLanguage: en-GB
   languagesToSourceAssets: []
   useAddressableAssets: 0
