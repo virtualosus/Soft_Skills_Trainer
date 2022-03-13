@@ -8,6 +8,10 @@ TagManager:
   - Emily
   - Jonathan
   - Teacher
+  - 0
+  - 1
+  - 2
+  - 3
   layers:
   - Default
   - TransparentFX

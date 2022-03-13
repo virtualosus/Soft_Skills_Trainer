@@ -46,6 +46,8 @@ namespace Oculus.Voice.Demo.UIShapesDemo
 
         public string[] previouslySpokenArray;
 
+        Coroutine tryAgain, YARNVoiceAttempt;
+
         private void Start()
         {
             textArea.text = pendingText;
@@ -107,7 +109,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             else
             {
                 ClassroomSpeechToYarn.indicator.SetActive(false);
-                StartCoroutine(NothingHeardRetry());
+                tryAgain = StartCoroutine(NothingHeardRetry());
             }
         }
 
@@ -121,6 +123,9 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             if (appVoiceExperience.Active) 
             {
                 appVoiceExperience.Deactivate();
+                ClassroomSpeechToYarn.indicator.SetActive(false);
+                StopCoroutine(tryAgain);
+                StopCoroutine(YARNVoiceAttempt);
                 textArea.text = freshStateText;
 
             }
@@ -129,6 +134,21 @@ namespace Oculus.Voice.Demo.UIShapesDemo
                 appVoiceExperience.Activate();
                 textArea.text = "I'm listening...";
             }
+        }
+
+        public void YarnVoiceAttempt()
+        {
+            YARNVoiceAttempt = StartCoroutine(AttemptActivation());
+        }
+
+        public void CancelVoiceAttempt()
+        {
+            appVoiceExperience.Deactivate();
+            ClassroomSpeechToYarn.indicator.SetActive(false);
+            StopCoroutine(tryAgain);
+            StopCoroutine(YARNVoiceAttempt);
+            textArea.text = "If you prefer, you can read the option you want to select out loud, or continue to press the option.";
+
         }
 
         public System.Collections.IEnumerator AttemptActivation()

@@ -12,7 +12,7 @@ public class OptionController : MonoBehaviour
 
     public GameObject[] Options;
 
-    public int OptionToSelect;
+    public int OptionToSelect, tagNumber;
 
     public bool optionSelected;
 
@@ -20,11 +20,14 @@ public class OptionController : MonoBehaviour
 
     public IEnumerator GatherOptions()
     {
+        tagNumber = 0;
         yield return new WaitForSeconds(0.5f);
         Options = new GameObject[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
             Options[i] = transform.GetChild(i).gameObject;
+            Options[i].tag = tagNumber.ToString();
+            tagNumber++;
         }
         Debug.LogError(Options.Length + " available options listed");
     }
