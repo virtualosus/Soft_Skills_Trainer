@@ -41,7 +41,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
 
         public List<string> previouslySpokenList = new List<string>();
 
-        public string previouslySpokenString;
+        public string previouslySpokenString, currentLineSpoken;
 
         private int counter;
 
@@ -119,6 +119,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
         {
             if (!string.IsNullOrEmpty(response["text"]))
             {
+                currentLineSpoken = response["text"];
                 textArea.text = "I heard: " + response["text"];
                 speechToOptionCompare.currentLine = response["text"];
                 speechToOptionCompare.LineComparison();
@@ -172,7 +173,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
                 tryAgainRunning = false;
             }
             StopCoroutine(YARNVoiceAttempt);
-            textArea.text = "If you prefer, you can read the option you want to select out loud, or continue to press the option.";
+            //textArea.text = "If you prefer, you can read the option you want to select out loud, or continue to press the option.";
 
         }
 
@@ -189,16 +190,30 @@ namespace Oculus.Voice.Demo.UIShapesDemo
 
         public IEnumerator NothingHeardRetry()
         {
-            tryAgainRunning = true;
-            textArea.text = "Sorry, I didn't hear a recognised response. Trying again in 3...";
+            CancelVoiceAttempt();
+            tryAgainRunning = true;            
+            if (speechToOptionCompare.requestRetry)
+            {
+                textArea.text = "I heard: '" + currentLineSpoken + "', which is not a recognised response.";
+                speechToOptionCompare.requestRetry = false;
+                yield return new WaitForSeconds(2f);
+            }
+            else
+            {
+                textArea.text = "Sorry, I didn't hear anything.";
+                yield return new WaitForSeconds(2f);
+            }
+            textArea.text = "As there was no recognised response, reattempting in 3...";
             yield return new WaitForSeconds(1f);
-            textArea.text = "Sorry, I didn't hear a recognised response. Trying again in 2...";
+            textArea.text = "As there was no recognised response, reattempting in 2...";
             yield return new WaitForSeconds(1f);
-            textArea.text = "Sorry, I didn't hear a recognised response. Trying again in 1...";
+            textArea.text = "As there was no recognised response, reattempting in 1...";
             yield return new WaitForSeconds(1f);
             ClassroomSpeechToYarn.ActivateVoiceRecognition();
             tryAgainRunning = false;
         }
+
+        
 
         public IEnumerator ButtonPressed()
         {

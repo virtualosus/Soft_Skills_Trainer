@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using System.Linq;
+using Oculus.Voice.Demo.UIShapesDemo;
 
 
 
@@ -10,9 +11,13 @@ public class SpeechToOptionCompare : MonoBehaviour
 {
     public YarnProject myYarnProject;
 
+    public InteractionHandler InteractionHandler;
+
     public OptionController OptionController;
 
     public string currentLine;
+    
+    public bool requestRetry;
 
     public int ratingOne, ratingTwo, ratingThree;
 
@@ -123,18 +128,45 @@ public class SpeechToOptionCompare : MonoBehaviour
 
         if(Mathf.Min(ratingOne, ratingTwo, ratingThree) == ratingOne)
         {
-            OptionController.OptionOneSelect();
+            if(ratingOne < 15)
+            {
+                OptionController.OptionOneSelect();
+                optionCounter++;
+            }
+            else
+            {
+                requestRetry = true;
+                StartCoroutine(InteractionHandler.NothingHeardRetry());
+            }
+
         }
         if (Mathf.Min(ratingOne, ratingTwo, ratingThree) == ratingTwo)
         {
-            OptionController.OptionTwoSelect();
+            if (ratingTwo < 15)
+            {
+                OptionController.OptionTwoSelect();
+                optionCounter++;
+            }
+            else
+            {
+                requestRetry = true;
+                StartCoroutine(InteractionHandler.NothingHeardRetry());
+            }
         }
         if (Mathf.Min(ratingOne, ratingTwo, ratingThree) == ratingThree)
         {
-            OptionController.OptionThreeSelect();
+            if (ratingThree < 15)
+            {
+                OptionController.OptionThreeSelect();
+                optionCounter++;
+            }
+            else
+            {
+                requestRetry = true;
+                StartCoroutine(InteractionHandler.NothingHeardRetry());
+            }
         }
         
-        optionCounter++;
     }
 
 

@@ -7511,6 +7511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myYarnProject: {fileID: 7545569452688597077, guid: b706abf9f670fee43b09c80176fe311e, type: 3}
+  InteractionHandler: {fileID: 1437035259}
   OptionController: {fileID: 1214897820}
   currentLine: 
   ratingOne: 0
