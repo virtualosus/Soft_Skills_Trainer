@@ -12,11 +12,14 @@ public class PressOptionButton : MonoBehaviour
 
     public InteractionHandler InteractionHandler;
 
+    public SpeechToOptionCompare SpeechToOptionCompare;
+
 
     public void Awake()
     {
         OptionController = GameObject.FindObjectOfType<OptionController>();
         InteractionHandler = GameObject.FindObjectOfType<InteractionHandler>();
+        SpeechToOptionCompare = GameObject.FindObjectOfType<SpeechToOptionCompare>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -29,8 +32,9 @@ public class PressOptionButton : MonoBehaviour
 
     public IEnumerator ButtonPressWait()
     {
+        StartCoroutine(InteractionHandler.ButtonPressed());
         InteractionHandler.CancelVoiceAttempt();
-
+        SpeechToOptionCompare.optionCounter++;
         yield return new WaitForSeconds(0.5f);
         if (Button.tag == "0")
         {

@@ -171,7 +171,7 @@ I guess I shouldn’t have done it.  I didn’t mean to make her cry. #line:char
 
 //Emily: 
 <<girl_talk DialogueRunner>>
-Yes.  I was trying to explain earlier but everyone was laughing and no one was listening. #line:char1_0de4cc3 
+I was trying to explain earlier but everyone was laughing and no one was listening. #line:char1_0de4cc3 
 
 //Teacher:  
 //What was it that you were trying to say Emily? #line:02f4451 
@@ -221,9 +221,9 @@ I feel bad.  I didn’t mean to upset her.  I should have listened.   #line:char
 Yeah I won’t do that in the future, I will listen more. #line:char2_0c7cdaf 
 
 //Teacher:  
-Emily are you happy with that outcome. #line:0445303 
-<<activate_voice_recognition DialogueRunner>>
-<<wait_for_speech_recog DialogueRunner>>
+//Emily are you happy with that outcome. #line:0445303 
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
 
 //Emily 3
 

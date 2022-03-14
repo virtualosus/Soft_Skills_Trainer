@@ -15,6 +15,7 @@ using Facebook.WitAi.Lib;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 
 
@@ -45,6 +46,8 @@ namespace Oculus.Voice.Demo.UIShapesDemo
         private int counter;
 
         public string[] previouslySpokenArray;
+
+        public bool buttonPressed, tryAgainRunning;
 
         Coroutine tryAgain, YARNVoiceAttempt;
 
@@ -79,6 +82,24 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             }
         }
 
+        public void ToggleActivation()
+        {
+            if (appVoiceExperience.Active)
+            {
+                appVoiceExperience.Deactivate();
+                ClassroomSpeechToYarn.indicator.SetActive(false);
+                StopCoroutine(tryAgain);
+                StopCoroutine(YARNVoiceAttempt);
+                textArea.text = freshStateText;
+
+            }
+            else
+            {
+                appVoiceExperience.Activate();
+                textArea.text = "I'm listening...";
+            }
+        }
+
         void DisplayPreviouslySpokenList()
         {
             if (previouslySpokenList == null)
@@ -101,15 +122,31 @@ namespace Oculus.Voice.Demo.UIShapesDemo
                 textArea.text = "I heard: " + response["text"];
                 speechToOptionCompare.currentLine = response["text"];
                 speechToOptionCompare.LineComparison();
-                previouslySpokenList.Add(counter + ". " + response["text"]);
-                DisplayPreviouslySpokenList();
+
+                StopCoroutine(YARNVoiceAttempt);
+                if (tryAgainRunning)
+                {
+                    StopCoroutine(tryAgain);
+                    tryAgainRunning = false;
+                }
+
                 ClassroomSpeechToYarn.indicator.SetActive(false);
                 ClassroomSpeechToYarn.PlayerFinishedTalking.Invoke();
+
+                previouslySpokenList.Add(counter + ". " + response["text"]);        //debugging
+                DisplayPreviouslySpokenList();                                      //debugging
             }
             else
             {
-                ClassroomSpeechToYarn.indicator.SetActive(false);
-                tryAgain = StartCoroutine(NothingHeardRetry());
+                if (!buttonPressed)
+                {
+                    ClassroomSpeechToYarn.indicator.SetActive(false);
+                    tryAgain = StartCoroutine(NothingHeardRetry());
+                }
+                else
+                {
+                    ClassroomSpeechToYarn.indicator.SetActive(false);
+                }
             }
         }
 
@@ -118,23 +155,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             textArea.text = $"<color=\"red\">Error: {error}\n\n{message}</color>";
         }
 
-        public void ToggleActivation()
-        {
-            if (appVoiceExperience.Active) 
-            {
-                appVoiceExperience.Deactivate();
-                ClassroomSpeechToYarn.indicator.SetActive(false);
-                StopCoroutine(tryAgain);
-                StopCoroutine(YARNVoiceAttempt);
-                textArea.text = freshStateText;
 
-            }
-            else
-            {
-                appVoiceExperience.Activate();
-                textArea.text = "I'm listening...";
-            }
-        }
 
         public void YarnVoiceAttempt()
         {
@@ -145,22 +166,30 @@ namespace Oculus.Voice.Demo.UIShapesDemo
         {
             appVoiceExperience.Deactivate();
             ClassroomSpeechToYarn.indicator.SetActive(false);
-            StopCoroutine(tryAgain);
+            if (tryAgainRunning)
+            {
+                StopCoroutine(tryAgain);
+                tryAgainRunning = false;
+            }
             StopCoroutine(YARNVoiceAttempt);
             textArea.text = "If you prefer, you can read the option you want to select out loud, or continue to press the option.";
 
         }
 
-        public System.Collections.IEnumerator AttemptActivation()
+        public IEnumerator AttemptActivation()
         {
+            ClassroomSpeechToYarn.indicator.SetActive(true);
             appVoiceExperience.Activate();
             textArea.text = "I'm listening...";
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(8f);
             appVoiceExperience.Deactivate();
+            ClassroomSpeechToYarn.indicator.SetActive(false);
+            tryAgain = StartCoroutine(NothingHeardRetry());
         }
 
-        public System.Collections.IEnumerator NothingHeardRetry()
+        public IEnumerator NothingHeardRetry()
         {
+            tryAgainRunning = true;
             textArea.text = "Sorry, I didn't hear a recognised response. Trying again in 3...";
             yield return new WaitForSeconds(1f);
             textArea.text = "Sorry, I didn't hear a recognised response. Trying again in 2...";
@@ -168,6 +197,14 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             textArea.text = "Sorry, I didn't hear a recognised response. Trying again in 1...";
             yield return new WaitForSeconds(1f);
             ClassroomSpeechToYarn.ActivateVoiceRecognition();
+            tryAgainRunning = false;
         }
+
+        public IEnumerator ButtonPressed()
+        {
+            buttonPressed = true;
+            yield return new WaitForSeconds(1);
+            buttonPressed = false;
+        } 
     }
 }

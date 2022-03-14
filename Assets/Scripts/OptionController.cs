@@ -29,6 +29,7 @@ public class OptionController : MonoBehaviour
             Options[i].tag = tagNumber.ToString();
             tagNumber++;
         }
+        tagNumber = 0;
         Debug.LogError(Options.Length + " available options listed");
     }
 
