@@ -1,0 +1,212 @@
+﻿title: Start
+tags: 
+colorID: 0
+position: -296,-511
+---
+<<declare $boyTemperment = 5>>
+<<declare $girlTemperment = 5>>
+
+<<wait 2>>
+
+<<girl_talk DialogueRunner>>
+I'll start because it was Jonathan that hurt my feelings.  #line:080416f_char1NeutralStage1
+
+-> Emily would you like to tell me what happened? #line:0c273a6
+    <<jump Stage1>>
+-> Jonathan can you tell me what happened? #line:02a40db 
+-> Who would like to go first? #line:0e7027f 
+
+<<jump Stage1>>
+===
+
+
+title: Stage1
+tags: 
+colorID: 0
+position: -297,-294
+---
+
+
+//Teacher
+//Hello Emily and Jonathan.  Thank you both for coming together to talk about what happened earlier today.  #line:0c54355 
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+
+<<girl_talk DialogueRunner>>
+Jonathan was saying that my family don’t have any money and they don’t care about me. #line:0f33821_char1NeutralStage1 
+
+<<wait 2>>
+
+-> blah blahg blah
+-> blah blahg blah
+-> blah blahg blah
+
+
+
+===
+
+
+title: Stage1Negative
+tags: 
+colorID: 0
+position: -641,-65
+---
+//if Jonathan is addressed first
+//negative path
+
+
+
+===
+
+
+title: Stage1Neutral
+tags: 
+colorID: 0
+position: -306,-60
+---
+//If neither child is referred to specifically
+//neutral pathway
+
+//Emily
+<<girl_talk DialogueRunner>>
+//I'll start because it was Jonathan that hurt my feelings.  #line:080416f_char1NeutralStage1
+
+//Emily
+<<girl_talk DialogueRunner>>
+//Jonathan was saying that my family don’t have any money and they don’t care about me. #line:0f33821_char1NeutralStage1 
+
+
+//Teacher
+//That’s very upsetting.  How did that make you feel Emily? #line:019f51f 
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily
+<<girl_talk DialogueRunner>>
+It made me cry. I felt embarrassed. Everyone was laughing. I wanted to go home and not come back to school.    #line:02f4319_char1NeutralStage1  
+
+
+//Teacher:  
+//I’m really sorry to hear this Emily.  How do you feel now?  
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily:  
+<<girl_talk DialogueRunner>>
+I’m still really upset.   #line:065100b_char1NeutralStage1  
+
+
+//Teacher: 
+//I’m glad you brought this to my attention and that you were both able to come together with me to talk about this. Emily, what would you like to get out of this meeting with me and Jonathan?    
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily: 
+<<girl_talk DialogueRunner>>
+I want him to stop saying those things.  #line:08e7e0f_char1NeutralStage1  
+
+
+
+===
+
+
+title: Stage1Positive
+tags: 
+colorID: 0
+position: 27,-57
+---
+//if Emily is referred to first
+//positive path
+
+//Emily
+<<girl_talk DialogueRunner>>
+Jonathan was saying that my family don’t have any money and they don’t care about me. #line:062e8ea_char1PositiveStage1  
+
+
+//Teacher
+//That’s very upsetting.  How did that make you feel Emily?  
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily
+<<girl_talk DialogueRunner>>
+It made me cry. I felt embarrassed. Everyone was laughing. I wanted to go home and not come back to school.   #line:005cfe1_char1PositiveStage1   
+
+
+//Teacher:  
+//I’m really sorry to hear this Emily.  How do you feel now?  
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily:  
+<<girl_talk DialogueRunner>>
+I’m still really upset.  #line:0466f44_char1PositiveStage1   
+
+
+//Teacher: 
+//I’m glad you brought this to my attention and that you were both able to come together with me to talk about this. Emily, what would you like to get out of this meeting with me and Jonathan?  
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily: 
+<<girl_talk DialogueRunner>>
+I want him to stop saying those things.  #line:08c1108_char1PositiveStage1   
+
+===
+title: Stage2Negative
+tags: 
+colorID: 0
+position: -633,198
+---
+
+
+Empty Text #line:03b041d 
+===
+title: Stage2Neutral
+tags: 
+colorID: 0
+position: -302,197
+---
+
+
+Empty Text #line:0fe44e4 
+===
+title: Stage2Positive
+tags: 
+colorID: 0
+position: 29,195
+---
+
+
+Empty Text #line:0299b99 
+===
+title: Stage3Negative
+tags: 
+colorID: 0
+position: -633,445
+---
+
+
+Empty Text #line:029b81b 
+===
+title: Stage3Neutral
+tags: 
+colorID: 0
+position: -303,442
+---
+
+
+Empty Text #line:08c95ed 
+===
+
+
+title: Stage3Positive
+tags: 
+colorID: 0
+position: 27,449
+---
+
+
+Empty Text #line:09ccba3 
+===

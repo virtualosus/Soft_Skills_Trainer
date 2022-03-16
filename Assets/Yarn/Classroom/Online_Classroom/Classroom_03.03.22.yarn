@@ -1,0 +1,556 @@
+﻿title: Stage2Neutral
+tags: 
+colorID: 0
+position: -811,-176
+---
+
+
+Empty Text #line:0e41f0f 
+===
+title: Start
+tags: 
+colorID: 0
+position: 39,-492
+---
+<<declare $boyTemperment = 5>>
+<<declare $girlTemperment = 5>>
+<<declare $sceneNumber  = 0>>
+
+<<declare $characterToTalk = "name" as String>>
+
+<<wait 2>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Emily would you like to tell me what happened? #line:0c273a6_OptionOne
+    //<<jump Stage1>>
+-> 2. Jonathan can you tell me what happened? #line:02a40db_OptionTwo
+    //<<jump Stage1>>
+-> 3. Who would like to go first? #line:0e7027f_OptionThree
+    //<<jump Stage1>>
+
+//Teacher
+<<set $characterToTalk to "Teacher">>
+<<NPC_start_talking DialogueRunner>>
+Welcome to this virtual reality training for restorative justice with children. #line:0fe64a4_Teacher 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+//Teacher
+<<set $characterToTalk to "Teacher">>
+<<NPC_start_talking DialogueRunner>>
+In a few moments I will leave you here with Emily and Jonathan who have had a bit of a falling out. #line:0a087b9_Teacher 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+//Teacher
+<<set $characterToTalk to "Teacher">>
+<<NPC_start_talking DialogueRunner>>
+Please try to resolve their issues in a calm and balanced manner.  #line:015d4d0_Teacher  
+<<NPC_finish_talking_wait DialogueRunner>>
+
+//Teacher
+<<set $characterToTalk to "Teacher">>
+<<NPC_start_talking DialogueRunner>>
+I will return at the end to let you know how you got on, based on our restorative practice procedures. #line:01098cd_Teacher  
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<set $sceneNumber to 1>>
+<<scene_change DialogueRunner>>
+
+<<wait 2>>
+
+
+
+
+===
+title: Stage1
+tags: 
+colorID: 0
+position: 41,-256
+---
+
+
+//Emily
+<<set $characterToTalk to "Emily">>
+<<NPC_start_talking DialogueRunner>>
+Jonathan was saying that my family don’t have any money and they don’t care about me. #line:0f33821_char1_Emily
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. That’s very upsetting.  How did that make you feel Emily? #line:0e33683_OptionOne 
+-> 2. That's not very nice. #line:01cdc4f_OptionTwo
+-> 3. I don't think Jonathan meant it. #line:07d8f6f_OptionThree 
+
+//Emily
+<<set $characterToTalk to "Emily">>
+<<NPC_start_talking DialogueRunner>>
+It made me cry and I felt embarrassed. Everyone was laughing, I wanted to go home and not come back to school.  #line:01c1039_char1_Emily
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. I’m really sorry to hear this Emily, how do you feel now?  #line:0ca7522_OptionOne 
+-> 2. That must have been awful. #line:0a9bffd_OptionTwo
+-> 3. How do you feel at the moment? #line:020b808_OptionThree
+
+//Emily:  
+<<set $characterToTalk to "Emily">>
+<<NPC_start_talking DialogueRunner>>
+I’m still really upset. #line:0fb1640_char1_Emily 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Emily, what would you like to get out of this meeting with me and Jonathan? #line:0a10b64_OptionOne 
+-> 2. What would you like to say to Jonathan? #line:01c686b_OptionTwo
+-> 3. How would you like to move forward? #line:0110048_OptionThree
+
+
+//Emily: 
+<<set $characterToTalk to "Emily">>
+<<NPC_start_talking DialogueRunner>>
+I want him to stop saying those things. #line:00df8a6_char1_Emily 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Jonathan would you like to tell me what happened from your viewpoint?  #line:0f6a89e_OptionOne 
+-> 2. Jonathan can you tell me what happened? #line:09d9449_OptionTwo 
+-> 3. What was going on Jonathan? #line:096bd1a_OptionThree 
+
+<<jump Stage2>>
+===
+title: Stage1Negative
+tags: 
+colorID: 0
+position: -1059,-411
+---
+//if Jonathan is addressed first
+//negative path
+
+
+
+===
+title: Stage1Neutral
+tags: 
+colorID: 0
+position: -811,-409
+---
+//If neither child is referred to specifically
+//neutral pathway
+
+//Emily
+//<<girl_talk DialogueRunner>>
+//I'll start because it was Jonathan that hurt my feelings.  #line:080416f_char1NeutralStage1
+
+//Emily
+//<<girl_talk DialogueRunner>>
+//Jonathan was saying that my family don’t have any money and they don’t care about me. #line:0f33821_char1NeutralStage1 
+
+
+//Teacher
+//That’s very upsetting.  How did that make you feel Emily? #line:019f51f 
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily
+//<<girl_talk DialogueRunner>>
+//It made me cry. I felt embarrassed. Everyone was laughing. I wanted to go home and not come back to school.    #line:02f4319_char1NeutralStage1  
+
+
+//Teacher:  
+//I’m really sorry to hear this Emily.  How do you feel now?  
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily:  
+//<<girl_talk DialogueRunner>>
+//I’m still really upset.   #line:065100b_char1NeutralStage1  
+
+
+//Teacher: 
+//I’m glad you brought this to my attention and that you were both able to come together with me to talk about this. Emily, what would you like to get out of this meeting with me and Jonathan?    
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily: 
+//<<girl_talk DialogueRunner>>
+//I want him to stop saying those things.  #line:08e7e0f_char1NeutralStage1  
+
+
+
+===
+title: Stage1Positive
+tags: 
+colorID: 0
+position: -533,-403
+---
+//if Emily is referred to first
+//positive path
+
+//Emily
+//<<girl_talk DialogueRunner>>
+//Jonathan was saying that my family don’t have any money and they don’t care about me. #line:062e8ea_char1PositiveStage1  
+
+
+//Teacher
+//That’s very upsetting.  How did that make you feel Emily?  
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily
+//<<girl_talk DialogueRunner>>
+//It made me cry. I felt embarrassed. Everyone was laughing. I wanted to go home and not come back to school.   #line:005cfe1_char1PositiveStage1   
+
+
+//Teacher:  
+//I’m really sorry to hear this Emily.  How do you feel now?  
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily:  
+//<<girl_talk DialogueRunner>>
+//I’m still really upset.  #line:0466f44_char1PositiveStage1   
+
+
+//Teacher: 
+//I’m glad you brought this to my attention and that you were both able to come together with me to talk about this. Emily, what would you like to get out of this meeting with me and Jonathan?  
+//<<activate_voice_recognition DialogueRunner>>
+//<<wait_for_speech_recog DialogueRunner>>
+
+//Emily: 
+//<<girl_talk DialogueRunner>>
+//I want him to stop saying those things.  #line:08c1108_char1PositiveStage1   
+
+===
+title: Stage2Negative
+tags: 
+colorID: 0
+position: -1051,-173
+---
+
+
+Empty Text #line:03b041d 
+===
+title: Stage2Positive
+tags: 
+colorID: 0
+position: -527,-172
+---
+
+
+Empty Text #line:0299b99 
+===
+title: Stage3Negative
+tags: 
+colorID: 0
+position: -1062,73
+---
+
+
+Empty Text #line:029b81b 
+===
+title: Stage3Neutral
+tags: 
+colorID: 0
+position: -814,65
+---
+
+
+Empty Text #line:08c95ed 
+===
+title: Stage3Positive
+tags: 
+colorID: 0
+position: -522,59
+---
+
+
+Empty Text #line:09ccba3 
+===
+title: Stage2
+tags: 
+colorID: 0
+position: 47,-21
+---
+//Jonathan: 
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+Nothing really, I was only joking. #line:0f767a6_char2_Jonathan
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. You like to have a laugh with your friends do you? #line:0c23aa5_OptionOne 
+-> 2. I don't think it was very funny. #line:042d98e_OptionTwo 
+-> 3. It was actually quite a mean thing to do. #line:0611d90_OptionThree 
+
+//Jonathan: 
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+Yeah I suppose. #line:02f5115_char2_Jonathan 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. So what was it about this particular incident that made you laugh? #line:0de75b1_OptionOne 
+-> 2. What about this did you find so funny? #line:0ed7664_OptionTwo 
+-> 3. Why were you laughing? #line:09d329d_OptionThree 
+
+//Jonathan: 
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+Well, I noticed that Emily never has dinner in school like the rest of us. She always sits on her own to eat a packed lunch.  I was only teasing her. #line:0fde08d_char2_Jonathan 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. So you thought that maybe you could have a joke with everyone? #line:0528951_OptionOne 
+-> 2. And you thought that was funny? #line:04723f4_OptionTwo 
+-> 3. So someone sat alone is a joke to you? #line:007578c_OptionThree 
+
+//Jonathan:  
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+Yeah I guess so.  I didn't mean to make her cry. #line:01b3826_char2_Jonathan 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. I understand, so tell me what happened.  #line:06ffdee_OptionOne 
+-> 2. But that is what she did. What exactly did you do? #line:0a7eb91_OptionTwo 
+-> 3. How did you make her cry? #line:03bd949_OptionThree 
+
+//Jonathan:  
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+Well, I shouted over to Emily, having sandwiches again then Emily!  Then everyone kind of laughed.  So I carried on for a bit.   #line:0ecee7a_char2_Jonathan
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. How were you feeling at that time?  #line:0691990_OptionOne 
+-> 2. Why would you say something like that? #line:0cce363_OptionTwo 
+-> 3. That doesn't sound very funny to me. #line:04ce51d_OptionThree 
+
+//Jonathan: 
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+I guess I thought it was funny because everyone else was laughing.   #line:009ec7c_char2_Jonathan 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. How did you feel when Emily started crying? #line:02a2781_OptionOne 
+-> 2. Why did you carry on when Emily was crying? #line:049e040_OptionTwo 
+-> 3. And what was Emily doing while you were all laughing? #line:01ae2c3_OptionThree 
+
+//Jonathan:  
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+I didn’t really notice.  I guess I was to into it to pay attention.   #line:0e6f05a_char2_Jonathan 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. So you were caught up in the moment? #line:0756cd3_OptionOne 
+-> 2. You didn't notice Emily crying at all? #line:05c8a3f_OptionTwo 
+-> 3. So you carried on though Emily was crying? #line:023b85f_OptionThree 
+
+//Jonathan:  
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+I guess so. #line:057be74_char2_Jonathan 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. How do you think it made Emily feel?  #line:09b1d34_OptionOne 
+-> 2. What do you think about it all now? #line:06536ca_OptionTwo 
+-> 3. Do you really think that was a nice thing to do? #line:0c3e774_OptionThree 
+
+//Jonathan:  
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+I guess I shouldn’t have done it.  I didn’t mean to make her cry. #line:0f5fa06_char2_Jonathan
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Emily, is there anything you would like to say to Jonathan? #line:02b18fa_OptionOne 
+-> 2. Emily, did tell them you were upset by this? #line:019b4bf_OptionTwo 
+-> 3. Emily, why didn't you stand up for yourself? #line:01b0fdd_OptionThree 
+
+<<jump Stage3>>
+===
+title: Stage3
+tags: 
+colorID: 0
+position: 51,210
+---
+//Emily: 
+<<set $characterToTalk to "Emily">>
+<<NPC_start_talking DialogueRunner>>
+I was trying to explain earlier but everyone was laughing and no one was listening. #line:0de4cc3_char1_Emily
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. What was it that you were trying to say Emily? #line:0e7d64b_OptionOne 
+-> 2. What was the reason you think they were laughing at you? #line:0f257c6_OptionTwo 
+-> 3. Why don't you tell him now? #line:0d64408_OptionThree 
+
+//Emily: 
+<<set $characterToTalk to "Emily">>
+<<NPC_start_talking DialogueRunner>>
+It's because I have diabetes that I can’t eat certain foods, so my Mum packs me a lunch to keep me safe. #line:02f45c7_char1_Emily
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. That’s a really lovely thing for your mum to do Emily.  #line:053ece2_OptionOne 
+-> 2. It must be important to your mum to keep you safe. #line:040ef44_OptionTwo 
+-> 3. That must be a difficult thing to deal with. #line:066b2c8_OptionThree 
+
+//Emily: 
+<<set $characterToTalk to "Emily">>
+<<NPC_start_talking DialogueRunner>>
+Yes it is. #line:0b98d05_char1_Emily
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. What do you think now that you have heard that Jonathan?  #line:0d13b22_OptionOne 
+-> 2. What do you think about Emily's parents now Jonathan? #line:038e15f_OptionTwo 
+-> 3. Does your mum care about you like that Jonathan? #line:055fc41_OptionThree 
+
+//Jonathan: 
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+Yeah that’s kind of her Mum.  I guess she does care about her a lot.  #line:014b84e_char2_Jonathan 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. How do you feel about what happened now, would you do anything differently next time?   #line:0e0a8ae_OptionOne 
+-> 2. Would you make the same mistake next time Jonathan? #line:068e17e_OptionTwo 
+-> 3. Do you feel bad now about what you said to Emily? #line:086d61e_OptionThree 
+
+//Jonathan:  
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+I do feel bad.  I didn’t mean to upset her and I should have listened.   #line:0c2970b_char2_Jonathan 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. What do you think needs to happen to make this right?   #line:0a2b400_OptionOne 
+-> 2. Would you make the same jokes about Emily again? #line:072e3b6_OptionTwo 
+-> 3. Do you think you would make the same horrible jokes? #line:0628091_OptionThree 
+
+//Jonathan: 
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+Yeah I won’t do that in the future, I will listen more. #line:0c7cdaf_char2_Jonathan 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Emily are you happy with that outcome?  #line:011c7ff_OptionOne 
+-> 2. What do you think about that Emily? #line:0733894_OptionTwo 
+-> 3. Does that make you feel better Emily? #line:074f0be_OptionThree 
+
+//Emily:  
+<<set $characterToTalk to "Emily">>
+<<NPC_start_talking DialogueRunner>>
+I really wanted him to stop.  I’m just glad he listened eventually.  #line:00ef902_char1_Emily 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Is there anything else either of you would like to say? #line:041b626_OptionOne 
+-> 2. Don't you think there is something else you should add Jonathan? #line:0615b91_OptionTwo 
+-> 3. Why haven't you apologised yet Jonathan? #line:0dcdc9a_OptionThree 
+
+//Jonathan:  
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+I guess I should say sorry. #line:04f83a7_char2_Jonathan 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Emily would that be acceptable?  #line:0d3d2eb_OptionOne 
+-> 2. Would that make you feel better Emily? #line:076e3e2_OptionTwo 
+-> 3. I think you should too, don't you Emily? #line:0d2882b_OptionThree 
+
+//Emily: 
+<<set $characterToTalk to "Emily">>
+<<NPC_start_talking DialogueRunner>>
+Yes. #line:04546cc_char1_Emily
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Over to you then Jonathan. #line:0f61d84_OptionOne 
+-> 2. If it will make Emily feel better, please apologise now. #line:0813bca_OptionTwo 
+-> 3. Let's hear it then. #line:0410a09_OptionThree 
+
+//Jonathan:  
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+I’m sorry I upset you Emily.  I won’t do it again. #line:083db28_char2_Jonathan
+<<NPC_finish_talking_wait DialogueRunner>>
+
+//Emily:  
+<<set $characterToTalk to "Emily">>
+<<NPC_start_talking DialogueRunner>>
+That’s okay. #line:032483e_char1_Emily
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Well done both of you for coming together like this. #line:07304bb_OptionOne 
+-> 2. I'm glad we could work this out together. #line:0271d71_OptionTwo 
+-> 3. Finally, thank you for taking reposibility Jonathan. #line:0dda2c4_OptionThree 
+
+<<wait 0.5>>
+
+<<activate_voice_recognition DialogueRunner>>
+-> 1. Is there anything else either of you would like to add?  #line:09d361c_OptionOne 
+-> 2. Can I help with anything else right now? #line:0b35cb7_OptionTwo 
+-> 3. Has Jonathan done anything else to you Emily? #line:0d3c1a5_OptionThree 
+
+//Emily:  
+<<set $characterToTalk to "Emily">>
+<<NPC_start_talking DialogueRunner>>
+No thank you. #line:12154314_char1_Emily
+<<NPC_finish_talking_wait DialogueRunner>>
+
+//Jonathan:  
+<<set $characterToTalk to "Jonathan">>
+<<NPC_start_talking DialogueRunner>>
+No. #line:0125741_char2_Jonathan
+<<NPC_finish_talking_wait DialogueRunner>>
+
+
+<<jump Outro>>
+
+
+===
+title: Outro
+tags: 
+colorID: 0
+position: 46,458
+---
+
+<<set $sceneNumber to 2>>
+<<scene_change DialogueRunner>>
+
+<<wait 2>>
+
+//Teacher
+<<set $characterToTalk to "Teacher">>
+<<NPC_start_talking DialogueRunner>>
+Thank you for your help resolving Emily and Jonathans falling out. #line:0b45790_Teacher 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+//Teacher
+<<set $characterToTalk to "Teacher">>
+<<NPC_start_talking DialogueRunner>>
+I am sure that they are once again, firm friends. #line:0ef7a12_Teacher 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+//Teacher
+<<set $characterToTalk to "Teacher">>
+<<NPC_start_talking DialogueRunner>>
+Based on your selections throughout the experience, you did really well by our restorative practice procedures and scored insert score here.   #line:040aea2_Teacher 
+<<NPC_finish_talking_wait DialogueRunner>>
+
+//Teacher
+<<set $characterToTalk to "Teacher">>
+<<NPC_start_talking DialogueRunner>>
+If you wish to run through this application once more, then please reload it from your headsets main menu. Thank you again for taking part.    #line:06b60b2_Teacher  
+<<NPC_finish_talking_wait DialogueRunner>>
+
+<<wait 2>>
+
+<<Quit_Application DialogueRunner>>
+
+===
