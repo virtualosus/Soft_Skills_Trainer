@@ -8,18 +8,15 @@ public class PressOptionButton : MonoBehaviour
 {
     public GameObject Button;
 
-    public OptionController OptionController;
+    public Offline_OptionController Offline_OptionController;
 
-    public InteractionHandler InteractionHandler;
-
-    public SpeechToOptionCompare SpeechToOptionCompare;
+    public Offline_SpeechToOptionCompare Offline_SpeechToOptionCompare;
 
 
     public void Awake()
     {
-        OptionController = GameObject.FindObjectOfType<OptionController>();
-        InteractionHandler = GameObject.FindObjectOfType<InteractionHandler>();
-        SpeechToOptionCompare = GameObject.FindObjectOfType<SpeechToOptionCompare>();
+        Offline_OptionController = GameObject.FindObjectOfType<Offline_OptionController>();
+        Offline_SpeechToOptionCompare = GameObject.FindObjectOfType<Offline_SpeechToOptionCompare>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -32,21 +29,20 @@ public class PressOptionButton : MonoBehaviour
 
     public IEnumerator ButtonPressWait()
     {
-        StartCoroutine(InteractionHandler.ButtonPressed());
-        InteractionHandler.CancelVoiceAttempt();
-        SpeechToOptionCompare.optionCounter++;
+
+        Offline_SpeechToOptionCompare.optionCounter++;
         yield return new WaitForSeconds(0.5f);
         if (Button.tag == "0")
         {
-            OptionController.OptionOneSelect();
+            Offline_OptionController.OptionOneSelect();
         }
         if (Button.tag == "1")
         {
-            OptionController.OptionTwoSelect();
+            Offline_OptionController.OptionTwoSelect();
         }
         if (Button.tag == "2")
         {
-            OptionController.OptionThreeSelect();
+            Offline_OptionController.OptionThreeSelect();
         }
         Debug.LogError("Option button pressed!!");
 

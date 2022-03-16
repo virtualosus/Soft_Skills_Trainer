@@ -1,0 +1,116 @@
+Trial SDK Licensing Agreement
+Version 1.0 (June 18, 2018)
+
+For the most recent version of the Trial SDK Licensing Agreement see: https://keenresearch.com/keenasr-docs/keenasr-trial-sdk-licensing-agreement.html
+
+This trial End User License Agreement (this “EULA” or this “Agreement”) is a legally binding agreement between you (“Licensee” or “You”) and Keen Research, a California Limited Liability Company (“Keen Research”), and describes your rights to use the KeenASR SDK (“SDK”) and related services (“Services”) provided by Keen Research.
+
+Agreement is entered into and made effective as of the date of the download of the SDK by the Licensee (the “Effective Date”).
+
+For the avoidance of doubt, SDK is defined as binary libraries for various hardware platforms, accompanying assets like ASR Bundles, and higher level programming interface wrappers for Unity, Xamarin, etc..
+
+BY DOWNLOADING OR USING THE SDK YOU ACKNOWLEDGE AND AGREE: (1) THAT YOU HAVE READ AND UNDERSTAND THIS AGREEMENT; (2) THAT YOU AGREE TO BE BOUND BY EACH AND EVERY TERM OF THIS AGREEMENT; AND (3) IF YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF A COMPANY, THAT YOU HAVE THE POWER AND AUTHORITY TO DO SO AND TO BIND SUCH COMPANY.
+
+IF YOU DO NOT AGREE TO EACH AND EVERY TERM AND CONDITION OF THIS AGREEMENT, YOU MAY NOT USE THE SDK AND SERVICES. If you do not agree with each and every of the terms and conditions of this Agreement, do not take any action that signifies your agreement to this Agreement.
+
+THIS IS A TRIAL LICENSE ONLY. AS DESCRIBED HEREIN, YOU MAY NOT USE THIS LICENSE FOR “PRODUCTION” PURPOSES.
+
+1. GRANT OF SDK LICENSE.
+
+1.1 Subject to Licensee’s compliance with this Agreement and payment of applicable fees, if any, Keen Research grants Licensee a limited, non-exclusive, non-transferable, non-assignable, revocable license during the Term to access and use the items in the SDK solely for the purpose of Licensee internally testing and evaluating the SDK, and Licensee designing, developing, and testing a mobile device application for the iOS or Android platforms that utilize automatic speech recognition capabilities of SDK (each, a “Licensee Application”).
+
+1.2 Licensee is granted no right to the SDK, and agrees to not use or distribute a “production” or “non-testing” Licensee Application, whether internally within Licensee’s organization or to third parties.
+
+1.3 For the avoidance of doubt, this Agreement and the license grant in this Section 1 shall have no impact on software products and services separately licensed by Licensee from Keen Research pursuant to a separate agreement.
+
+1.4 Keen Research reserves the right to limit or restrict access to the SDK trial in its sole discretion.
+
+2. SDK AND LICENSE RESTRICTIONS.
+
+The license granted herein by Keen Research to Licensee does not grant Licensee the right to, and Licensee agrees not to:
+
+2.1   distribute any Licensee Application to a third party, regardless of whether or not Licensee receives compensation for such distribution, or to use a Licensee Application within Licensee’s organization for “production” or non-evaluation purposes;
+
+2.2   use the SDK for any purpose that violates applicable law or that is not expressly permitted by this Agreement, including without limitation, using the SDK to create any product or service other than the type of mobile device application expressly permitted by Section 1;
+
+2.3   work around any technical limitation in the SDK;
+
+2.4   engage in any activity, including but not limited to development or distribution of an application or service, that is likely or intended to, or does in fact, interfere with, disrupt, damage, or access in an unauthorized manner, any Keen Research or third party software, server, service, network, or other property;
+
+2.5   sublicense, sell, transmit, rent, lease, loan, distribute, disclose, publish, or otherwise transfer any part of the SDK to any third party, or permit access to or use of any part of the SDK by or on behalf of any third party;
+
+2.6   reverse engineer, decompile, or disassemble any part of the SDK (except and only to the extent permitted by applicable law despite this restriction);
+
+2.7   create or distribute any malicious, deceptive, or unlawful applications;
+
+2.8   make copies of the SDK;
+
+2.9   create another SDK or any other derivative work of the SDK
+
+2.10  include any part of the SDK in Licensee’s product(s) except for sample code as expressly permitted herein;
+
+2.11  remove, obscure, alter, or interfere with any watermarks or other licensing mechanisms imposed by Keen Research;
+
+2.12  remove, obscure, or alter any proprietary rights notice contained in or on any part of the SDK; or
+
+2.13  export or use the SDK or Confidential Information in any manner that violates applicable law.
+
+3.   NO DISTRIBUTION OR PRODUCTION USE OF LICENSEE APPLICATION. Licensee agrees to not distribute, either to third parties or within Licensee’s organization, any Licensee Application pursuant to this Agreement. Even if merely used internally, Licensee agrees to not use any Licensee Application developed pursuant to this Agreement for any “production” or commercial purposes whatsoever.
+
+4.   KEEN RESEARCH PRODUCTS & SERVICES. Keen Research may from time to time provide products and services that interact with the SDK or with the Licensee Application. Keen Research may change or cancel such products or services at any time, or limit their availability. Licensee agrees to not use the SDK in any way that could harm, or gain unauthorized access to, any Keen Research product, service, data, account, or network.
+
+5.   MAINTENANCE & SUPPORT. Keen Research will receive technical support inquiries and provide technical and other support related to the SDK (“Support”) in a manner Keen Research deems appropriate in its sole discretion; Keen Research may notify Licensee of changes in what constitutes Support or how Support is to be requested or received, from time to time. Although Keen Research will endeavor to respond to Support inquiries in a commercially reasonable manner, Keen Research does not commit to any specific timeframe for such responses and does not commit to resolve all Support inquiries. Keen Research may also, in its sole discretion, provide software updates (including without limitation, upgrades, improvements, bypasses, and bug fixes, collectively “Updates”). Support and Updates are each provided pursuant to this Agreement and Keen Research policies then in effect. Keen Research may chose to release Updates at any time but is not required to do so and does not commit to provide Updates according to any timeframe (for the avoidance of doubt and for example, Keen Research does not commit to provide Updates within any timeframe following release of new operating system versions).
+
+6.   KEEN RESEARCH TRADEMARKS. Licensee will not use any Keen Research trademark, or Keen Research’s name or product or service names, to market the Licensee Application, unless authorized in advance by Keen Research. Regardless of the foregoing, any use of Keen Research trademarks, name, service mark, trade name, logo, design, trade dress, domain name, or other brand designation shall inure to the sole benefit of Keen Research. Licensee will not contest or aid in contesting the validity or ownership of, or Keen Research’s rights in, any Keen Research trademark, name, service mark, trade name, logo, design, trade dress, domain name, or other brand designation, or take any action in derogation of Keen Research’s rights therein, including without limitation, applying to register any trademark, trade name, domain name, service mark, or other designation that is confusingly similar to any Keen Research trademark or Keen Research domain name, in any event as determined in Keen Research ’s sole discretion. Licensee hereby exclusively and irrevocably assigns all its rights in or to, and all rights obtained from or as a result of, any filing, application, or attempt to register, any trademark, trade name, domain name, service mark, or other designation that is confusingly similar to any Keen Research name, service mark, trade name, logo, design, trade dress, domain name, or other brand designation or Keen Research domain name, as determined in Keen Research’s sole discretion.
+
+7.   IDEAS. Licensee shall promptly notify Keen Research of any problems or defects encountered in the SDK, or ideas for enhancements or changes to the SDK (collectively, “Ideas”). By providing such Ideas, whether such Ideas are conceived of or provided to Keen Research during the Term of after, Licensee grants to Keen Research a worldwide, royalty-free, irrevocable and exclusive license, with the right to sublicense, to use and disclose the Ideas in any manner Keen Research chooses and to display, perform, copy, make, have made, use, sell, and otherwise dispose of Keen Research’s and its sublicensee’s products embodying such Ideas in any manner and via any media Keen Research or its sublicensees choose, without reference or obligation of any kind to Licensee. Licensee warrants that it will not give Keen Research any Idea: (i) that Licensee has reason to believe is subject to any patent, copyright, or other intellectual property claim or right of a third party; or (ii) subject to license terms that seek to require any Keen Research product incorporating or derived from any Idea, or other Keen Research intellectual property, to be licensed to or otherwise shared with any third party.
+
+8.   TERM. This Agreement is effective from the Effective Date and will remain in effect for sixty (60) days from the Effective Date unless Keen Research and Licensee agree to a different period of time in writing, email accepted (“Term”). Keen Research may unilaterally extend the Term by email or written notice to Licensee.
+
+9.   TERMINATION.
+
+9.1   Keen Research may discontinue offering, terminate, or restrict access to any part of the SDK, any API, or both, at any time in its sole discretion and without prior notice to Licensee.
+
+9.2   If Licensee is dissatisfied with any aspect of the SDK, Licensee’s sole and exclusive remedy is to cease using the SDK.
+
+9.3   Keen Research and Licensee may each terminate this Agreement by notifying the other Party in writing and complying with its obligations hereunder. Keen Research may terminate this Agreement upon email notice to Licensee.
+
+**9.4   Sections 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, and 17 shall survive the termination of this Agreement for any reason.
+
+10.   OBLIGATIONS UPON TERMINATION. Within one (1) business day following termination of this Agreement for any reason, including the expiration of the Term, Licensee shall: (i) cease all usage of the SDK; (ii) destroy and erase from computer memory or return to Keen Research the SDK and any copies thereof; (iii) return to Keen Research or destroy all Confidential Information (as set forth in Section 11) and copies thereof; (iv) return to Keen Research or destroy all copies of materials relating to the SDK, Confidential Information, or Ideas; and (v) provide to Keen Research any Ideas conceived of but not provided to Keen Research. Licensee shall, upon request from Keen Research, provide Keen Research with written certification that it has complied with these requirements within three (3) business days of such request.
+
+11.   CONFIDENTIALITY.
+
+11.1   Definition. Keen Research may disclose to Licensee certain confidential, proprietary, and trade secret information of Keen Research (“Confidential Information”). Confidential Information includes without limitation, information Licensee receives or has received from Keen Research that is related to the SDK, that is designated as confidential by Keen Research, or that, given the nature of the information, should reasonably be assumed to be confidential. Confidential Information also includes without limitation, Ideas, the SDK and all copies thereof, as well as computer programs, flowcharts, diagrams, manuals, documentation, development tools, marketing information, financial information, business plans, results of the beta testing, problems identified as a result of the beta testing, and Ideas. Confidential Information does not include those things that Keen Research designates or identifies as not being subject to this Agreement or that are: (i) publicly available other than by a breach of this Agreement; (ii) rightfully received from a third party not in breach of any obligation of confidentiality; (iii) independently developed by Licensee without access or reference to the Confidential Information, as demonstrated by written records in Licensee’s possession; or (iv) known to Licensee at the time of disclosure without breach of this Agreement, as demonstrated by written records in Licensee’s possession.
+
+11.2   Protection of Confidential Information. Licensee agrees to use the Confidential Information only during the Term and solely for the purpose of evaluating the SDK. Licensee agrees to take all steps reasonably necessary to maintain and protect the secrecy of the Confidential Information for the benefit of Keen Research. Licensee agrees to refrain from disclosing Confidential Information to third parties, including without limitation, consultants, advisors, and contractors, and agrees to only disclose the Confidential Information to its own employees with a need to know the Confidential Information and who are made aware of and agree to the confidentiality obligations provided by this Agreement. Licensee acknowledges that unauthorized disclosure of the Confidential Information could diminish the value to Keen Research of proprietary interests that are the subject of this Agreement. If Licensee breaches any obligations hereunder, Keen Research may be entitled to seek equitable relief to protect its interests therein, including but not limited to injunctive relief, in addition to any and all other rights and remedies, including monetary damages, available at law or equity. Licensee waives any requirement that Keen Research post security in order to seek injunctive relief related to this Agreement.
+
+12.   ALL RIGHTS RESERVED. Except for the limited license expressly granted herein, Licensee agrees that Keen Research retains all rights, title, and interest in and to the SDK, including without limitation, any and all copies, improvements, enhancements, modifications, and derivative works thereof, along with Confidential Information and Ideas. Keen Research’s retention of rights includes, without limitation, all patents, copyrights, inventions, trade secrets, trade dress, trademarks, and any other intellectual property rights in and to the Assets. Keen Research retains all rights not expressly granted to Licensee. Licensee shall reproduce all titles, trademarks, copyright, and restricted rights notices contained in the SDK.
+
+13.   DISCLAIMER OF WARRANTIES, LIABILITY.
+
+13.1   Licensee acknowledges that the SDK is trial only, and may include pre-release code. Licensee acknowledges that the SDK may not function in or on all versions of iOS or Android, may contain errors and defects, and may be substantially modified in the future. The SDK may be withdrawn by Keen Research. LICENSEE ACKNOWLEDGES THAT THE SDK IS PROVIDED “AS IS” WITHOUT ANY EXPRESS OR IMPLIED WARRANTY OF ANY KIND, INCLUDING BUT NOT LIMITED TO WARRANTIES OF SATISFACTORY QUALITY, MERCHANTABILITY, NON-INFRINGEMENT OF THIRD-PARTY INTELLECTUAL PROPERTY, WARRANTIES THAT THE SDK WILL BE ERROR FREE OR WILL FUNCTION AS DESIRED BY LICENSEE, OR WARRANTIES OF FITNESS FOR ANY PARTICULAR PURPOSE. The entire risk as to the quality of the SDK and arising out of or related to Licensee’s evaluation and use of the SDK remains with Licensee. Keen Research does not ensure continuous, error-free, secure, or virus-free operation of the SDK. Keen Research is not obligated to provide support related to the SDK.
+
+13.2   IN NO EVENT SHALL KEEN RESEARCH, ITS AFFILIATES OR ASSOCIATED ENTITIES, AND ANY OF THEIR RESPECTIVE EMPLOYEES, AGENTS, OFFICERS, AND/OR DIRECTORS, BE LIABLE FOR ANY DAMAGES IN EXCESS OF $15, ARISING OUT OF OR RELATED TO THIS AGREEMENT OR THE USE OR INABILITY TO USE THE SDK, REGARDLESS OF THE LEGAL THEORY UPON WHICH ANY CLAIM FOR SUCH DAMAGES IS BASED. IN ADDITION, KEEN RESEARCH WILL NOT BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, PUNITIVE, OR SIMILAR TYPES OF DAMAGES, OR FOR LOST PROFITS.
+
+13.3   THE DISCLAIMERS OF WARRANTIES AND LIABILITY IN THIS AGREEMENT CONSTITUTE AN ESSENTIAL PART OF THIS AGREEMENT AND THE LIMITATIONS OF LIABILITY PROVIDED HEREIN WILL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY. THE PARTIES ACKNOWLEDGE AND AGREE THAT THE EXCLUSIONS, DISCLAIMERS, AND LIMITATIONS OF LIABILITY SET FORTH IN THIS AGREEMENT ARE ESSENTIAL COMPONENTS OF THIS AGREEMENT AND FORM THE BASIS FOR DETERMINING THE PRICE CHARGED FOR THE SDK (OR, ALTERNATIVELY, FORM THE BASIS FOR KEEN RESEARCH PROVIDING THE LICENSE GRANTS HEREIN FOR NO FEE), AND THAT KEEN RESEARCH WOULD NOT ENTER INTO THIS AGREEMENT WITHOUT THESE LIMITATIONS TO ITS LIABILITY.
+
+14.   INDEMNIFICATION. Licensee agrees to indemnify, defend, and hold harmless, and hereby releases Keen Research, its licensors, affiliates, and associated entities, and their respective officers, directors, employees, contractors, and agents from and against any and all losses, liabilities, claims, including product liability, warranty, and intellectual property claims, obligations, costs, and/or expenses, including reasonable legal fees, which result from, arise out of, or are in any way related to: (i) this Agreement; (ii) Licensee’s design, creation, testing, or distribution of the Licensee Application or sample code provided in the SDK; (iii) services or activities related to the SDK; (v) any actual, threatened, or anticipated breach by Licensee of this Agreement; or (vi) any other activity of Licensee.
+
+15.   GENERAL.
+
+15.1   Assignment. Licensee may not assign this Agreement without prior written consent of Keen Research.
+
+15.2   Relationship. This Agreement shall not be construed to create any employment, partnership, joint venture, franchise, or agency relationship between Keen Research and Licensee, nor shall this Agreement be construed to authorize either Party to enter into any commitment or agreement binding on the other Party.
+
+15.3   Governing Law. This Agreement shall be governed by and construed and enforced in accordance with the laws of the State of California excluding conflict of law rules and principles. Both Keen Research and Licensee submit to personal jurisdiction in California and further agree that any cause of action relating to this Agreement shall be brought in Marin County, State of California (if under State law) or in the Northern District of California (if under Federal Law) and such courts shall have the exclusive jurisdiction to determine the validity, construction, and performance of this Agreement and the legal relations between parties thereto. Licensee hereby waives any claim that such venue is not proper or would be inconvenient.
+
+15.4   Notice. Any notice required by this Agreement to any Party shall be in writing and in English, addressed as set forth on the Cover Page, and deemed to be sufficient and effective: (i) upon sending if given in writing by certified U.S. mail, postage prepaid, return receipt requested, or by overnight delivery by an internationally recognized carrier; or (ii) upon sending if given in writing by email and acknowledged by the receiving Party or followed within five (5) business days by a writing delivered as stated in subsection “(i)”, above. Either Party may designate a different or additional recipient for notices by like notice to the other Party.
+
+15.5   Headings and Interpretation. The headings used in this Agreement are provided for convenience only and shall not be used to construe meaning or intent. The Parties acknowledge that they have participated jointly in the negotiation and drafting of this Agreement and, in the event an ambiguity or question of intent or interpretation arises, this Agreement shall be construed consistent with the joint drafting of this Agreement by the Parties and no presumption or burden of proof shall arise favoring or disfavoring any party by virtue of the authorship of any of the provisions of this Agreement.
+
+15.6   Survival and Severability. If any provision of this Agreement shall be held invalid or unenforceable, in whole or in part, such provision shall be modified to the minimum extent necessary to make it valid and enforceable and most closely approximate the intent and economic effect of the invalid provision, and the validity and enforcement of all other provisions in this Agreement shall not be affected thereby. Sections 1 through 13 shall survive termination of this Agreement.
+
+15.7   Entire Agreement. This Agreement constitutes the complete and exclusive agreement between Keen Research and Licensee relating to the subject matter hereof, and supersedes all oral or written communications, proposals, representations, negotiations, commitments, understandings, or agreements not specifically incorporated herein. This Agreement shall only be amended by a written amendment duly signed by authorized representatives of each of Keen Research and Licensee.
+
+15.8   Any notice required by this Agreement to any Party shall be in writing and in English, addressed as set forth in this Section, and deemed to be sufficient and effective: (i) upon sending if given in writing by certified U.S. mail, postage prepaid, return receipt requested, or by overnight delivery by an internationally recognized carrier; or (ii) upon sending if given in writing by email and acknowledged by the receiving Party or followed within five (5) business days by a writing delivered as stated in subsection “(i)”, above. Licensee’s address for notices hereunder is the email address provided by Licensee on the Keen Research Website when purchasing the Services or establishing Licensee’s account with Keen Research on the Keen Research Website. Keen Research’s address for notices hereunder is 180 Harbor Drive, Suite 205, Sausalito CA 94965, USA, ATTN: Legal Department; with a copy to info@keenresearch.com. Either party may update their address for notices hereunder by notifying the other party as provided in this section.

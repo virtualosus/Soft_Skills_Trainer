@@ -29,29 +29,43 @@ position: 39,-492
  
 <<offline_activate_voice_recognition DialogueRunner>> 
 
-<<wait 5>>
+
+
+<<wait 10>>
+
+
+<<offline_deactivate_voice_recognition DialogueRunner>>
+
+
+<<wait 30>>
 
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
-Welcome to this virtual reality training for restorative practice with children. #line:0fe64a4_Teacher  
+<<offline_NPC_start_talking DialogueRunner>>
+Welcome to this virtual reality training for restorative practice with children. #line:Teacher1  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
 
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
-In a few moments I will leave you here with Emily and Jonathan who have had a disagreement. #line:0a087b9_Teacher  
+<<offline_NPC_start_talking DialogueRunner>>
+In a few moments I will leave you here with Emily and Jonathan who have had a disagreement. #line:Teacher2
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
 
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
-Please try to resolve their issues in a calm and balanced manner by reading out loud one of the three options you see in front of you.  #line:015d4d0_Teacher   
+<<offline_NPC_start_talking DialogueRunner>>
+
+Please try to resolve their issues in a calm and balanced manner by reading out loud one of the three options you see in front of you.  #line:Teacher3
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
 
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
-I will return at the end to let you know how you got on, based on our restorative practice procedures. #line:01098cd_Teacher   
+<<offline_NPC_start_talking DialogueRunner>>
+
+I will return at the end to let you know how you got on, based on our restorative practice procedures. #line:Teacher4
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
 
@@ -684,25 +698,25 @@ position: 46,458
  
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
-Thank you for your help resolving Emily and Jonathans falling out. #line:0b45790_Teacher  
+Thank you for your help resolving Emily and Jonathans falling out. #line:Teacher5  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
  
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
-I am sure that they are once again, firm friends. #line:0ef7a12_Teacher  
+I am sure that they are once again, firm friends. #line:Teacher6  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
  
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
-Based on your selections throughout the experience, you did really well by our restorative practice procedures and scored insert score here.   #line:040aea2_Teacher  
+Based on your selections throughout the experience, you did really well by our restorative practice procedures and scored insert score here.   #line:Teacher7  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
  
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
-If you wish to run through this application once more, then please reload it from your headsets main menu. Thank you again for taking part.    #line:06b60b2_Teacher   
+If you wish to run through this application once more, then please reload it from your headsets main menu. Thank you again for taking part.    #line:Teacher8   
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
  
