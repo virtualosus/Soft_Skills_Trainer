@@ -12,6 +12,7 @@ TagManager:
   - 1
   - 2
   - 3
+  - MenuNPC
   layers:
   - Default
   - TransparentFX

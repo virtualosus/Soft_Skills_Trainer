@@ -11,9 +11,9 @@ public class Offline_YarnCommandController : MonoBehaviour
 {
     [Header("Voice")]
 
-    //public VoskSpeechToText VoskSpeechToText;
+    public VoskSpeechToText VoskSpeechToText;
 
-    public TestKeenASR TestKeenASR;
+    //public TestKeenASR TestKeenASR;
 
     public GameObject indicator;
     public Offline_OptionController Offline_OptionController;
@@ -54,8 +54,8 @@ public class Offline_YarnCommandController : MonoBehaviour
         Debug.LogError("Attempting voice recog...");
         StartCoroutine(Offline_OptionController.GatherOptions());
         indicator.SetActive(true);
-        TestKeenASR.YARNStartListening();
-        //VoskSpeechToText.ToggleRecording();
+        //TestKeenASR.YARNStartListening();
+        VoskSpeechToText.ToggleRecording();
         Debug.LogError("Attempt voice recog activation complete");
     }
 
@@ -65,7 +65,7 @@ public class Offline_YarnCommandController : MonoBehaviour
         Debug.LogError("Deactiavting voice recog...");
         //StartCoroutine(Offline_OptionController.GatherOptions());
         indicator.SetActive(false);
-        TestKeenASR.YARNStopListening();
+        //TestKeenASR.YARNStopListening();
         //VoskSpeechToText.ToggleRecording();
         Debug.LogError("Deactivating voice recog complete");
     }
