@@ -12,6 +12,10 @@ public class InternetTestController : MonoBehaviour
 
     public string pingResultString;
 
+    public bool appHasInternet;
+
+    public float pingResult;
+
     private ConnectionTester _connectionTester;
 
     public void CheckConnection()
@@ -23,6 +27,8 @@ public class InternetTestController : MonoBehaviour
             ShowFeedback("Starting test");
             _connectionTester.TestInternet(hasInternet =>
             {
+                appHasInternet = _connectionTester.hasIntenet;
+                pingResult = _connectionTester.pingResult;
                 ShowFeedback($"Has internet connection: {hasInternet}");
                 FeedbackText.text += _connectionTester.pingResultString;
             }

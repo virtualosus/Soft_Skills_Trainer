@@ -12,7 +12,7 @@ public class Offline_SpeechToOptionCompare : MonoBehaviour
 
     public VoskResultText VoskResultText;
 
-    public Offline_OptionController Offline_OptionController;
+    public OptionController OptionController;
 
     public string currentLine;
     
@@ -131,7 +131,7 @@ public class Offline_SpeechToOptionCompare : MonoBehaviour
         {
             if(ratingOne < 15)
             {
-                Offline_OptionController.OptionOneSelect();
+                OptionController.OptionOneSelect();
                 optionCounter++;
             }
             else
@@ -144,7 +144,7 @@ public class Offline_SpeechToOptionCompare : MonoBehaviour
         {
             if (ratingTwo < 15)
             {
-                Offline_OptionController.OptionTwoSelect();
+                OptionController.OptionTwoSelect();
                 optionCounter++;
             }
             else
@@ -156,7 +156,7 @@ public class Offline_SpeechToOptionCompare : MonoBehaviour
         {
             if (ratingThree < 15)
             {
-                Offline_OptionController.OptionThreeSelect();
+                OptionController.OptionThreeSelect();
                 optionCounter++;
             }
             else

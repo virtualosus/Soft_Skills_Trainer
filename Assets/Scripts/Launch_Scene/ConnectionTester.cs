@@ -11,6 +11,9 @@ public class ConnectionTester : MonoBehaviour
     private string INTERNET_TEST_PING_IP = "8.8.8.8";
     private float INTERNET_TEST_PING_TIME_MAX = 5f;
 
+    public bool hasIntenet;
+    public float pingResult;
+
     public string pingResultString;
 
     private static ConnectionTester instance;
@@ -123,6 +126,8 @@ public class ConnectionTester : MonoBehaviour
             yield break;
         }
 
+        hasIntenet = true;
+
         WaitForSeconds f = new WaitForSeconds(0.05f);
         Debug.Log($"CheckInternet: ping ip: {"8.8.8.8"}");
         Ping ping = new Ping("8.8.8.8");
@@ -137,6 +142,7 @@ public class ConnectionTester : MonoBehaviour
         {
             Debug.Log("CheckInternet: internet available");
             Debug.Log(pingTime);
+            pingResult = pingTime;
             pingResultString = pingTime.ToString();
             callback(true);
         }

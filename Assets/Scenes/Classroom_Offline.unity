@@ -5382,7 +5382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7c3618cdd1adb45a2d713c34c9f38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  launchScene: 0
   characterName: 
+  yarnInMemoryVariableStorage: {fileID: 0}
   CharacterAudioSource: {fileID: 1192779490}
   VoiceLine:
   - {fileID: 8300000, guid: b63acae96dd68ae44909cceed4ecf525, type: 3}
@@ -5400,6 +5402,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7255d2954603cc945a89d2942d73e94f, type: 3}
   - {fileID: 8300000, guid: e1ea041745ba4df4892898d8b16b20c9, type: 3}
   VoiceLineCounter: 0
+  YarnVoicelineOverride: 0
   characterFinishedTalking:
     m_PersistentCalls:
       m_Calls: []
@@ -7402,7 +7405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myYarnProject: {fileID: 7545569452688597077, guid: af07a8a9a06c9b14b93d6b175961177e, type: 3}
   VoskResultText: {fileID: 1321406745}
-  Offline_OptionController: {fileID: 1214897820}
+  OptionController: {fileID: 1214897820}
   currentLine: 
   requestRetry: 0
   ratingOne: 0
@@ -37831,10 +37834,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1214897814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d6e97f1c5dbcc4aaf5f943699cf1c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0236c4ee7954be94dbca5759e3deb68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Offline_YarnCommandController: {fileID: 1766036283}
   Options: []
   OptionToSelect: 0
   tagNumber: 0
@@ -41717,6 +41719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf39116cc6db44d47b2eaf534e0f6682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Indicator: {fileID: 558993229}
   MicrophoneIndex: 0
   _minimumSpeakingSampleValue: 0.05
   _silenceTimer: 1
@@ -41736,7 +41739,7 @@ MonoBehaviour:
   ModelPath: vosk-model-en-us-0.22-lgraph.zip
   VoiceProcessor: {fileID: 1321406743}
   MaxAlternatives: 1
-  MaxRecordLength: 20
+  MaxRecordLength: 4
   AutoStart: 1
   KeyPhrases: []
   resultText: {fileID: 1750705081}
@@ -56590,7 +56593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7c3618cdd1adb45a2d713c34c9f38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  launchScene: 0
   characterName: Teacher
+  yarnInMemoryVariableStorage: {fileID: 0}
   CharacterAudioSource: {fileID: 779485659}
   VoiceLine:
   - {fileID: 8300000, guid: 38b63458506960541b599ae4f26674c1, type: 3}
@@ -56602,6 +56607,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 78dd801d35356af47a0b6871402a0dba, type: 3}
   - {fileID: 8300000, guid: c1768de265b73e64eb700595cf96b1dc, type: 3}
   VoiceLineCounter: 0
+  YarnVoicelineOverride: 0
   characterFinishedTalking:
     m_PersistentCalls:
       m_Calls: []
@@ -60912,8 +60918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VoskSpeechToText: {fileID: 1321406744}
-  indicator: {fileID: 558993229}
-  Offline_OptionController: {fileID: 1214897820}
+  OptionController: {fileID: 1214897820}
   PlayerFinishedTalking:
     m_PersistentCalls:
       m_Calls: []
@@ -66135,7 +66140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7c3618cdd1adb45a2d713c34c9f38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  launchScene: 0
   characterName: Emily
+  yarnInMemoryVariableStorage: {fileID: 0}
   CharacterAudioSource: {fileID: 2026871036}
   VoiceLine:
   - {fileID: 8300000, guid: 4d8cc139c59c8704792ad851f7bb1822, type: 3}
@@ -66149,6 +66156,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4114a14973690fb4bbf3a81c2045081c, type: 3}
   - {fileID: 8300000, guid: 71426d11efa69dc4da50a29a21d945b3, type: 3}
   VoiceLineCounter: 0
+  YarnVoicelineOverride: 0
   characterFinishedTalking:
     m_PersistentCalls:
       m_Calls: []
@@ -73340,7 +73348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 0.5
+  fadeTime: 1
   fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
   fadeOnStart: 1
   renderQueue: 5000

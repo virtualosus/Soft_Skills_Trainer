@@ -15,8 +15,7 @@ public class Offline_YarnCommandController : MonoBehaviour
 
     //public TestKeenASR TestKeenASR;
 
-    public GameObject indicator;
-    public Offline_OptionController Offline_OptionController;
+    public OptionController OptionController;
     public UnityEvent PlayerFinishedTalking;
 
     [Header("Yarn")]
@@ -35,7 +34,6 @@ public class Offline_YarnCommandController : MonoBehaviour
 
     private void Awake()
     {
-        indicator.SetActive(false);
 
         for (int i = 0; i < children.Length; i++)
         {
@@ -52,9 +50,7 @@ public class Offline_YarnCommandController : MonoBehaviour
     public void ActivateVoiceRecognition()
     {
         Debug.LogError("Attempting voice recog...");
-        StartCoroutine(Offline_OptionController.GatherOptions());
-        indicator.SetActive(true);
-        //TestKeenASR.YARNStartListening();
+        StartCoroutine(OptionController.GatherOptions());
         VoskSpeechToText.ToggleRecording();
         Debug.LogError("Attempt voice recog activation complete");
     }
@@ -63,10 +59,7 @@ public class Offline_YarnCommandController : MonoBehaviour
     public void DeactivateVoiceRecognition()
     {
         Debug.LogError("Deactiavting voice recog...");
-        //StartCoroutine(Offline_OptionController.GatherOptions());
-        indicator.SetActive(false);
-        //TestKeenASR.YARNStopListening();
-        //VoskSpeechToText.ToggleRecording();
+        VoskSpeechToText.ToggleRecording();
         Debug.LogError("Deactivating voice recog complete");
     }
 
@@ -151,58 +144,4 @@ public class Offline_YarnCommandController : MonoBehaviour
         }
         OVRScreenFade.FadeIn();
     }
-
-    //[YarnCommand("wait_for_speech_recog")]                                                   //yarn command to wait for player to finish talking - for YARN line view mode
-    //public IEnumerator CustomWait()
-    //{
-    //    //Debug.Log("Coroutine started...");
-    //    var trigger = false;
-    //    System.Action action = () => trigger = true;
-    //    PlayerFinishedTalking.AddListener(action.Invoke);
-    //    yield return new WaitUntil(() => trigger);
-    //    PlayerFinishedTalking.RemoveListener(action.Invoke);
-    //    //Debug.Log("Coroutine finished!!");
-    //}
-
-    //[YarnCommand("girl_talk")]                          //OLD TEST COMMANDS - yarn command retrieving required voiceline number from YARN and setting clip and initiating Audio in VOLineController
-    //public void GirlToTalk()
-    //{
-    //    LineManager.Char1SpeechPlayback();
-    //}
-
-    //[YarnCommand("char1_finish_talking_wait")]                         
-    //public IEnumerator Char1FinishTalking()
-    //{
-    //    //Debug.Log("Coroutine started...");
-    //    var trigger = false;
-    //    System.Action action = () => trigger = true;
-    //    LineManager.Char1FinishedTalking.AddListener(action.Invoke);
-    //    yield return new WaitUntil(() => trigger);
-    //    LineManager.Char1FinishedTalking.RemoveListener(action.Invoke);
-    //    //LineView.OnContinueClicked();
-    //    //Debug.Log("Coroutine finished!!");
-    //    //
-    // }
-
-
-    //[YarnCommand("boy_talk")]                           //yarn command retrieving required voiceline number from YARN and setting clip and initiating Audio in VOLineController
-    //public void BoyToTalk()
-    //{
-    //    LineManager.Char2SpeechPlayback();
-    //}
-
-    //[YarnCommand("char2_finish_talking_wait")]                         
-    //public IEnumerator Char2FinishTalking()
-    //{
-    //    //Debug.Log("Coroutine started...");
-    //    var trigger = false;
-    //    System.Action action = () => trigger = true;
-    //    LineManager.Char2FinishedTalking.AddListener(action.Invoke);
-    //    yield return new WaitUntil(() => trigger);
-    //    LineManager.Char2FinishedTalking.RemoveListener(action.Invoke);
-    //    //LineView.OnContinueClicked();
-    //    //Debug.Log("Coroutine finished!!");
-    //    //
-    //}
-
 }

@@ -7,9 +7,6 @@ using UnityEngine.Events;
 
 public class OptionController : MonoBehaviour
 {
-    public LineView LineView;
-    public YarnCommandController ClassroomSpeechToYarn;
-
     public GameObject[] Options;
 
     public int OptionToSelect, tagNumber;

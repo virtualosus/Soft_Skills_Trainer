@@ -4,56 +4,77 @@ colorID: 0
 position: 39,-492 
 --- 
 
-<<declare $internetConnection = false as bool>> 
+
+
+<<declare $internetConnection = "">> 
 <<declare $ping = 0>>
-<<declare $sceneToLoad = "none" as String>> 
+<<declare $sceneRecommend = 0>>
+<<declare $launchSceneNumber = 0>>
 
-<<wait 2>>
+//<<wait 2>>
 
 <<check_internet_connection DialogueRunner>>
 
-
-<<wait 10>>
-
 //MenuNPC
 <<set $characterToTalk to "MenuNPC">>
+<<launch_NPC_start_talking DialogueRunner>>
 Welcome to this Virtual Reality soft skills trainer. #line:09410e7 
-<<NPC_finish_talking_wait DialogueRunner>> 
+<<launch_NPC_finish_talking_wait DialogueRunner>> 
 
 //MenuNPC
 <<set $characterToTalk to "MenuNPC">>
+<<launch_NPC_start_talking DialogueRunner>>
 Before we begin, we are going to check your internet connection to ensure an optimal experience. #line:07f5e2b 
-<<NPC_finish_talking_wait DialogueRunner>> 
+<<launch_NPC_finish_talking_wait DialogueRunner>> 
 
-<<check_internet_connection DialogueRunner>>
 
-<<wait 10>>
+<<if $internetConnection is "true" && $ping <= 5>>
+    <<set $sceneRecommend to 1>>
 
-<<if $internetConnection is true && $ping <= 50>>
-    You seem to have a good internet connection, so we recommend using the online simulation for an optimal experience. #line:0a1db44 
+    <<set $characterToTalk to "MenuNPC">>
+    <<launch_NPC_start_talking DialogueRunner>>
+    You seem to have a good internet connection, so we recommend using the online simulation for the best optimal experience. #line:0a1db44 
+    <<launch_NPC_finish_talking_wait DialogueRunner>> 
 
-<<elseif $internetConnection is true && $ping >50 >>
+//    <<set $sceneRecommend to 4>>
+
+
+<<elseif $internetConnection is "true" && $ping >5 >>
+    <<set $sceneRecommend to 2>>
+
+    <<set $characterToTalk to "MenuNPC">>
+    <<launch_NPC_start_talking DialogueRunner>>
     Though you are connected to the internet, it seems that you do not have the required connection speed. #line:0c062ef 
+    <<launch_NPC_finish_talking_wait DialogueRunner>> 
 
-    We stronlgy recommend using the offline simulation for the optimal experience. #line:0b36ae1 
+    <<set $characterToTalk to "MenuNPC">>
+    <<launch_NPC_start_talking DialogueRunner>>
+    We stronlgy recommend using the offline simulation for the best experience. #line:0b36ae1 
+    <<launch_NPC_finish_talking_wait DialogueRunner>> 
 
-<<elseif $internetConnection is false>>
+//    <<set $sceneRecommend to 4>>
+
+<<elseif $internetConnection is "false">>
+    <<set $sceneRecommend to 3>>
+
+    <<set $characterToTalk to "MenuNPC">>
+    <<launch_NPC_start_talking DialogueRunner>>
     You do not seem to be connected with the internet via your headset, so you will need to use the offline version of the simulation. #line:004d673 
+    <<launch_NPC_finish_talking_wait DialogueRunner>> 
+
+//    <<set $sceneRecommend to 4>>
 
 <<endif>>
 
 
-
-<<wait 2>> 
-
-<<activate_voice_recognition DialogueRunner>> 
+<<launch_activate_voice_recognition DialogueRunner>> 
 -> Online Soft Skills Trainer #line:0c273a6_OptionOne
-    <<set $sceneToLoad to "Online">>
-    <<load_scene DialogueRunner>> 
+    <<set $launchSceneNumber to 1>>
+    <<launch_scene_change DialogueRunner>> 
 
 -> Offline Soft Skills Trainer #line:02a40db_OptionTwo
-    <<set $sceneToLoad to "Offline">>
-    <<load_scene DialogueRunner>> 
+    <<set $launchSceneNumber to 2>>
+    <<launch_scene_change DialogueRunner>> 
     
 -> Close Application #line:0e7027f_OptionThree 
     <<Quit_Application DialogueRunner>> 

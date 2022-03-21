@@ -7651,9 +7651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c651e76948f2c64c90ca357d2b35210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myYarnProject: {fileID: 7545569452688597077, guid: af07a8a9a06c9b14b93d6b175961177e, type: 3}
+  myYarnProject: {fileID: 7545569452688597077, guid: 95647937a40e1f24da67d0ebc31f3430, type: 3}
   VoskResultText: {fileID: 1321406745}
-  Offline_OptionController: {fileID: 1214897820}
+  OptionController: {fileID: 1214897820}
   currentLine: 
   requestRetry: 0
   ratingOne: 0
@@ -10643,18 +10643,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7c3618cdd1adb45a2d713c34c9f38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  launchScene: 1
   characterName: MenuNPC
+  yarnInMemoryVariableStorage: {fileID: 1766036279}
   CharacterAudioSource: {fileID: 180013852}
   VoiceLine:
-  - {fileID: 8300000, guid: 38b63458506960541b599ae4f26674c1, type: 3}
-  - {fileID: 8300000, guid: cb9b5f9e7f86bb2439ed8f088ac6c859, type: 3}
-  - {fileID: 8300000, guid: a589c95b853b87a4da8899ce990cce96, type: 3}
-  - {fileID: 8300000, guid: 1bf954ccf09f0a440ad27be6959de9a4, type: 3}
-  - {fileID: 8300000, guid: a0ab5f5abeabc2a498c151ef88e53b98, type: 3}
-  - {fileID: 8300000, guid: cc0dfc318b57c354a9de2eb182418147, type: 3}
-  - {fileID: 8300000, guid: 78dd801d35356af47a0b6871402a0dba, type: 3}
-  - {fileID: 8300000, guid: c1768de265b73e64eb700595cf96b1dc, type: 3}
+  - {fileID: 8300000, guid: 82598f162cef2e84a8d5406b2434519b, type: 3}
+  - {fileID: 8300000, guid: 8a9fb72d09b1cad46ac380fc897bccf5, type: 3}
+  - {fileID: 8300000, guid: 8222365ca6484e143b0f1aea574df46a, type: 3}
+  - {fileID: 8300000, guid: 79d3beb30bd34de4a8ae9cf2a01597df, type: 3}
+  - {fileID: 8300000, guid: 5601636b95b350447a6831368418d6d2, type: 3}
+  - {fileID: 8300000, guid: c31b135a67317c4458fe62021366c98e, type: 3}
   VoiceLineCounter: 0
+  YarnVoicelineOverride: 0
   characterFinishedTalking:
     m_PersistentCalls:
       m_Calls: []
@@ -37540,10 +37541,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1214897814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d6e97f1c5dbcc4aaf5f943699cf1c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0236c4ee7954be94dbca5759e3deb68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Offline_YarnCommandController: {fileID: 0}
   Options: []
   OptionToSelect: 0
   tagNumber: 0
@@ -40844,6 +40844,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FeedbackText: {fileID: 1750705081}
   pingResultString: 
+  appHasInternet: 0
+  pingResult: 0
 --- !u!43 &1305226463
 Mesh:
   m_ObjectHideFlags: 0
@@ -41471,6 +41473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf39116cc6db44d47b2eaf534e0f6682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Indicator: {fileID: 558993229}
   MicrophoneIndex: 0
   _minimumSpeakingSampleValue: 0.05
   _silenceTimer: 1
@@ -41490,7 +41493,7 @@ MonoBehaviour:
   ModelPath: vosk-model-en-us-0.22-lgraph.zip
   VoiceProcessor: {fileID: 1321406743}
   MaxAlternatives: 1
-  MaxRecordLength: 20
+  MaxRecordLength: 8
   AutoStart: 1
   KeyPhrases: []
   resultText: {fileID: 1750705081}
@@ -60575,14 +60578,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VoskSpeechToText: {fileID: 1321406744}
-  indicator: {fileID: 558993229}
-  Offline_OptionController: {fileID: 1214897820}
+  OptionController: {fileID: 1214897820}
   PlayerFinishedTalking:
     m_PersistentCalls:
       m_Calls: []
   Offline_CharacterYarnLineHandler: []
   yarnInMemoryVariableStorage: {fileID: 1766036279}
-  characters: []
+  characters:
+  - {fileID: 217718211}
   characterToTalk: 
   InternetTestController: {fileID: 1302838651}
   OVRScreenFade: {fileID: 628292719046881232}
@@ -71923,7 +71926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 0.5
+  fadeTime: 2
   fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
   fadeOnStart: 1
   renderQueue: 5000

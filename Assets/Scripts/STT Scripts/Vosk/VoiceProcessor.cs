@@ -35,6 +35,8 @@ using UnityEngine;
 /// </summary>
 public class VoiceProcessor : MonoBehaviour
 {
+    public GameObject Indicator;
+
     /// <summary>
     /// Indicates whether microphone is capturing or not
     /// </summary>
@@ -114,6 +116,7 @@ public class VoiceProcessor : MonoBehaviour
 
     void Awake()
     {
+        Indicator.SetActive(false);
         UpdateDevices();
     }
 #if UNITY_EDITOR
@@ -183,6 +186,9 @@ public class VoiceProcessor : MonoBehaviour
     /// <param name="autoDetect">Should the audio continuously record based on the volume</param>
     public void StartRecording(int sampleRate = 16000, int frameSize = 512, bool ?autoDetect = null)
     {
+        Indicator.SetActive(true);
+
+
         if (autoDetect != null)
         {
             _autoDetect = (bool) autoDetect;
@@ -217,9 +223,9 @@ public class VoiceProcessor : MonoBehaviour
     /// </summary>
     public void StopRecording()
     {
+        Indicator.SetActive(false);
         if (!IsRecording)
             return;
-
         Microphone.End(CurrentDeviceName);
         Destroy(_audioClip);
         _audioClip = null;

@@ -1,21 +1,26 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
-using Yarn.Markup;
-using UnityEngine.UI;
-using System.Linq;
 using UnityEngine.Events;
+
 
 public class Offline_CharacterYarnLineHandler : MonoBehaviour
 {
+    public bool launchScene;
+
     public string characterName;
+
+    private string sceneToLoad;
+
+    public InMemoryVariableStorage yarnInMemoryVariableStorage;
 
     public AudioSource CharacterAudioSource;
 
     public AudioClip[] VoiceLine;
 
     public int VoiceLineCounter = 0;
+
+    public float YarnVoicelineOverride;
 
     public UnityEvent characterFinishedTalking;
 
@@ -237,7 +242,26 @@ public class Offline_CharacterYarnLineHandler : MonoBehaviour
 
     public void CharacterSpeechPlayback()                                   //sets the line to be sent to the TTS from the line list and sends
     {
-        //Debug.LogError(characterName + " speaking...");
+        if (launchScene)
+        {
+            yarnInMemoryVariableStorage.TryGetValue("$sceneRecommend", out YarnVoicelineOverride);
+
+            if (YarnVoicelineOverride == 1)
+            {
+                VoiceLineCounter = 2;
+            }
+
+            if (YarnVoicelineOverride == 2)
+            {
+                VoiceLineCounter = 3;
+            }
+
+            if (YarnVoicelineOverride == 3)
+            {
+                VoiceLineCounter = 5;
+            }
+        }
+
         Debug.LogError("Audio source triggered...");
 
         CharacterAudioSource.clip = VoiceLine[VoiceLineCounter];

@@ -7514,6 +7514,7 @@ MonoBehaviour:
   InteractionHandler: {fileID: 1437035259}
   OptionController: {fileID: 1214897820}
   currentLine: 
+  requestRetry: 0
   ratingOne: 0
   ratingTwo: 0
   ratingThree: 0
@@ -38315,8 +38316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0236c4ee7954be94dbca5759e3deb68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LineView: {fileID: 1011686699}
-  ClassroomSpeechToYarn: {fileID: 1766036283}
   Options: []
   OptionToSelect: 0
   tagNumber: 0
@@ -45941,6 +45940,7 @@ MonoBehaviour:
   speechToOptionCompare: {fileID: 258782848}
   previouslySpokenList: []
   previouslySpokenString: 
+  currentLineSpoken: 
   previouslySpokenArray: []
   buttonPressed: 0
   tryAgainRunning: 0
@@ -73614,7 +73614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 0.5
+  fadeTime: 1
   fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
   fadeOnStart: 1
   renderQueue: 5000

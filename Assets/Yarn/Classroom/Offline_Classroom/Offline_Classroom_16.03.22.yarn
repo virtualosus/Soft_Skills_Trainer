@@ -25,20 +25,8 @@ position: 39,-492
 <<declare $characterToTalk = "name" as String>> 
  
 
-<<wait 2>> 
+<<wait 1>> 
  
-<<offline_activate_voice_recognition DialogueRunner>> 
-
-
-
-<<wait 10>>
-
-
-<<offline_deactivate_voice_recognition DialogueRunner>>
-
-
-<<wait 30>>
-
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
 <<offline_NPC_start_talking DialogueRunner>>
@@ -56,7 +44,6 @@ In a few moments I will leave you here with Emily and Jonathan who have had a di
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
 <<offline_NPC_start_talking DialogueRunner>>
-
 Please try to resolve their issues in a calm and balanced manner by reading out loud one of the three options you see in front of you.  #line:Teacher3
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -64,7 +51,6 @@ Please try to resolve their issues in a calm and balanced manner by reading out 
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
 <<offline_NPC_start_talking DialogueRunner>>
-
 I will return at the end to let you know how you got on, based on our restorative practice procedures. #line:Teacher4
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -94,6 +80,7 @@ position: 41,-256
 
 //Emily 
 <<set $characterToTalk to "Emily">> 
+<<offline_NPC_start_talking DialogueRunner>>
 Jonathan was saying that my family don’t have any money and they don’t care about me. #line:Girl1 
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -105,7 +92,8 @@ Jonathan was saying that my family don’t have any money and they don’t care 
  
 
 //Emily 
-<<set $characterToTalk to "Emily">> 
+<<set $characterToTalk to "Emily">>
+<<offline_NPC_start_talking DialogueRunner>>
 It made me cry and I felt embarrassed. Everyone was laughing, I wanted to go home and not come back to school.  #line:Girl2 
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -117,7 +105,8 @@ It made me cry and I felt embarrassed. Everyone was laughing, I wanted to go hom
 
 
 //Emily:   
-<<set $characterToTalk to "Emily">> 
+<<set $characterToTalk to "Emily">>
+<<offline_NPC_start_talking DialogueRunner>>
 I’m still really upset. #line:Girl3  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -130,6 +119,7 @@ I’m still really upset. #line:Girl3
 
 //Emily:  
 <<set $characterToTalk to "Emily">> 
+<<offline_NPC_start_talking DialogueRunner>>
 I want him to stop saying those things. #line:Girl4  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -417,6 +407,7 @@ position: 47,-21
 
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 Nothing really, I was only joking. #line:Boy1 
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -427,7 +418,8 @@ Nothing really, I was only joking. #line:Boy1
  
 
 //Jonathan:  
-<<set $characterToTalk to "Jonathan">> 
+<<set $characterToTalk to "Jonathan">>
+<<offline_NPC_start_talking DialogueRunner>>
 Yeah I suppose. #line:Boy2  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -440,6 +432,7 @@ Yeah I suppose. #line:Boy2
  
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 Well, I noticed that Emily never has dinner in school like the rest of us. She always sits on her own to eat a packed lunch.  I was only teasing her. #line:Boy3  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -452,6 +445,7 @@ Well, I noticed that Emily never has dinner in school like the rest of us. She a
  
 //Jonathan:   
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 Yeah I guess so.  I didn't mean to make her cry. #line:Boy4  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -464,6 +458,7 @@ Yeah I guess so.  I didn't mean to make her cry. #line:Boy4
 
 //Jonathan:   
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 Well, I shouted over to Emily, having sandwiches again then Emily!  Then everyone kind of laughed.  So I carried on for a bit.   #line:Boy5
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -476,6 +471,7 @@ Well, I shouted over to Emily, having sandwiches again then Emily!  Then everyon
  
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 I guess I thought it was funny because everyone else was laughing.   #line:Boy6  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
  
@@ -488,6 +484,7 @@ I guess I thought it was funny because everyone else was laughing.   #line:Boy6
 
 //Jonathan:   
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 I didn’t really notice.  I guess I was too into it to pay attention.   #line:Boy7  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -500,6 +497,7 @@ I didn’t really notice.  I guess I was too into it to pay attention.   #line:B
 
 //Jonathan:   
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 I guess so. #line:Boy8  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -512,6 +510,7 @@ I guess so. #line:Boy8
 
 //Jonathan:   
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 I guess I shouldn’t have done it.  I didn’t mean to make her cry. #line:Boy9 
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
  
@@ -533,6 +532,7 @@ position: 51,210
 
 //Emily:  
 <<set $characterToTalk to "Emily">> 
+<<offline_NPC_start_talking DialogueRunner>>
 I was trying to explain earlier but everyone was laughing and no one was listening. #line:Girl5 
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
  
@@ -547,6 +547,7 @@ I was trying to explain earlier but everyone was laughing and no one was listeni
 
 //Emily:
 <<set $characterToTalk to "Emily">> 
+<<offline_NPC_start_talking DialogueRunner>>
 It's because I have diabetes that I can’t eat certain foods, so my Mum packs me a lunch to keep me safe. #line:Girl6
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -559,6 +560,7 @@ It's because I have diabetes that I can’t eat certain foods, so my Mum packs m
  
 //Emily:  
 <<set $characterToTalk to "Emily">> 
+<<offline_NPC_start_talking DialogueRunner>>
 Yes it is. #line:Girl7 
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -571,6 +573,7 @@ Yes it is. #line:Girl7
 
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 Yeah that’s kind of her Mum.  I guess she does care about her a lot.  #line:Boy10  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -583,6 +586,7 @@ Yeah that’s kind of her Mum.  I guess she does care about her a lot.  #line:Bo
   
 //Jonathan:   
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 I do feel bad.  I didn’t mean to upset her and I should have listened.   #line:Boy11  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -595,6 +599,7 @@ I do feel bad.  I didn’t mean to upset her and I should have listened.   #line
  
 //Jonathan:  
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 Yeah I won’t do that in the future, I will listen more. #line:Boy12  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -607,6 +612,7 @@ Yeah I won’t do that in the future, I will listen more. #line:Boy12
 
 //Emily:   
 <<set $characterToTalk to "Emily">> 
+<<offline_NPC_start_talking DialogueRunner>>
 I really wanted him to stop.  I’m just glad he listened eventually.  #line:Girl8  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -619,6 +625,7 @@ I really wanted him to stop.  I’m just glad he listened eventually.  #line:Gir
  
 //Jonathan:   
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 I guess I should say sorry. #line:Boy13  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -631,6 +638,7 @@ I guess I should say sorry. #line:Boy13
 
 //Emily:  
 <<set $characterToTalk to "Emily">> 
+<<offline_NPC_start_talking DialogueRunner>>
 Yes. #line:Girl9 
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
  
@@ -643,12 +651,14 @@ Yes. #line:Girl9
 
 //Jonathan:   
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 I’m sorry I upset you Emily.  I won’t do it again. #line:Boy14 
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
  
 //Emily:   
 <<set $characterToTalk to "Emily">> 
+<<offline_NPC_start_talking DialogueRunner>>
 That’s okay. #line:Girl10 
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -669,12 +679,14 @@ That’s okay. #line:Girl10
 
 //Emily:   
 <<set $characterToTalk to "Emily">> 
+<<offline_NPC_start_talking DialogueRunner>>
 No thank you. #line:12154314_char1_Emily    //NEED TO RECORD AUDIO
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
  
 //Jonathan:   
 <<set $characterToTalk to "Jonathan">> 
+<<offline_NPC_start_talking DialogueRunner>>
 No. #line:0125741_char2_Jonathan           //NEED TO RECORD AUDIO
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
@@ -698,24 +710,28 @@ position: 46,458
  
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
+<<offline_NPC_start_talking DialogueRunner>>
 Thank you for your help resolving Emily and Jonathans falling out. #line:Teacher5  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
  
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
+<<offline_NPC_start_talking DialogueRunner>>
 I am sure that they are once again, firm friends. #line:Teacher6  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
  
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
+<<offline_NPC_start_talking DialogueRunner>>
 Based on your selections throughout the experience, you did really well by our restorative practice procedures and scored insert score here.   #line:Teacher7  
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
  
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
+<<offline_NPC_start_talking DialogueRunner>>
 If you wish to run through this application once more, then please reload it from your headsets main menu. Thank you again for taking part.    #line:Teacher8   
 <<offline_NPC_finish_talking_wait DialogueRunner>> 
 
