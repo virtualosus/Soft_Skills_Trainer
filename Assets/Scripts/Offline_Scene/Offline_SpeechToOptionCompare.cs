@@ -16,8 +16,6 @@ public class Offline_SpeechToOptionCompare : MonoBehaviour
 
     public string currentLine;
     
-    public bool requestRetry;
-
     public int ratingOne, ratingTwo, ratingThree;
 
     public int optionCounter = 0;
@@ -43,18 +41,6 @@ public class Offline_SpeechToOptionCompare : MonoBehaviour
         GetLineIDs();
         SortLineIDs();
         GetLinesFromIDs();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void GetLineIDs()                                                //finds all of the line IDs in the referenced YARN project and lists
@@ -136,9 +122,8 @@ public class Offline_SpeechToOptionCompare : MonoBehaviour
             }
             else
             {
-                requestRetry = true;
+                VoskResultText.RetryListenForSpeech();
             }
-
         }
         if (Mathf.Min(ratingOne, ratingTwo, ratingThree) == ratingTwo)
         {
@@ -149,7 +134,7 @@ public class Offline_SpeechToOptionCompare : MonoBehaviour
             }
             else
             {
-                requestRetry = true;
+                VoskResultText.RetryListenForSpeech();
             }
         }
         if (Mathf.Min(ratingOne, ratingTwo, ratingThree) == ratingThree)
@@ -161,10 +146,9 @@ public class Offline_SpeechToOptionCompare : MonoBehaviour
             }
             else
             {
-                requestRetry = true;
+                VoskResultText.RetryListenForSpeech();
             }
-        }
-        
+        }        
     }
 
 

@@ -215,11 +215,12 @@ namespace Oculus.Voice.Demo.UIShapesDemo
 
         
 
-        public IEnumerator ButtonPressed()
-        {
-            buttonPressed = true;
-            yield return new WaitForSeconds(1);
-            buttonPressed = false;
-        } 
+        //public IEnumerator ButtonPressed()
+        //{
+        //    buttonPressed = true;
+        //    CancelVoiceAttempt()
+        //    yield return new WaitForSeconds(1);
+        //    buttonPressed = false;
+        //} 
     }
 }

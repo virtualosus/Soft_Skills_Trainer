@@ -280,7 +280,7 @@ public class VoskSpeechToText : MonoBehaviour
         else
         {
             VoiceProcessor.StopRecording();
-            //resultText.text = "Listening finished.";
+            resultText.text = "Processing...";
 
         }
     }

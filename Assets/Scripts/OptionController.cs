@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.Events;
+using Oculus.Voice.Demo.UIShapesDemo;
 
 
 public class OptionController : MonoBehaviour
 {
+    public InteractionHandler InteractionHandler;
+
+    public LearningResponse LearningResponse;
+
     public GameObject[] Options;
 
     public int OptionToSelect, tagNumber;
@@ -23,6 +28,7 @@ public class OptionController : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             Options[i] = transform.GetChild(i).gameObject;
+            Options[i].GetComponent<ColourSelect>().NeutralSelect();
             Options[i].tag = tagNumber.ToString();
             tagNumber++;
         }
@@ -32,34 +38,44 @@ public class OptionController : MonoBehaviour
 
     public void OptionOneSelect()
     {
+
+        Options[0].GetComponent<ColourSelect>().PositiveSelect();
         OptionToSelect = 0;
-        OptionSelectCoroutine();
-        //StartCoroutine(OptionSelectCoroutine());
+        LearningResponse.optionSelected = OptionToSelect;
+        StartCoroutine(OptionSelectCoroutine());
         Debug.LogError("Option 1 selected");
     }
 
     public void OptionTwoSelect()
     {
+        Options[1].GetComponent<ColourSelect>().NeutralSelect();
         OptionToSelect = 1;
-        OptionSelectCoroutine();
-        //StartCoroutine(OptionSelectCoroutine());
+        LearningResponse.optionSelected = OptionToSelect;
+        StartCoroutine(OptionSelectCoroutine());
         Debug.LogError("Option 2 selected");
     }
 
     public void OptionThreeSelect()
     {
+        Options[2].GetComponent<ColourSelect>().NegativeSelect();
         OptionToSelect = 2;
-        OptionSelectCoroutine();
-        //StartCoroutine(OptionSelectCoroutine());
+        LearningResponse.optionSelected = OptionToSelect;
+        StartCoroutine(OptionSelectCoroutine());
         Debug.LogError("Option 3 selected");
     }
 
-    public void OptionSelectCoroutine()
+    public IEnumerator OptionSelectCoroutine()
     {
         optionSelected = true;
         Options[OptionToSelect].GetComponent<OptionView>().InvokeOptionSelected();
         Options[OptionToSelect].GetComponent<Animator>().Play("Selected");
-       // OptionSelected.Invoke();
+        InteractionHandler.CancelVoiceAttempt();
+        yield return new WaitForSeconds(2f);
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Options[i].GetComponent<ColourSelect>().NeutralSelect();
+        }
+        // OptionSelected.Invoke();
         //yield return new WaitForSeconds(1f);
         //LineView.OnContinueClicked();
     }

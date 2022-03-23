@@ -14,10 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Classroom.unity
     guid: d1b8d048dceb63247b19f6fedf119592
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Classroom_LaunchMenu.unity
     guid: 3ce04dee204a6834d847f4c50d796e42
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Classroom_Offline.unity
     guid: 0a2d01d0ab8385a4d92d22975d0bfd7e
   - enabled: 1

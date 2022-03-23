@@ -18,27 +18,28 @@ public class YarnCommandController : MonoBehaviour
     [Header("Yarn")]
     public InMemoryVariableStorage yarnInMemoryVariableStorage;
     public CharacterYarnLineHandler[] characterYarnLineHandlers;
+    public LearningResponse LearningResponse;
     public string characterToTalk;
     //public LineManager LineManager;
 
     [Header("Screenfade")]
     public OVRScreenFade OVRScreenFade;
-    public float sceneNumber;
-    public GameObject[] children;
-    public GameObject[] teacher;
+    //public float sceneNumber;
+    public GameObject[] charactersToSwitch;
+    //public GameObject[] teacher;
 
     private void Awake()
     {
         indicator.SetActive(false);
 
-        for (int i = 0; i < children.Length; i++)
+        for (int i = 0; i < charactersToSwitch.Length; i++)
         {
-            children[i].SetActive(false);
+            charactersToSwitch[i].SetActive(false);
         }
-        for (int i = 0; i < teacher.Length; i++)
-        {
-            teacher[i].SetActive(true);
-        }
+        //for (int i = 0; i < teacher.Length; i++)
+        //{
+        //    teacher[i].SetActive(true);
+        //}
 
         for (int i = 0; i < characterYarnLineHandlers.Length ; i++ )                             //checks all characters in array and makes sure tags are set to the character name
         {
@@ -73,6 +74,21 @@ public class YarnCommandController : MonoBehaviour
         }
     }
 
+    [YarnCommand("NPC_learning_response")]                                                          //YARN command retrieving current character set in YARN, finding the relevant character and activating its audio playback
+    public void NPCLearningResponse()
+    {
+        LearningResponse.SetupLearningResponse();
+        yarnInMemoryVariableStorage.TryGetValue("$characterToTalk", out characterToTalk);
+        //Debug.LogError(characterToTalk + " is set to talk.");
+        for (int i = 0; i < characterYarnLineHandlers.Length; i++)
+        {
+            if (characterYarnLineHandlers[i].tag == characterToTalk)
+            {
+                characterYarnLineHandlers[i].CharacterSpeechPlayback();
+            }
+        }
+    }
+
 
     [YarnCommand("NPC_finish_talking_wait")]                                                    //YARN command retrieving the current character and waiting for it's 'finishedTalking' event to trigger
     public IEnumerator NPCWaitFinishTalking()
@@ -90,11 +106,11 @@ public class YarnCommandController : MonoBehaviour
         }
     }
 
-    [YarnCommand("scene_change")]
-    public void SceneChange()
-    {
-        StartCoroutine(SwitchCharacters());
-    }
+    //[YarnCommand("scene_change")]
+    //public void SceneChange()
+    //{
+    //    StartCoroutine(SwitchCharacters());
+    //}
 
     [YarnCommand ("Quit_Application")]                                                          //YARN command to enter the application Quit procedure
     public void CloseApplication()
@@ -103,35 +119,66 @@ public class YarnCommandController : MonoBehaviour
         Application.Quit();
     }
 
-    public IEnumerator SwitchCharacters()
+
+    [YarnCommand("switch_characters")]                                                          //YARN command to enter the application Quit procedure
+    public void SwitchCharacters()
+    {
+        StartCoroutine(CharacterSwitch());
+    }
+
+
+    public IEnumerator CharacterSwitch()
     {
         OVRScreenFade.FadeOut();
         yield return new WaitForSeconds(1f);
-        yarnInMemoryVariableStorage.TryGetValue("$sceneNumber", out sceneNumber);
-        if (sceneNumber == 1)
+        bool enter;
+        yarnInMemoryVariableStorage.TryGetValue("$bringInCharacters", out enter);
+        if (enter)
         {
-            for (int i = 0; i < children.Length; i++)
+            for (int i = 0; i < charactersToSwitch.Length; i++)
             {
-                children[i].SetActive(true);
-            }
-            for (int i = 0; i < teacher.Length; i++)
-            {
-                teacher[i].SetActive(false);
+                charactersToSwitch[i].SetActive(true);
             }
         }
-        if (sceneNumber == 2)
+        if (!enter)
         {
-            for (int i = 0; i < children.Length; i++)
+            for (int i = 0; i < charactersToSwitch.Length; i++)
             {
-                children[i].SetActive(false);
-            }
-            for (int i = 0; i < teacher.Length; i++)
-            {
-                teacher[i].SetActive(true);
+                charactersToSwitch[i].SetActive(false);
             }
         }
         OVRScreenFade.FadeIn();
     }
+
+    //public IEnumerator SwitchCharacters()
+    //{
+    //    OVRScreenFade.FadeOut();
+    //    yield return new WaitForSeconds(1f);
+    //    yarnInMemoryVariableStorage.TryGetValue("$sceneNumber", out sceneNumber);
+    //    if (sceneNumber == 1)
+    //    {
+    //        for (int i = 0; i < children.Length; i++)
+    //        {
+    //            children[i].SetActive(true);
+    //        }
+    //        for (int i = 0; i < teacher.Length; i++)
+    //        {
+    //            teacher[i].SetActive(false);
+    //        }
+    //    }
+    //    if (sceneNumber == 2)
+    //    {
+    //        for (int i = 0; i < children.Length; i++)
+    //        {
+    //            children[i].SetActive(false);
+    //        }
+    //        for (int i = 0; i < teacher.Length; i++)
+    //        {
+    //            teacher[i].SetActive(true);
+    //        }
+    //    }
+    //    OVRScreenFade.FadeIn();
+    //}
 
     //[YarnCommand("wait_for_speech_recog")]                                                   //yarn command to wait for player to finish talking - for YARN line view mode
     //public IEnumerator CustomWait()

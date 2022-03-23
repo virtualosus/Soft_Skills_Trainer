@@ -6,20 +6,24 @@ using Oculus.Voice.Demo.UIShapesDemo;
 
 public class PressOptionButton : MonoBehaviour
 {
-    public VoskSpeechToText VoskSpeechToText;
+
+
+    //public VoskResultText VoskResultText;
 
     public GameObject Button;
 
     public OptionController OptionController;
 
-    public Offline_SpeechToOptionCompare Offline_SpeechToOptionCompare;
+    public SpeechToOptionCompare SpeechToOptionCompare;
 
 
     public void Awake()
     {
         OptionController = GameObject.FindObjectOfType<OptionController>();
-        Offline_SpeechToOptionCompare = GameObject.FindObjectOfType<Offline_SpeechToOptionCompare>();
-        VoskSpeechToText = GameObject.FindObjectOfType<VoskSpeechToText>();
+        SpeechToOptionCompare = GameObject.FindObjectOfType<SpeechToOptionCompare>();
+        //VoskResultText = GameObject.FindObjectOfType<VoskResultText>();
+
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -32,9 +36,11 @@ public class PressOptionButton : MonoBehaviour
 
     public IEnumerator ButtonPressWait()
     {
-        VoskSpeechToText.ToggleRecording();
-        Offline_SpeechToOptionCompare.optionCounter++;
+
+        //VoskResultText.CancelListenForSpeech();
+        //Offline_SpeechToOptionCompare.optionCounter++;
         yield return new WaitForSeconds(0.5f);
+        SpeechToOptionCompare.optionCounter++;
         if (Button.tag == "0")
         {
             OptionController.OptionOneSelect();
@@ -50,5 +56,4 @@ public class PressOptionButton : MonoBehaviour
         Debug.LogError("Option button pressed!!");
 
     }
-
 }

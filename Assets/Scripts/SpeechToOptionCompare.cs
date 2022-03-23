@@ -13,6 +13,8 @@ public class SpeechToOptionCompare : MonoBehaviour
 
     public InteractionHandler InteractionHandler;
 
+    public LearningResponse LearningResponse;
+
     public OptionController OptionController;
 
     public string currentLine;
@@ -131,6 +133,7 @@ public class SpeechToOptionCompare : MonoBehaviour
             if(ratingOne < 15)
             {
                 OptionController.OptionOneSelect();
+                LearningResponse.optionSelected = 1;
                 optionCounter++;
             }
             else
@@ -145,6 +148,7 @@ public class SpeechToOptionCompare : MonoBehaviour
             if (ratingTwo < 15)
             {
                 OptionController.OptionTwoSelect();
+                LearningResponse.optionSelected = 2;
                 optionCounter++;
             }
             else
@@ -158,6 +162,7 @@ public class SpeechToOptionCompare : MonoBehaviour
             if (ratingThree < 15)
             {
                 OptionController.OptionThreeSelect();
+                LearningResponse.optionSelected = 3;
                 optionCounter++;
             }
             else

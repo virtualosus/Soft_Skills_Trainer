@@ -61,6 +61,10 @@ public class CharacterYarnLineHandler : MonoBehaviour
 
     public int characterLineCount;
 
+    public string learningResponseLine;
+
+    public bool learningResponseActivate;
+
     public float waitTime;
 
     public UnityEvent characterFinishedTalking;
@@ -233,11 +237,22 @@ public class CharacterYarnLineHandler : MonoBehaviour
 
         if (characterSpeechManager.isReady)
         {
-            string lineToBeSpoken = characterTextLineList[characterLineCount];
-            characterSpeechManager.SpeakWithSDKPlugin(lineToBeSpoken);
-            characterLineCount++;
-            //StartCoroutine(CharacterVolTrim());
-            StartCoroutine(CharacterWaitForLineToFinish());
+            if (learningResponseActivate)
+            {
+                characterSpeechManager.SpeakWithSDKPlugin(learningResponseLine);
+                //StartCoroutine(CharacterVolTrim());
+                StartCoroutine(CharacterWaitForLineToFinish());
+                learningResponseActivate = false;
+            }
+            else
+            {
+                string lineToBeSpoken = characterTextLineList[characterLineCount];
+                characterSpeechManager.SpeakWithSDKPlugin(lineToBeSpoken);
+                characterLineCount++;
+                //StartCoroutine(CharacterVolTrim());
+                StartCoroutine(CharacterWaitForLineToFinish());
+            }
+
         }
         else
         {

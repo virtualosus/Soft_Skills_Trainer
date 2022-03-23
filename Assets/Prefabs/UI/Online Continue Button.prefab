@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2711017116807074042
 RectTransform:
   m_ObjectHideFlags: 0
@@ -152,8 +152,9 @@ GameObject:
   - component: {fileID: 6719905578260254270}
   - component: {fileID: 2393415407401042845}
   - component: {fileID: 5471432795592915821}
+  - component: {fileID: 4779612343171384826}
   m_Layer: 12
-  m_Name: Offline Continue Button
+  m_Name: Online Continue Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,6 +284,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6719905578260254270}
   text: {fileID: 7705724315864490155}
   showCharacterName: 0
+--- !u!114 &4779612343171384826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006816238991954735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac62e1f3fa16d6439419145456eb244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PositiveButton: {fileID: 5364524069892414683}
+  NegativeButton: {fileID: 2966353407662075070}
 --- !u!1 &5292105199151087633
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5133134220038092920
 RectTransform:
   m_ObjectHideFlags: 0
