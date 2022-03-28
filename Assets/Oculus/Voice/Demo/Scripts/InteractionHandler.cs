@@ -185,13 +185,14 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             yield return new WaitForSeconds(8f);
             appVoiceExperience.Deactivate();
             ClassroomSpeechToYarn.indicator.SetActive(false);
+            yield return new WaitForSeconds(2f);
             tryAgain = StartCoroutine(NothingHeardRetry());
         }
 
         public IEnumerator NothingHeardRetry()
         {
             CancelVoiceAttempt();
-            tryAgainRunning = true;            
+            tryAgainRunning = true;
             if (speechToOptionCompare.requestRetry)
             {
                 textArea.text = "I heard: '" + currentLineSpoken + "', which is not a recognised response.";
@@ -213,7 +214,7 @@ namespace Oculus.Voice.Demo.UIShapesDemo
             tryAgainRunning = false;
         }
 
-        
+
 
         //public IEnumerator ButtonPressed()
         //{

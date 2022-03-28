@@ -10,6 +10,8 @@ public class PressOptionButton : MonoBehaviour
 
     //public VoskResultText VoskResultText;
 
+    public InteractionHandler InteractionHandler;
+
     public GameObject Button;
 
     public OptionController OptionController;
@@ -21,6 +23,7 @@ public class PressOptionButton : MonoBehaviour
     {
         OptionController = GameObject.FindObjectOfType<OptionController>();
         SpeechToOptionCompare = GameObject.FindObjectOfType<SpeechToOptionCompare>();
+        InteractionHandler = GameObject.FindObjectOfType<InteractionHandler>();
         //VoskResultText = GameObject.FindObjectOfType<VoskResultText>();
 
 
@@ -44,14 +47,22 @@ public class PressOptionButton : MonoBehaviour
         if (Button.tag == "0")
         {
             OptionController.OptionOneSelect();
+            InteractionHandler.buttonPressed = true;
+            InteractionHandler.CancelVoiceAttempt();
         }
         if (Button.tag == "1")
         {
             OptionController.OptionTwoSelect();
+            InteractionHandler.buttonPressed = true;
+            InteractionHandler.CancelVoiceAttempt();
+
         }
         if (Button.tag == "2")
         {
             OptionController.OptionThreeSelect();
+            InteractionHandler.buttonPressed = true;
+            InteractionHandler.CancelVoiceAttempt();
+
         }
         Debug.LogError("Option button pressed!!");
 

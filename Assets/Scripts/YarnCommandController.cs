@@ -19,10 +19,12 @@ public class YarnCommandController : MonoBehaviour
     public InMemoryVariableStorage yarnInMemoryVariableStorage;
     public CharacterYarnLineHandler[] characterYarnLineHandlers;
     public LearningResponse LearningResponse;
-    public string characterToTalk;
+    private string characterToTalk;
+    public int numberOfScoreOpportunities, score;
+    private float scorePercentCheck;
     //public LineManager LineManager;
 
-    [Header("Screenfade")]
+    [Header("SceneChange")]
     public OVRScreenFade OVRScreenFade;
     //public float sceneNumber;
     public GameObject[] charactersToSwitch;
@@ -104,6 +106,60 @@ public class YarnCommandController : MonoBehaviour
                 characterYarnLineHandlers[i].characterFinishedTalking.RemoveListener(action.Invoke);
             }
         }
+    }
+
+    [YarnCommand("NPC_score_response")]                                                          //YARN command retrieving current character set in YARN, finding the relevant character and activating its audio playback
+    public void NPCScoreResponse()
+    {
+
+        if (scorePercentCheck >= 80)
+        {
+            LearningResponse.GoodScore();
+        }
+        else if(scorePercentCheck > 50 && scorePercentCheck < 80)
+        {
+            LearningResponse.MiddleScore();
+        }
+        else if(scorePercentCheck <= 50)
+        {
+            LearningResponse.BadScore();
+        }
+        yarnInMemoryVariableStorage.TryGetValue("$characterToTalk", out characterToTalk);
+        //Debug.LogError(characterToTalk + " is set to talk.");
+        for (int i = 0; i < characterYarnLineHandlers.Length; i++)
+        {
+            if (characterYarnLineHandlers[i].tag == characterToTalk)
+            {
+                characterYarnLineHandlers[i].CharacterSpeechPlayback();
+            }
+        }
+    }
+
+    [YarnCommand("add_positive_score")]                                                    //YARN command retrieving the current character and waiting for it's 'finishedTalking' event to trigger
+    public void AddPositiveScore()
+    {
+        score = score + 2;
+    }
+
+    [YarnCommand("add_neutral_score")]                                                    //YARN command retrieving the current character and waiting for it's 'finishedTalking' event to trigger
+    public void AddNeutralScore()
+    {
+        score = score + 1;
+    }
+
+    [YarnCommand("calculate_score")]                                                    //YARN command retrieving the current character and waiting for it's 'finishedTalking' event to trigger
+    public void CalculateScore()
+    {
+        float maxScore = (numberOfScoreOpportunities * 2);
+        float scoreFraction = (score / maxScore);
+        float scorePercent = (scoreFraction * 100);
+
+        yarnInMemoryVariableStorage.SetValue("$scorePercent", scorePercent);
+
+        Debug.LogError("Max score: " + maxScore);
+        Debug.LogError("Score fraction: " + scoreFraction);
+        Debug.LogError("Score percent: " + scorePercent);
+        
     }
 
     //[YarnCommand("scene_change")]

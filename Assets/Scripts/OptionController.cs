@@ -41,7 +41,7 @@ public class OptionController : MonoBehaviour
 
         Options[0].GetComponent<ColourSelect>().PositiveSelect();
         OptionToSelect = 0;
-        LearningResponse.optionSelected = OptionToSelect;
+        LearningResponse.optionSelected = 1;
         StartCoroutine(OptionSelectCoroutine());
         Debug.LogError("Option 1 selected");
     }
@@ -50,7 +50,7 @@ public class OptionController : MonoBehaviour
     {
         Options[1].GetComponent<ColourSelect>().NeutralSelect();
         OptionToSelect = 1;
-        LearningResponse.optionSelected = OptionToSelect;
+        LearningResponse.optionSelected = 2;
         StartCoroutine(OptionSelectCoroutine());
         Debug.LogError("Option 2 selected");
     }
@@ -59,7 +59,7 @@ public class OptionController : MonoBehaviour
     {
         Options[2].GetComponent<ColourSelect>().NegativeSelect();
         OptionToSelect = 2;
-        LearningResponse.optionSelected = OptionToSelect;
+        LearningResponse.optionSelected = 3;
         StartCoroutine(OptionSelectCoroutine());
         Debug.LogError("Option 3 selected");
     }

@@ -37558,7 +37558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0236c4ee7954be94dbca5759e3deb68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractionHandler: {fileID: 0}
+  InteractionHandler: {fileID: 1437035259}
+  LearningResponse: {fileID: 1930977190}
   Options: []
   OptionToSelect: 0
   tagNumber: 0
@@ -60239,7 +60240,8 @@ MonoBehaviour:
   - {fileID: 224688139}
   - {fileID: 55344153}
   LearningResponse: {fileID: 1930977190}
-  characterToTalk: 
+  numberOfScoreOpportunities: 25
+  score: 0
   OVRScreenFade: {fileID: 628292719046881232}
   charactersToSwitch:
   - {fileID: 1918314943}
@@ -63136,7 +63138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab9f931ff98cb14cae6ad75e5f9b7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Responder: {fileID: 55344153}
+  CharacterYarnLineHandler: {fileID: 55344153}
   myYarnProject: {fileID: 7545569452688597077, guid: b706abf9f670fee43b09c80176fe311e, type: 3}
   responseCounter: 0
   optionSelected: 0

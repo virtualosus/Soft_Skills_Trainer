@@ -246,36 +246,6 @@ public class OVRManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration
 	/// </summary>
 	public static event Action<float, float> DisplayRefreshRateChanged;
 
-	/// <summary>
-	/// Occurs when attempting to enable a component on a spatial entity
-	/// @params (UInt64 requestId, bool result, OVRPlugin.SpatialEntityComponentType componentType, UInt64 space)
-	/// </summary>
-	public static event Action<UInt64, bool, OVRPlugin.SpatialEntityComponentType, UInt64> SpatialEntitySetComponentEnabled;
-
-	/// <summary>
-	/// Occurs when a spatial entity is found during query
-	/// @params (UInt64 requestId, OVRPlugin.SpatialEntityQueryResult[], int numResults)
-	/// </summary>
-	public static event Action<UInt64, int, OVRPlugin.SpatialEntityQueryResult[]> SpatialEntityQueryResults;
-
-	/// <summary>
-	/// Occurs when querying for a spatial entity completes
-	/// @params (UInt64 requestId, bool result, int numFound)
-	/// </summary>
-	public static event Action<UInt64, bool, int> SpatialEntityQueryComplete;
-
-	/// <summary>
-	/// Occurs when saving a spatial entity
-	/// @params (UInt64 requestId, UInt64 space, bool result, OVRPlugin.SpatialEntityUuid uuid)
-	/// </summary>
-	public static event Action<UInt64, UInt64, bool, OVRPlugin.SpatialEntityUuid> SpatialEntityStorageSave;
-
-	/// <summary>
-	/// Occurs when erasing a spatial entity
-	/// @params (UInt64 requestId, bool result, OVRPlugin.SpatialEntityUuid uuid, SpatialEntityStorageLocation location)
-	/// </summary>
-	public static event Action<UInt64, bool, OVRPlugin.SpatialEntityUuid, OVRPlugin.SpatialEntityStorageLocation> SpatialEntityStorageErase;
-
 
 	/// <summary>
 	/// Occurs when Health & Safety Warning is dismissed.
@@ -1287,11 +1257,6 @@ public class OVRManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration
 	[Tooltip("If true, rendered controller latency is reduced by several ms, as the left/right controllers will have their positions updated right before rendering.")]
 	public bool LateControllerUpdate = true;
 
-#if UNITY_2020_3_OR_NEWER
-	[Tooltip("Late latching is a feature that can reduce rendered head/controller latency by a substantial amount. Before enabling, be sure to go over the documentation to ensure that the feature is used correctly. This feature must also be enabled through the Oculus XR Plugin settings.")]
-	public bool LateLatching = false;
-#endif
-
 	/// <summary>
 	/// True if the current platform supports virtual reality.
 	/// </summary>
@@ -1991,6 +1956,14 @@ public class OVRManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration
 #endif
 
 		UpdateInsightPassthrough(isInsightPassthroughEnabled);
+
+		if (m_SpaceWarpEnabled && m_AppSpaceTransform != null)
+		{
+#if USING_XR_SDK
+			OculusXRPlugin.SetAppSpacePosition(m_AppSpaceTransform.position.x, m_AppSpaceTransform.position.y, m_AppSpaceTransform.position.z);
+			OculusXRPlugin.SetAppSpaceRotation(m_AppSpaceTransform.rotation.x, m_AppSpaceTransform.rotation.y, m_AppSpaceTransform.rotation.z, m_AppSpaceTransform.rotation.w);
+#endif
+		}
 	}
 
 	private void UpdateHMDEvents()
@@ -2005,72 +1978,6 @@ public class OVRManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration
 						float FromRefreshRate = BitConverter.ToSingle(eventDataBuffer.EventData, 0);
 						float ToRefreshRate = BitConverter.ToSingle(eventDataBuffer.EventData, 4);
 						DisplayRefreshRateChanged(FromRefreshRate, ToRefreshRate);
-					}
-					break;
-				case OVRPlugin.EventType.SpatialEntitySetComponentEnabledResult:
-					if(SpatialEntitySetComponentEnabled != null)
-					{
-						UInt64 requestId = BitConverter.ToUInt64(eventDataBuffer.EventData, 0);
-						int result = BitConverter.ToInt32(eventDataBuffer.EventData, 8);
-						OVRPlugin.SpatialEntityComponentType componentType = (OVRPlugin.SpatialEntityComponentType)BitConverter.ToInt32(eventDataBuffer.EventData, 12);
-						UInt64 space = BitConverter.ToUInt64(eventDataBuffer.EventData, 16);
-						SpatialEntitySetComponentEnabled(requestId, result >= 0, componentType, space);
-					}
-					break;
-				case OVRPlugin.EventType.SpatialEntityQueryResults:
-					if(SpatialEntityQueryResults != null)
-					{
-						const int sizeOfUInt64 = 8;
-						int offset = 0;
-						UInt64 requestId = BitConverter.ToUInt64(eventDataBuffer.EventData, 0);
-						offset += sizeOfUInt64;
-						int numResults = BitConverter.ToInt32(eventDataBuffer.EventData, offset);
-						offset += sizeOfUInt64; // This is intentional because of how the eventData is structured in memory.
-						OVRPlugin.SpatialEntityQueryResult[] results = new OVRPlugin.SpatialEntityQueryResult[OVRPlugin.SpatialEntityMaxQueryResultsPerEvent];
-						for (int i = 0; i < numResults; i++) {
-							results[i] = new OVRPlugin.SpatialEntityQueryResult();
-							results[i].space = BitConverter.ToUInt64(eventDataBuffer.EventData, offset);
-							offset += sizeOfUInt64;
-							results[i].uuid = new OVRPlugin.SpatialEntityUuid();
-							results[i].uuid.Value_0 = BitConverter.ToUInt64(eventDataBuffer.EventData, offset);
-							offset += sizeOfUInt64;
-							results[i].uuid.Value_1 = BitConverter.ToUInt64(eventDataBuffer.EventData, offset);
-							offset += sizeOfUInt64;
-						}
-						SpatialEntityQueryResults(requestId, numResults, results);
-					}
-					break;
-				case OVRPlugin.EventType.SpatialEntityQueryComplete:
-					if(SpatialEntityQueryComplete != null)
-					{
-						UInt64 requestId = BitConverter.ToUInt64(eventDataBuffer.EventData, 0);
-						int result = BitConverter.ToInt32(eventDataBuffer.EventData, 8);
-						int found = BitConverter.ToInt32(eventDataBuffer.EventData, 12);
-						SpatialEntityQueryComplete(requestId, result >= 0, found);
-					}
-					break;
-				case OVRPlugin.EventType.SpatialEntityStorageSaveResult:
-					if(SpatialEntityStorageSave != null)
-					{
-						UInt64 requestId = BitConverter.ToUInt64(eventDataBuffer.EventData, 0);
-						UInt64 space = BitConverter.ToUInt64(eventDataBuffer.EventData, 8);
-						int result = BitConverter.ToInt32(eventDataBuffer.EventData, 16);
-						OVRPlugin.SpatialEntityUuid uuid;
-						uuid.Value_0 = BitConverter.ToUInt64(eventDataBuffer.EventData, 24);
-						uuid.Value_1 = BitConverter.ToUInt64(eventDataBuffer.EventData, 32);
-						SpatialEntityStorageSave(requestId, space, result >= 0, uuid);
-					}
-					break;
-				case OVRPlugin.EventType.SpatialEntityStorageEraseResult:
-					if(SpatialEntityStorageErase != null)
-					{
-						UInt64 requestId = BitConverter.ToUInt64(eventDataBuffer.EventData, 0);
-						int result = BitConverter.ToInt32(eventDataBuffer.EventData, 8);
-						OVRPlugin.SpatialEntityUuid uuid;
-						uuid.Value_0 = BitConverter.ToUInt64(eventDataBuffer.EventData, 16);
-						uuid.Value_1 = BitConverter.ToUInt64(eventDataBuffer.EventData, 24);
-						OVRPlugin.SpatialEntityStorageLocation location = (OVRPlugin.SpatialEntityStorageLocation)BitConverter.ToInt32(eventDataBuffer.EventData, 32);
-						SpatialEntityStorageErase(requestId, result >= 0, uuid, location);
 					}
 					break;
 				default:
@@ -2152,14 +2059,6 @@ public class OVRManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration
 	private void LateUpdate()
 	{
 		OVRHaptics.Process();
-
-		if (m_SpaceWarpEnabled && m_AppSpaceTransform != null)
-		{
-#if USING_XR_SDK
-			OculusXRPlugin.SetAppSpacePosition(m_AppSpaceTransform.position.x, m_AppSpaceTransform.position.y, m_AppSpaceTransform.position.z);
-			OculusXRPlugin.SetAppSpaceRotation(m_AppSpaceTransform.rotation.x, m_AppSpaceTransform.rotation.y, m_AppSpaceTransform.rotation.z, m_AppSpaceTransform.rotation.w);
-#endif
-		}
 	}
 
 	private void FixedUpdate()
@@ -2378,7 +2277,7 @@ public class OVRManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration
 
 		bool passthroughResult = OVRPlugin.InitializeInsightPassthrough();
         OVRPlugin.Result result = OVRPlugin.GetInsightPassthroughInitializationState();
-		if (result < 0)
+		if (!passthroughResult)
 		{
             _passthroughInitializationState = PassthroughInitializationState.Failed;
 			Debug.LogError("Failed to initialize Insight Passthrough. Passthrough will be unavailable. Error " + result.ToString() + ".");
@@ -2460,20 +2359,13 @@ public class OVRManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration
         }
 	}
 
-	/// Checks whether the passthrough is initialized.
-	/// \return Boolean value to indicate the current state of passthrough. If the value returned is true, the passthrough is initialized.
 	public static bool IsInsightPassthroughInitialized() {
 		return _passthroughInitializationState == PassthroughInitializationState.Initialized;
 	}
 
-	/// Checks whether the passthrough has failed the initialization.
-	/// \return Boolean value to indicate the passthrough initialization failed status. If the value returned is true, the passthrough has failed the initialization.
 	public static bool HasInsightPassthroughInitFailed() {
 		return _passthroughInitializationState == PassthroughInitializationState.Failed;
 	}
-
-	/// Checks whether the passthrough is in the process of initialization.
-	/// \return Boolean value to indicate the current state of passthrough. If the value returned is true, the passthrough is initializing.
     public static bool IsInsightPassthroughInitPending()
     {
         return _passthroughInitializationState == PassthroughInitializationState.Pending;

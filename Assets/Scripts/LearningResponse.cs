@@ -7,7 +7,7 @@ using System.Linq;
 public class LearningResponse : MonoBehaviour
 {
 
-    public CharacterYarnLineHandler Responder;
+    public CharacterYarnLineHandler CharacterYarnLineHandler;
 
     public YarnProject myYarnProject;
 
@@ -96,24 +96,42 @@ public class LearningResponse : MonoBehaviour
     {
         if(optionSelected == 1)
         {
-            Responder.learningResponseActivate = true;
-            Responder.learningResponseLine = responseOneText[responseCounter];
+            CharacterYarnLineHandler.learningResponseActivate = true;
+            CharacterYarnLineHandler.learningResponseLine = responseOneText[responseCounter];
             responseCounter++;
             optionSelected = 0;
         }
         if (optionSelected == 2)
         {
-            Responder.learningResponseActivate = true;
-            Responder.learningResponseLine = responseTwoText[responseCounter];
+            CharacterYarnLineHandler.learningResponseActivate = true;
+            CharacterYarnLineHandler.learningResponseLine = responseTwoText[responseCounter];
             responseCounter++;
             optionSelected = 0;
         }
         if (optionSelected == 3)
         {
-            Responder.learningResponseActivate = true;
-            Responder.learningResponseLine = responseThreeText[responseCounter];
+            CharacterYarnLineHandler.learningResponseActivate = true;
+            CharacterYarnLineHandler.learningResponseLine = responseThreeText[responseCounter];
             responseCounter++;
             optionSelected = 0;
         }
+    }
+
+    public void GoodScore()
+    {
+        CharacterYarnLineHandler.learningResponseActivate = true;
+        CharacterYarnLineHandler.learningResponseLine = responseOneText[responseCounter];
+    }
+
+    public void MiddleScore()
+    {
+        CharacterYarnLineHandler.learningResponseActivate = true;
+        CharacterYarnLineHandler.learningResponseLine = responseTwoText[responseCounter];
+    }
+
+    public void BadScore()
+    {
+        CharacterYarnLineHandler.learningResponseActivate = true;
+        CharacterYarnLineHandler.learningResponseLine = responseThreeText[responseCounter];
     }
 }

@@ -22,6 +22,8 @@ position: 39,-492
 <<declare $sceneNumber  = 0>> 
 <<declare $bringInCharacters = false as bool>>
 <<declare $characterToTalk = "name" as String>> 
+<<declare $score = 0>>
+<<declare $scorePercent = 0>>
  
 
 <<wait 1>> 
@@ -47,6 +49,8 @@ In a few moments I will bring in Emily and Jonathan who have had a disagreement.
 Please try to resolve their issues in a calm and balanced manner by reading out loud one of the three options you see in front of you.  #line:015d4d0_Teacher   
 <<NPC_finish_talking_wait DialogueRunner>> 
  
+ <<calculate_score DialogueRunner>>
+
 
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
@@ -63,6 +67,7 @@ I will give you feedback on your selections throughout and at the end will give 
 
 <<activate_voice_recognition DialogueRunner>> 
 -> Emily would you like to tell me what happened? #line:0c273a6_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -71,6 +76,7 @@ I will give you feedback on your selections throughout and at the end will give 
     <<jump Stage1>> 
 
 -> Who would like to go first? #line:02a40db_OptionTwo 
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -103,7 +109,8 @@ Jonathan was saying that my family don’t have any money and they don’t care 
 
 
 <<activate_voice_recognition DialogueRunner>> 
--> That’s very upsetting.  How did that make you feel Emily? #line:0e33683_OptionOne
+-> How did that make you feel Emily? #line:0e33683_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -111,6 +118,7 @@ Jonathan was saying that my family don’t have any money and they don’t care 
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> That's not very nice. #line:01cdc4f_OptionTwo 
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -121,7 +129,7 @@ Jonathan was saying that my family don’t have any money and they don’t care 
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
-    You should not make that assumption.  You should be attempting find out how the confrontation made them feel. #line:0dafaae_ResponseThree 
+    You should not make that assumption.  You should be attempting to find out how the confrontation made them feel. #line:0dafaae_ResponseThree 
     <<NPC_finish_talking_wait DialogueRunner>> 
  
 
@@ -131,9 +139,13 @@ Jonathan was saying that my family don’t have any money and they don’t care 
 It made me cry and I felt embarrassed. Everyone was laughing, I wanted to go home and not come back to school.  #line:01c1039_char1_Emily 
 <<NPC_finish_talking_wait DialogueRunner>> 
 
+<<calculate_score DialogueRunner>>
+
+
 
 <<activate_voice_recognition DialogueRunner>> 
 -> I’m really sorry to hear this Emily, how do you feel now?  #line:0ca7522_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>  
@@ -141,6 +153,7 @@ It made me cry and I felt embarrassed. Everyone was laughing, I wanted to go hom
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> That must have been awful. #line:0a9bffd_OptionTwo
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -164,6 +177,7 @@ I’m still really upset. #line:0fb1640_char1_Emily
 
 <<activate_voice_recognition DialogueRunner>> 
 -> Emily, what would you like to get out of this meeting with me and Jonathan? #line:0a10b64_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -171,6 +185,7 @@ I’m still really upset. #line:0fb1640_char1_Emily
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> How would you like to move forward? #line:01c686b_OptionTwo 
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -194,6 +209,7 @@ I want him to stop saying those things. #line:00df8a6_char1_Emily
 
 <<activate_voice_recognition DialogueRunner>> 
 -> Jonathan would you like to tell me what happened from your viewpoint?  #line:0f6a89e_OptionOne
+    <<add_positive_score DialogueRunner>> 
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -201,6 +217,7 @@ I want him to stop saying those things. #line:00df8a6_char1_Emily
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> Jonathan can you tell me what happened out there? #line:09d9449_OptionTwo
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -498,6 +515,7 @@ Nothing really, I was only joking. #line:0f767a6_char2_Jonathan
 
 <<activate_voice_recognition DialogueRunner>> 
 -> You like to have a laugh with your friends do you? #line:0c23aa5_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -505,6 +523,7 @@ Nothing really, I was only joking. #line:0f767a6_char2_Jonathan
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> I don't think it was very funny. #line:042d98e_OptionTwo
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -528,6 +547,7 @@ Yeah I suppose. #line:02f5115_char2_Jonathan
 
 <<activate_voice_recognition DialogueRunner>> 
 -> So what was it about this particular incident that made you laugh? #line:0de75b1_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>   
@@ -535,6 +555,7 @@ Yeah I suppose. #line:02f5115_char2_Jonathan
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> What about this did you find so funny? #line:0ed7664_OptionTwo
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -558,6 +579,7 @@ Well, I noticed that Emily never has dinner in school like the rest of us. She a
  
 <<activate_voice_recognition DialogueRunner>> 
 -> So you thought that maybe you could have a joke with everyone? #line:0528951_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>  
@@ -565,6 +587,7 @@ Well, I noticed that Emily never has dinner in school like the rest of us. She a
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> And you thought that was funny? #line:04723f4_OptionTwo  
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -588,6 +611,7 @@ Yeah I guess so.  I didn't mean to make her cry. #line:01b3826_char2_Jonathan
  
 <<activate_voice_recognition DialogueRunner>> 
 -> I understand, so tell me what happened.  #line:06ffdee_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -595,6 +619,7 @@ Yeah I guess so.  I didn't mean to make her cry. #line:01b3826_char2_Jonathan
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> But that is what she did. What exactly did you do? #line:0a7eb91_OptionTwo
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -617,6 +642,7 @@ Well, I shouted over to Emily, having sandwiches again then Emily!  Then everyon
  
 <<activate_voice_recognition DialogueRunner>> 
 -> How were you feeling at that time?  #line:0691990_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -624,6 +650,7 @@ Well, I shouted over to Emily, having sandwiches again then Emily!  Then everyon
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> Why would you say something like that? #line:0cce363_OptionTwo
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>   
@@ -647,13 +674,15 @@ I guess I thought it was funny because everyone else was laughing.   #line:009ec
 
 <<activate_voice_recognition DialogueRunner>> 
 -> How did you feel when Emily started crying? #line:02a2781_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
     Good, establish how Jonathan was feeling at the time of the incident. Gain as much detail as you can. #line:056c28f_ResponseOne
     <<NPC_finish_talking_wait DialogueRunner>> 
 
--> Why did you carry on when Emily was crying? #line:049e040_OptionTwo  
+-> Why did you carry on when Emily was crying? #line:049e040_OptionTwo 
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -677,13 +706,15 @@ I didn’t really notice.  I guess I was too into it to pay attention.   #line:0
 
 <<activate_voice_recognition DialogueRunner>> 
 -> So you were caught up in the moment? #line:0756cd3_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
     Good, a show of empathy.  Encourage Jonathan to look at the situation as a whole.  #line:07751a4_ResponseOne
     <<NPC_finish_talking_wait DialogueRunner>> 
 
--> You didn't notice Emily crying at all? #line:05c8a3f_OptionTwo 
+-> You didn't notice Emily crying at all? #line:05c8a3f_OptionTwo
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>  
@@ -707,13 +738,15 @@ I guess so. #line:057be74_char2_Jonathan
 
 <<activate_voice_recognition DialogueRunner>> 
 -> How do you think it made Emily feel?  #line:09b1d34_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
     Good question.  Encourage Jonathan to look at how the situation made Emily feel.   #line:024c114_ResponseOne
     <<NPC_finish_talking_wait DialogueRunner>> 
 
--> What do you think about it all now? #line:06536ca_OptionTwo  
+-> What do you think about it all now? #line:06536ca_OptionTwo 
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -737,13 +770,15 @@ I guess I shouldn’t have done it.  I didn’t mean to make her cry. #line:0f5f
 
 <<activate_voice_recognition DialogueRunner>> 
 -> Emily, is there anything you would like to say to Jonathan? #line:02b18fa_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
     Good question.  Encourage Emily to express how she is feeling by engaging with Jonathan. #line:00f0dd8_ResponseOne
     <<NPC_finish_talking_wait DialogueRunner>> 
 
--> Emily, did you tell them you were upset by this? #line:019b4bf_OptionTwo  
+-> Emily, did you tell them you were upset by this? #line:019b4bf_OptionTwo
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -776,6 +811,7 @@ I was trying to explain earlier but everyone was laughing and no one was listeni
 
 <<activate_voice_recognition DialogueRunner>> 
 -> What was it that you were trying to say Emily? #line:0e7d64b_OptionOne  
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -783,6 +819,7 @@ I was trying to explain earlier but everyone was laughing and no one was listeni
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> What was the reason you think they were laughing at you? #line:0f257c6_OptionTwo 
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -806,6 +843,7 @@ It's because I have diabetes that I can’t eat certain foods, so my Mum packs m
 
 <<activate_voice_recognition DialogueRunner>> 
 -> That’s a really lovely thing for your mum to do Emily.  #line:053ece2_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
@@ -813,6 +851,7 @@ It's because I have diabetes that I can’t eat certain foods, so my Mum packs m
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> It must be important to your mum to keep you safe. #line:040ef44_OptionTwo
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -836,6 +875,7 @@ Yes it is. #line:0b98d05_char1_Emily
 
 <<activate_voice_recognition DialogueRunner>> 
 -> What do you think now that you have heard that Jonathan?  #line:0d13b22_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>   
@@ -843,6 +883,7 @@ Yes it is. #line:0b98d05_char1_Emily
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> What do you think about Emily's parents now Jonathan? #line:038e15f_OptionTwo
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>   
@@ -866,13 +907,15 @@ Yeah that’s kind of her Mum.  I guess she does care about her a lot.  #line:01
 
 <<activate_voice_recognition DialogueRunner>> 
 -> How do you feel about what happened now, would you do anything differently next time?   #line:0e0a8ae_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>> 
     Good!  Establish if this changes how Jonathan feels now he has all the information and if he would do anything different if he was in the same situation again. #line:0397d6f_ResponseOne
     <<NPC_finish_talking_wait DialogueRunner>> 
 
--> Would you make the same mistake next time Jonathan? #line:068e17e_OptionTwo  
+-> Would you make the same mistake next time Jonathan? #line:068e17e_OptionTwo 
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -896,13 +939,15 @@ I do feel bad.  I didn’t mean to upset her and I should have listened.   #line
  
 <<activate_voice_recognition DialogueRunner>> 
 -> What do you think needs to happen to make this right?   #line:0a2b400_OptionOne 
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>  
     Good!  Let’s see how they would like to conclude this meeting and right any wrongs. #line:0cff1ac_ResponseOne
     <<NPC_finish_talking_wait DialogueRunner>> 
 
--> Would you make the same jokes about Emily again? #line:072e3b6_OptionTwo  
+-> Would you make the same jokes about Emily again? #line:072e3b6_OptionTwo 
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -926,6 +971,7 @@ Yeah I won’t do that in the future, I will listen more. #line:0c7cdaf_char2_Jo
  
 <<activate_voice_recognition DialogueRunner>> 
 -> Emily are you happy with that outcome?  #line:011c7ff_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>  
@@ -933,6 +979,7 @@ Yeah I won’t do that in the future, I will listen more. #line:0c7cdaf_char2_Jo
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> What do you think about that Emily? #line:0733894_OptionTwo  
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -956,13 +1003,15 @@ I really wanted him to stop.  I’m just glad he listened eventually.  #line:00e
 
 <<activate_voice_recognition DialogueRunner>> 
 -> Is there anything else either of you would like to say? #line:041b626_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>   
     Good question.  Open the conversation up for a possible apology. #line:0ba59fe_ResponseOne
     <<NPC_finish_talking_wait DialogueRunner>> 
 
--> Don't you think there is something else you should add Jonathan? #line:0615b91_OptionTwo  
+-> Don't you think there is something else you should add Jonathan? #line:0615b91_OptionTwo 
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -986,6 +1035,7 @@ I guess I should say sorry. #line:04f83a7_char2_Jonathan
  
 <<activate_voice_recognition DialogueRunner>> 
 -> Emily would that be acceptable?  #line:0d3d2eb_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>  
@@ -993,6 +1043,7 @@ I guess I should say sorry. #line:04f83a7_char2_Jonathan
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> Would that make you feel better Emily? #line:076e3e2_OptionTwo  
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -1016,6 +1067,7 @@ Yes. #line:04546cc_char1_Emily
 
 <<activate_voice_recognition DialogueRunner>> 
 -> Over to you then Jonathan. #line:0f61d84_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>   
@@ -1023,6 +1075,7 @@ Yes. #line:04546cc_char1_Emily
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> If it will make Emily feel better, please apologise now. #line:0813bca_OptionTwo 
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>  
@@ -1053,6 +1106,7 @@ That’s okay. #line:032483e_char1_Emily
 
 <<activate_voice_recognition DialogueRunner>> 
 -> Well done both of you for coming together like this. #line:07304bb_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>   
@@ -1060,6 +1114,7 @@ That’s okay. #line:032483e_char1_Emily
     <<NPC_finish_talking_wait DialogueRunner>> 
 
 -> I'm glad we could work this out together. #line:0271d71_OptionTwo  
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -1079,13 +1134,15 @@ That’s okay. #line:032483e_char1_Emily
 
 <<activate_voice_recognition DialogueRunner>> 
 -> Is there anything else either of you would like to add?  #line:09d361c_OptionOne
+    <<add_positive_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>   
     Check once more if there is anything else anyone wishes to say.  Very Good #line:0da077d_ResponseOne
     <<NPC_finish_talking_wait DialogueRunner>> 
 
--> Can I help with anything else right now? #line:0b35cb7_OptionTwo  
+-> Can I help with anything else right now? #line:0b35cb7_OptionTwo
+    <<add_neutral_score DialogueRunner>>
     //Teacher
     <<set $characterToTalk to "Teacher">> 
     <<NPC_learning_response DialogueRunner>>     
@@ -1138,6 +1195,7 @@ position: 46,458
 Thank you for your help resolving Emily and Jonathans falling out. #line:0b45790_Teacher  
 <<NPC_finish_talking_wait DialogueRunner>> 
 
+<<calculate_score DialogueRunner>>
  
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
@@ -1145,13 +1203,29 @@ Thank you for your help resolving Emily and Jonathans falling out. #line:0b45790
 I am sure that they are once again, firm friends. #line:0ef7a12_Teacher  
 <<NPC_finish_talking_wait DialogueRunner>> 
 
- 
-//Teacher 
-<<set $characterToTalk to "Teacher">> 
-<<NPC_start_talking DialogueRunner>> 
-Based on your selections throughout the experience, you did really well by our restorative practice procedures and scored insert score here.   #line:040aea2_Teacher  
-<<NPC_finish_talking_wait DialogueRunner>> 
 
+<<if $scorePercent >= 80>>
+    //Teacher 
+    <<set $characterToTalk to "Teacher">> 
+    <<NPC_score_response DialogueRunner>> 
+    Based on your selections throughout the experience, you did really well by our restorative practice procedures and scored above seventy five percent.   #line:040arewa2_ResponseOne  
+    <<NPC_finish_talking_wait DialogueRunner>> 
+
+<<elseif $scorePercent > 50 && $scorePercent < 80 >> 
+    //Teacher 
+    <<set $characterToTalk to "Teacher">> 
+    <<NPC_score_response DialogueRunner>> 
+    Based on your selections throughout the experience, you did quite well by our restorative practice procedures though could perhaps run through the program again.   #line:0ergeea2_ResponseTwo  
+    <<NPC_finish_talking_wait DialogueRunner>> 
+
+<<elseif $scorePercent <= 50>>
+    //Teacher 
+    <<set $characterToTalk to "Teacher">> 
+    <<NPC_score_response DialogueRunner>> 
+    Based on your selections throughout the experience, you did not score well by our restorative practice procedures, and we would recommend running through the application again to improve your reactions.   #line:04erhea2_ResponseThree  
+    <<NPC_finish_talking_wait DialogueRunner>> 
+
+<<endif>>
  
 //Teacher 
 <<set $characterToTalk to "Teacher">> 
