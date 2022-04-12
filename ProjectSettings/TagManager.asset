@@ -13,6 +13,8 @@ TagManager:
   - 2
   - 3
   - MenuNPC
+  - NPC_Prefab
+  - NPCPrefab
   layers:
   - Default
   - TransparentFX

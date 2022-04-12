@@ -66,11 +66,13 @@ public class YarnCommandController : MonoBehaviour
     public void NPCStartToTalk()
     {
         yarnInMemoryVariableStorage.TryGetValue("$characterToTalk", out characterToTalk);
-        //Debug.LogError(characterToTalk + " is set to talk.");
+        Debug.LogError(characterToTalk + " is set to talk.");
         for (int i = 0; i < characterYarnLineHandlers.Length; i++)
         {
             if(characterYarnLineHandlers[i].tag == characterToTalk)
             {
+                Debug.LogError(characterToTalk + " speech playback called.");
+
                 characterYarnLineHandlers[i].CharacterSpeechPlayback();
             }
         }

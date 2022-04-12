@@ -73,4 +73,5 @@ crashlytics-build.properties
 /DemoVids
 /Assets/Plugins/KeenASR/iOS
 /Assets/StreamingAssets/vosk-model-en-us-0.22-lgraph.zip
-/Assets/MRCHelpers
+
+/TestVideos

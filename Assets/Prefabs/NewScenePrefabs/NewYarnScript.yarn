@@ -1,0 +1,23 @@
+﻿title: Start
+tags:
+---
+
+<<declare $characterToTalk = "name" as String>> 
+
+
+<<wait 2>>
+
+//NPC_Prefab 
+<<set $characterToTalk to "NPCPrefab">> 
+<<NPC_start_talking DialogueRunner>> 
+This demonstration is eggselent #line:00147c4_NPCPrefab 
+<<NPC_finish_talking_wait DialogueRunner>> 
+
+
+<<activate_voice_recognition DialogueRunner>> 
+-> Option One  #line:0b031e0_OptionOne  
+-> Option Two  #line:0fed8ef_OptionTwo 
+-> Option Three #line:027ae90_OptionThree
+
+
+===

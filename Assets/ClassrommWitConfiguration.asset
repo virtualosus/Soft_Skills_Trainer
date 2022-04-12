@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ClassrommWitConfiguration
   m_EditorClassIdentifier: 
   application:
-    witConfiguration: {fileID: 0}
+    witConfiguration: {fileID: 11400000}
     name: test_app
     id: 927575798122501
     lang: en
@@ -30,6 +30,25 @@ MonoBehaviour:
     speech: 
     message: 
   entities:
+  - witConfiguration: {fileID: 11400000}
+    id: 649430246291266
+    name: NPC
+    lookups:
+    - free-text
+    - keywords
+    roles:
+    - id: 634628340944078
+      name: NPC
+    keywords:
+    - keyword: emily
+      synonyms:
+      - emily
+    - keyword: jonathan
+      synonyms:
+      - jonathan
+    - keyword: you
+      synonyms:
+      - you
   - witConfiguration: {fileID: 11400000}
     id: 341735944500348
     name: color
@@ -52,6 +71,50 @@ MonoBehaviour:
     - keyword: yellow
       synonyms:
       - yellow
+  - witConfiguration: {fileID: 11400000}
+    id: 696174581393247
+    name: comment
+    lookups:
+    - free-text
+    - keywords
+    roles:
+    - id: 551651839174411
+      name: comment
+    keywords:
+    - keyword: not very
+      synonyms:
+      - not very
+    - keyword: not very kind
+      synonyms:
+      - not very kind
+    - keyword: not very nice
+      synonyms:
+      - not very nice
+  - witConfiguration: {fileID: 11400000}
+    id: 1014491172480446
+    name: option
+    lookups:
+    - free-text
+    - keywords
+    roles:
+    - id: 748681416095736
+      name: option
+    keywords:
+    - keyword: one
+      synonyms:
+      - one
+    - keyword: three
+      synonyms:
+      - three
+    - keyword: two
+      synonyms:
+      - two
+  - witConfiguration: {fileID: 11400000}
+    id: 532448641832477
+    name: question
+    lookups: []
+    roles: []
+    keywords: []
   - witConfiguration: {fileID: 11400000}
     id: 645656230009152
     name: shape
@@ -76,6 +139,32 @@ MonoBehaviour:
       - sphere
   intents:
   - witConfiguration: {fileID: 11400000}
+    id: 497904662007028
+    name: add_score
+    entities:
+    - witConfiguration: {fileID: 11400000}
+      id: 634628340944078
+      name: NPC:NPC
+      lookups: []
+      roles: []
+      keywords: []
+    - witConfiguration: {fileID: 11400000}
+      id: 551651839174411
+      name: comment:comment
+      lookups: []
+      roles: []
+      keywords: []
+    - witConfiguration: {fileID: 11400000}
+      id: 4426814990751389
+      name: question:question
+      lookups: []
+      roles: []
+      keywords: []
+  - witConfiguration: {fileID: 11400000}
+    id: 3016479195269086
+    name: adjust_Player_Score
+    entities: []
+  - witConfiguration: {fileID: 11400000}
     id: 2080889858726811
     name: change_color
     entities:
@@ -88,6 +177,16 @@ MonoBehaviour:
     - witConfiguration: {fileID: 11400000}
       id: 3096781143972496
       name: shape:shape
+      lookups: []
+      roles: []
+      keywords: []
+  - witConfiguration: {fileID: 11400000}
+    id: 962676161275584
+    name: option_selection
+    entities:
+    - witConfiguration: {fileID: 11400000}
+      id: 748681416095736
+      name: option:option
       lookups: []
       roles: []
       keywords: []
